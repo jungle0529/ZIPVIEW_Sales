@@ -21,7 +21,6 @@
   }
   .wrap{max-width:980px; margin:0 auto; padding:0 24px 80px}
 
-  /* Header */
   header{padding:56px 0 28px; border-bottom:1px solid var(--line); margin-bottom:8px}
   .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;
     letter-spacing:.04em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
@@ -31,22 +30,12 @@
   .badge{background:var(--warn-soft);color:var(--warn);font-size:11px;font-weight:700;
     padding:3px 9px;border-radius:999px;letter-spacing:.02em}
 
-  /* Key message */
-  .keymsg{background:var(--ink);color:#fff;border-radius:16px;padding:28px 30px;margin:30px 0;
-    box-shadow:var(--shadow)}
-  .keymsg .lbl{font-size:12px;font-weight:700;color:#8FE3CF;letter-spacing:.06em;text-transform:uppercase}
-  .keymsg p{margin-top:10px;font-size:16.5px;line-height:1.7;color:#E9EEF2}
-  .keymsg b{color:#fff;font-weight:700}
-  .keymsg .hl{color:#F2D79B;font-weight:700}
-
-  /* Section */
   section{margin-top:44px}
   .sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
   .sec-n{font-size:13px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
   h2{font-size:21px;font-weight:800;letter-spacing:-0.02em}
   .sec-note{color:var(--muted);font-size:13px;margin-left:auto;font-weight:500}
 
-  /* Metric cards */
   .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .mcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;
     box-shadow:var(--shadow)}
@@ -57,38 +46,39 @@
   .mcard.accent{background:var(--accent);border-color:var(--accent)}
   .mcard.accent .t{color:#CDE8E1}.mcard.accent .v{color:#fff}.mcard.accent .d{color:#CDE8E1}
 
-  /* Chart */
   .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;
     box-shadow:var(--shadow)}
   .chart{display:flex;align-items:flex-end;gap:14px;height:200px;margin:18px 4px 6px;
-    border-bottom:1px solid var(--line);padding-bottom:0}
-  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+    border-bottom:1px solid var(--line)}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+    height:100%;cursor:pointer;border-radius:6px 6px 0 0;transition:background .15s;padding-top:4px}
+  .bar-col:hover{background:#F0F4F3}
+  .bar-col:hover .bar{filter:brightness(1.06)}
+  .bar-col.active{background:#EAF1EF}
   .bar-val{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;
     font-variant-numeric:tabular-nums}
   .bar{width:100%;max-width:54px;background:linear-gradient(180deg,#2E8C76,#1F6F5C);
-    border-radius:6px 6px 0 0;transition:height .3s}
+    border-radius:6px 6px 0 0;transition:height .3s;pointer-events:none}
   .bar.peak{background:linear-gradient(180deg,#C99A45,#B0822E)}
   .bar.low{background:linear-gradient(180deg,#D2604A,#C0492F)}
+  .bar-col.active .bar{outline:2px solid var(--ink);outline-offset:2px}
   .bar-x{display:flex;gap:14px;margin-top:8px}
   .bar-x span{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
   .chart-cap{font-size:13px;color:var(--warn);font-weight:600;margin-top:12px;
     background:var(--warn-soft);display:inline-block;padding:5px 11px;border-radius:8px}
+  .hint{font-size:12px;color:var(--muted);margin-top:10px}
 
-  /* Levers */
-  .levers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
-    box-shadow:var(--shadow);position:relative}
-  .lever .num{font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:24px;height:24px;
-    border-radius:7px;display:flex;align-items:center;justify-content:center}
-  .lever h3{font-size:15.5px;font-weight:800;margin:12px 0 7px;letter-spacing:-0.01em}
-  .lever p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
-  .lever .ev{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);
-    background:var(--gold-soft);padding:3px 9px;border-radius:7px}
-
-  /* Tables */
+  /* expandable detail */
+  #detail{margin-top:16px;overflow:hidden;max-height:0;transition:max-height .3s ease;
+    border-top:1px dashed var(--line)}
+  #detail.open{max-height:520px}
+  .detail-inner{padding-top:16px}
+  .detail-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+  .detail-head .m{font-size:15px;font-weight:800}
+  .detail-head .s{font-size:13px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
   table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);
     border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
   th{background:#FAFBFC;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
   td{color:var(--ink-soft)} tr:last-child td{border-bottom:none}
   .num-cell{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
@@ -99,7 +89,16 @@
   .tag.t{background:var(--accent);color:#fff}
   .tag.s{background:var(--gold-soft);color:var(--gold)}
 
-  /* role / risk lists */
+  .levers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+    box-shadow:var(--shadow)}
+  .lever .num{font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:24px;height:24px;
+    border-radius:7px;display:flex;align-items:center;justify-content:center}
+  .lever h3{font-size:15.5px;font-weight:800;margin:12px 0 7px;letter-spacing:-0.01em}
+  .lever p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+  .lever .ev{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);
+    background:var(--gold-soft);padding:3px 9px;border-radius:7px}
+
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .listcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
     box-shadow:var(--shadow)}
@@ -114,8 +113,7 @@
     border-radius:50%;background:var(--line)}
   .listcard li b{color:var(--ink)}
 
-  /* timeline */
-  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--card);
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);
     border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
   .tl-col{padding:18px;border-right:1px solid var(--line)}
   .tl-col:last-child{border-right:none}
@@ -124,16 +122,23 @@
   .tl-col p:last-child{margin-bottom:0}
   .owner{font-size:10.5px;font-weight:700;color:var(--muted)}
 
+  /* conclusion */
+  .keymsg{background:var(--ink);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow)}
+  .keymsg .lbl{font-size:12px;font-weight:700;color:#8FE3CF;letter-spacing:.06em;text-transform:uppercase}
+  .keymsg p{margin-top:12px;font-size:16.5px;line-height:1.75;color:#E9EEF2}
+  .keymsg b{color:#fff;font-weight:700}.keymsg .hl{color:#F2D79B;font-weight:700}
+
   footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
     .metrics,.levers,.cols{grid-template-columns:1fr}
-    .tl{grid-template-columns:1fr;}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
+    .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
   }
   @media print{body{background:#fff}.keymsg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .mcard,.lever,.panel,table,.listcard,.tl{box-shadow:none}}
+    .mcard,.lever,.panel,table,.listcard,.tl{box-shadow:none}
+    #detail{max-height:none!important}.hint{display:none}}
 </style>
 </head>
 <body>
@@ -148,17 +153,40 @@
     </div>
   </header>
 
-  <div class="keymsg">
-    <div class="lbl">핵심 메시지</div>
-    <p>연간 분양 목표 <b>30억</b> 중 상반기 <b>7.52억(25%)</b> 달성. 하반기 <span class="hl">22.48억 —
-    상반기의 3배</span>가 필요하나, 지금의 <b>유닛 VR 위주 구성</b>으로는 산술적으로 도달 불가.
-    핵심은 딜 성격을 <b>"다건·소액 VR" → "옵션몰 · 하드웨어 결합 · 대형 deal"</b>로 전환하는 것.
-    정직한 착지 전망은 현실선(commit) <b>약 20억</b>, 목표선(target) <b>30억</b>이며,
-    30억 달성은 <span class="hl">대형 deal 1~2건 + 포스코 도입 확대</span>의 적중에 달려 있다.</p>
-  </div>
-
+  <!-- 1. 현황 진단 -->
   <section>
-    <div class="sec-h"><span class="sec-n">02</span><h2>목표와 갭</h2></div>
+    <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 경고 신호</h2>
+      <span class="sec-note">월별 수주 (백만원) · 막대 클릭 시 상세</span></div>
+    <div class="panel">
+      <div class="chart" id="chart">
+        <div class="bar-col" data-m="1"><div class="bar-val">59</div><div class="bar" style="height:18%"></div></div>
+        <div class="bar-col" data-m="2"><div class="bar-val">64</div><div class="bar" style="height:20%"></div></div>
+        <div class="bar-col" data-m="3"><div class="bar-val">213</div><div class="bar" style="height:67%"></div></div>
+        <div class="bar-col" data-m="4"><div class="bar-val">319</div><div class="bar peak" style="height:100%"></div></div>
+        <div class="bar-col" data-m="5"><div class="bar-val">83</div><div class="bar" style="height:26%"></div></div>
+        <div class="bar-col" data-m="6"><div class="bar-val">15</div><div class="bar low" style="height:5%"></div></div>
+      </div>
+      <div class="bar-x"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span></div>
+      <div class="chart-cap">⚠ 4월 피크(3.19억) 이후 5월 0.83억 → 6월 0.15억 급랭 — 7월 공백이 최대 단기 리스크</div>
+      <div class="hint">↑ 막대를 클릭하면 해당 월의 프로젝트 · 금액이 아래에 펼쳐집니다.</div>
+
+      <div id="detail">
+        <div class="detail-inner">
+          <div class="detail-head"><span class="m" id="d-month"></span><span class="s" id="d-sum"></span></div>
+          <table><thead><tr><th>프로젝트</th><th>고객사</th><th class="num-cell">금액(원)</th></tr></thead>
+            <tbody id="d-rows"></tbody></table>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--ink-soft);margin-top:18px">
+        매출 견인: <b>하드웨어 결합</b>(투명 LED · 거제 상동 2.06억 · 전체의 27%) +
+        <b>계정 확장</b>(한토신 · 동문 상위 2개 계정이 52%). 17건 · 합계 7.52억 · 평균 deal 약 44백만원.</p>
+    </div>
+  </section>
+
+  <!-- 2. 문제 제기 -->
+  <section>
+    <div class="sec-h"><span class="sec-n">02</span><h2>문제 — 목표와 갭</h2></div>
     <div class="metrics">
       <div class="mcard"><div class="t">연간 목표</div><div class="v">30.0억</div>
         <div class="d">건축(분양) 파트</div></div>
@@ -167,30 +195,14 @@
       <div class="mcard accent"><div class="t">하반기 필요</div><div class="v">22.48억</div>
         <div class="d">상반기의 3.0배</div></div>
     </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-top:16px">
+      지금의 <b>유닛 VR 위주 구성</b>(평균 44백만원)으로 22.48억을 채우려면 하반기에만 50건 이상이 필요 —
+      인력 2.5명으로 산술적 불가. <b>딜 성격의 전환</b>이 전제.</p>
   </section>
 
+  <!-- 3. 해법 -->
   <section>
-    <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 경고 신호</h2>
-      <span class="sec-note">월별 수주 (백만원)</span></div>
-    <div class="panel">
-      <div class="chart">
-        <div class="bar-col"><div class="bar-val">59</div><div class="bar" style="height:18%"></div></div>
-        <div class="bar-col"><div class="bar-val">64</div><div class="bar" style="height:20%"></div></div>
-        <div class="bar-col"><div class="bar-val">213</div><div class="bar" style="height:67%"></div></div>
-        <div class="bar-col"><div class="bar-val">319</div><div class="bar peak" style="height:100%"></div></div>
-        <div class="bar-col"><div class="bar-val">83</div><div class="bar" style="height:26%"></div></div>
-        <div class="bar-col"><div class="bar-val">15</div><div class="bar low" style="height:5%"></div></div>
-      </div>
-      <div class="bar-x"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span></div>
-      <div class="chart-cap">⚠ 4월 피크(3.19억) 이후 5월 0.83억 → 6월 0.15억 급랭 — 7월 공백이 최대 단기 리스크</div>
-      <p style="font-size:13.5px;color:var(--ink-soft);margin-top:16px">
-        매출 견인: <b>하드웨어 결합</b>(투명 LED · 거제 상동 2.06억 · 전체의 27%) +
-        <b>계정 확장</b>(한토신 · 동문 상위 2개 계정이 52%). 평균 deal 약 44백만원.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-h"><span class="sec-n">03</span><h2>하반기 전략 — 딜 성격 전환 (4대 레버)</h2></div>
+    <div class="sec-h"><span class="sec-n">03</span><h2>해법 — 딜 성격 전환 (4대 레버)</h2></div>
     <div class="levers">
       <div class="lever"><div class="num">1</div>
         <h3>하이브리드 옵션몰 <span style="font-weight:600;color:var(--muted);font-size:12px">성장 1순위</span></h3>
@@ -214,8 +226,9 @@
       상향 판매(라이프사이클 락인).</p>
   </section>
 
+  <!-- 4. 현실성 -->
   <section>
-    <div class="sec-h"><span class="sec-n">04</span><h2>파이프라인 & 착지 전망</h2></div>
+    <div class="sec-h"><span class="sec-n">04</span><h2>현실성 — 파이프라인 & 착지 전망</h2></div>
     <table style="margin-bottom:16px">
       <thead><tr><th>항목</th><th class="num-cell">금액</th><th>비고</th></tr></thead>
       <tbody>
@@ -239,8 +252,9 @@
       ※ 시나리오 금액은 영업 추정(확인 필요). 웜 9건 확률 확정 시 가중합 · 착지 전망 정밀화.</p>
   </section>
 
+  <!-- 5. 실행 체계 -->
   <section>
-    <div class="sec-h"><span class="sec-n">05</span><h2>분기 목표 & 역할 분담</h2>
+    <div class="sec-h"><span class="sec-n">05</span><h2>실행 체계 — 분기 목표 & 역할</h2>
       <span class="sec-note">Q3 ~10억 · Q4 ~12.48억</span></div>
     <div class="cols">
       <div class="listcard"><h3><span class="dot"></span>역할 분담 <span style="font-weight:500;color:var(--muted);font-size:11px">(제안 · 확인 필요)</span></h3>
@@ -258,6 +272,7 @@
     </div>
   </section>
 
+  <!-- 6. 리스크 -->
   <section>
     <div class="sec-h"><span class="sec-n">06</span><h2>리스크 & 대응</h2></div>
     <div class="cols">
@@ -277,6 +292,7 @@
     </div>
   </section>
 
+  <!-- 7. 7월 실행 -->
   <section>
     <div class="sec-h"><span class="sec-n">07</span><h2>7월 즉시 실행</h2>
       <span class="sec-note">목표 : 7월 1억+ 회복</span></div>
@@ -297,11 +313,54 @@
     </div>
   </section>
 
+  <!-- 결론 -->
+  <section>
+    <div class="keymsg">
+      <div class="lbl">결론 · 종합</div>
+      <p>연간 목표 <b>30억</b> 중 상반기는 <b>7.52억(25%)</b>. 하반기 <span class="hl">22.48억 —
+      상반기의 3배</span>가 필요하며, 유닛 VR 위주로는 불가능하다. 답은 <b>옵션몰 · 하드웨어 결합 ·
+      대형 deal로의 딜 성격 전환</b>이다. 정직한 착지 전망은 현실선 <b>약 20억</b>, 목표선 <b>30억</b>이며,
+      30억은 <span class="hl">대형 deal 1~2건 + 포스코 도입 확대</span>의 적중에 달려 있다.
+      당장은 <b>7월 파이프라인 공백 차단</b>이 1순위다.</p>
+    </div>
+  </section>
+
   <footer>
     <span>2026 하반기 분양 파트 영업전략 · 팀 공유용</span>
     <span>올림플래닛 · 대외비</span>
   </footer>
 
 </div>
+
+<script>
+  var MONTH = {
+    "1":{rows:[["오티에르 반포 XR","포스코이앤씨",20200000],["동문 용인고림2지구","동문건설",39000000]]},
+    "2":{rows:[["동문 천안삼룡동","동문건설",63636364]]},
+    "3":{rows:[["포레나힐스테이트진주","(주)한화",57600000],["송도 G5","포애드원",58000000],
+      ["거제 상동 LED DX 추가","한국토지신탁",55024000],["엘리프 세종 옵션행사 DX","계룡건설",36000000],
+      ["등촌역 펜타아르테","지존애드",6000000]]},
+    "4":{rows:[["거제 상동 투명 LED DX","한국토지신탁",140456000],["동문 장승배기역","동문건설",80000000],
+      ["소요한남","브릭스인베스트먼트",40000000],["송도 G5 추가","포애드원",36000000],
+      ["함안 주상복합","더시프트",12000000],["거제 상동 LED DX 2차 추가","한국토지신탁",10300000]]},
+    "5":{rows:[["전주 삼천주공3 재건축","삼천주공3 조합",59000000],["오산세교2 A-5BL","우미건설",24000000]]},
+    "6":{rows:[["GS 옵션몰 고도화","GS건설",15000000]]}
+  };
+  function won(n){return n.toLocaleString("ko-KR")+"원";}
+  var detail=document.getElementById("detail"), cols=document.querySelectorAll(".bar-col"), cur=null;
+  cols.forEach(function(c){
+    c.addEventListener("click",function(){
+      var m=c.getAttribute("data-m");
+      if(cur===m){ detail.classList.remove("open"); c.classList.remove("active"); cur=null; return; }
+      cols.forEach(function(x){x.classList.remove("active");}); c.classList.add("active");
+      var d=MONTH[m], sum=0, html="";
+      d.rows.forEach(function(r){ sum+=r[2];
+        html+="<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td class='num-cell'>"+won(r[2])+"</td></tr>"; });
+      document.getElementById("d-month").textContent=m+"월 · "+d.rows.length+"건";
+      document.getElementById("d-sum").textContent="합계 "+won(sum);
+      document.getElementById("d-rows").innerHTML=html;
+      detail.classList.add("open"); cur=m;
+    });
+  });
+</script>
 </body>
 </html>
