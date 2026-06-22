@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 하반기 분양 파트 영업전략</title>
+<style>
+  :root{
+    --ink:#15202E; --ink-soft:#33414F; --muted:#6B7785; --line:#E4E8EE;
+    --bg:#F5F6F8; --card:#FFFFFF; --accent:#1F6F5C; --accent-soft:#E7F1EE;
+    --gold:#B0822E; --gold-soft:#F6EFE0; --warn:#C0492F; --warn-soft:#FBEBE6;
+    --pos:#2E7D5B; --shadow:0 1px 2px rgba(20,32,46,.04),0 6px 20px rgba(20,32,46,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,
+      BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6;
+    -webkit-font-smoothing:antialiased; letter-spacing:-0.01em;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px 80px}
+
+  /* Header */
+  header{padding:56px 0 28px; border-bottom:1px solid var(--line); margin-bottom:8px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;
+    letter-spacing:.04em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+  .kicker::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block}
+  h1{font-size:34px;line-height:1.25;font-weight:800;letter-spacing:-0.03em}
+  .sub{margin-top:12px;color:var(--muted);font-size:14px;display:flex;gap:16px;flex-wrap:wrap}
+  .badge{background:var(--warn-soft);color:var(--warn);font-size:11px;font-weight:700;
+    padding:3px 9px;border-radius:999px;letter-spacing:.02em}
+
+  /* Key message */
+  .keymsg{background:var(--ink);color:#fff;border-radius:16px;padding:28px 30px;margin:30px 0;
+    box-shadow:var(--shadow)}
+  .keymsg .lbl{font-size:12px;font-weight:700;color:#8FE3CF;letter-spacing:.06em;text-transform:uppercase}
+  .keymsg p{margin-top:10px;font-size:16.5px;line-height:1.7;color:#E9EEF2}
+  .keymsg b{color:#fff;font-weight:700}
+  .keymsg .hl{color:#F2D79B;font-weight:700}
+
+  /* Section */
+  section{margin-top:44px}
+  .sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+  .sec-n{font-size:13px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+  h2{font-size:21px;font-weight:800;letter-spacing:-0.02em}
+  .sec-note{color:var(--muted);font-size:13px;margin-left:auto;font-weight:500}
+
+  /* Metric cards */
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .mcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;
+    box-shadow:var(--shadow)}
+  .mcard .t{font-size:13px;color:var(--muted);font-weight:600}
+  .mcard .v{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-0.02em;
+    font-variant-numeric:tabular-nums}
+  .mcard .d{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .mcard.accent{background:var(--accent);border-color:var(--accent)}
+  .mcard.accent .t{color:#CDE8E1}.mcard.accent .v{color:#fff}.mcard.accent .d{color:#CDE8E1}
+
+  /* Chart */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;
+    box-shadow:var(--shadow)}
+  .chart{display:flex;align-items:flex-end;gap:14px;height:200px;margin:18px 4px 6px;
+    border-bottom:1px solid var(--line);padding-bottom:0}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-val{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;
+    font-variant-numeric:tabular-nums}
+  .bar{width:100%;max-width:54px;background:linear-gradient(180deg,#2E8C76,#1F6F5C);
+    border-radius:6px 6px 0 0;transition:height .3s}
+  .bar.peak{background:linear-gradient(180deg,#C99A45,#B0822E)}
+  .bar.low{background:linear-gradient(180deg,#D2604A,#C0492F)}
+  .bar-x{display:flex;gap:14px;margin-top:8px}
+  .bar-x span{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
+  .chart-cap{font-size:13px;color:var(--warn);font-weight:600;margin-top:12px;
+    background:var(--warn-soft);display:inline-block;padding:5px 11px;border-radius:8px}
+
+  /* Levers */
+  .levers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+    box-shadow:var(--shadow);position:relative}
+  .lever .num{font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:24px;height:24px;
+    border-radius:7px;display:flex;align-items:center;justify-content:center}
+  .lever h3{font-size:15.5px;font-weight:800;margin:12px 0 7px;letter-spacing:-0.01em}
+  .lever p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+  .lever .ev{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);
+    background:var(--gold-soft);padding:3px 9px;border-radius:7px}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#FAFBFC;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+  td{color:var(--ink-soft)} tr:last-child td{border-bottom:none}
+  .num-cell{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+  .row-target{background:var(--accent-soft)}
+  .row-target td{color:var(--ink);font-weight:700}
+  .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px}
+  .tag.c{background:#EEF1F4;color:var(--ink-soft)}
+  .tag.t{background:var(--accent);color:#fff}
+  .tag.s{background:var(--gold-soft);color:var(--gold)}
+
+  /* role / risk lists */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .listcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+    box-shadow:var(--shadow)}
+  .listcard h3{font-size:14px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .listcard h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .listcard.warn h3 .dot{background:var(--warn)}
+  .listcard ul{list-style:none}
+  .listcard li{font-size:13.5px;color:var(--ink-soft);padding:7px 0 7px 18px;position:relative;
+    border-bottom:1px dashed var(--line)}
+  .listcard li:last-child{border-bottom:none}
+  .listcard li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;
+    border-radius:50%;background:var(--line)}
+  .listcard li b{color:var(--ink)}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .tl-col{padding:18px;border-right:1px solid var(--line)}
+  .tl-col:last-child{border-right:none}
+  .tl-col .wk{font-size:12px;font-weight:800;color:var(--accent);margin-bottom:10px}
+  .tl-col p{font-size:12.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:8px}
+  .tl-col p:last-child{margin-bottom:0}
+  .owner{font-size:10.5px;font-weight:700;color:var(--muted)}
+
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media(max-width:720px){
+    .metrics,.levers,.cols{grid-template-columns:1fr}
+    .tl{grid-template-columns:1fr;}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
+    h1{font-size:27px}
+  }
+  @media print{body{background:#fff}.keymsg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .mcard,.lever,.panel,table,.listcard,.tl{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">분양 파트 · 팀 공유</div>
+    <h1>2026 하반기 분양 파트 영업전략</h1>
+    <div class="sub">
+      <span>기준일 2026-06-22</span><span>작성 · 세일즈</span>
+      <span class="badge">대외비 · 내부용</span>
+    </div>
+  </header>
+
+  <div class="keymsg">
+    <div class="lbl">핵심 메시지</div>
+    <p>연간 분양 목표 <b>30억</b> 중 상반기 <b>7.52억(25%)</b> 달성. 하반기 <span class="hl">22.48억 —
+    상반기의 3배</span>가 필요하나, 지금의 <b>유닛 VR 위주 구성</b>으로는 산술적으로 도달 불가.
+    핵심은 딜 성격을 <b>"다건·소액 VR" → "옵션몰 · 하드웨어 결합 · 대형 deal"</b>로 전환하는 것.
+    정직한 착지 전망은 현실선(commit) <b>약 20억</b>, 목표선(target) <b>30억</b>이며,
+    30억 달성은 <span class="hl">대형 deal 1~2건 + 포스코 도입 확대</span>의 적중에 달려 있다.</p>
+  </div>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">02</span><h2>목표와 갭</h2></div>
+    <div class="metrics">
+      <div class="mcard"><div class="t">연간 목표</div><div class="v">30.0억</div>
+        <div class="d">건축(분양) 파트</div></div>
+      <div class="mcard"><div class="t">상반기 실적</div><div class="v">7.52억</div>
+        <div class="d">17건 · 목표의 25%</div></div>
+      <div class="mcard accent"><div class="t">하반기 필요</div><div class="v">22.48억</div>
+        <div class="d">상반기의 3.0배</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 경고 신호</h2>
+      <span class="sec-note">월별 수주 (백만원)</span></div>
+    <div class="panel">
+      <div class="chart">
+        <div class="bar-col"><div class="bar-val">59</div><div class="bar" style="height:18%"></div></div>
+        <div class="bar-col"><div class="bar-val">64</div><div class="bar" style="height:20%"></div></div>
+        <div class="bar-col"><div class="bar-val">213</div><div class="bar" style="height:67%"></div></div>
+        <div class="bar-col"><div class="bar-val">319</div><div class="bar peak" style="height:100%"></div></div>
+        <div class="bar-col"><div class="bar-val">83</div><div class="bar" style="height:26%"></div></div>
+        <div class="bar-col"><div class="bar-val">15</div><div class="bar low" style="height:5%"></div></div>
+      </div>
+      <div class="bar-x"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span></div>
+      <div class="chart-cap">⚠ 4월 피크(3.19억) 이후 5월 0.83억 → 6월 0.15억 급랭 — 7월 공백이 최대 단기 리스크</div>
+      <p style="font-size:13.5px;color:var(--ink-soft);margin-top:16px">
+        매출 견인: <b>하드웨어 결합</b>(투명 LED · 거제 상동 2.06억 · 전체의 27%) +
+        <b>계정 확장</b>(한토신 · 동문 상위 2개 계정이 52%). 평균 deal 약 44백만원.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">03</span><h2>하반기 전략 — 딜 성격 전환 (4대 레버)</h2></div>
+    <div class="levers">
+      <div class="lever"><div class="num">1</div>
+        <h3>하이브리드 옵션몰 <span style="font-weight:600;color:var(--muted);font-size:12px">성장 1순위</span></h3>
+        <p>분양 시점 핵심 타입만 VR, 옵션행사 시점 잔여 타입 리스트형으로 확대 → 한 사업지에서
+        매출 2단계 발생. 단순 VR 대비 차별화 · 진입장벽 완화.</p></div>
+      <div class="lever"><div class="num">2</div>
+        <h3>업셀링 (시행 주체 직거래)</h3>
+        <p>시행권을 쥔 발주처(신탁 · 자체시행 · 조합)와 계약 시 추가 투자(사이니지 · 옵션몰) 성사율 높음.</p>
+        <span class="ev">거제 5,600만→2.06억 (3.7배) · 송도 5,800만→9,400만 (1.6배)</span></div>
+      <div class="lever"><div class="num">3</div>
+        <h3>하드웨어 결합 대형 deal</h3>
+        <p>투명 LED · 키오스크로 객단가 상향(콘텐츠 단독 40~60백만 → 결합 140백만+).
+        거제 옥포동(현대ENG 1,963세대) 등 단독 추진.</p></div>
+      <div class="lever"><div class="num">4</div>
+        <h3>포스코 도입 확대</h3>
+        <p>송도 G5(더샵) + 오티에르 반포(하이엔드) 양 레퍼런스 보유. 검단레이크파크 · 오티에르
+        벨트로 확대(포스코 측 도입 의향 확인).</p></div>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">
+      미개척 매출 풀 : 옵션몰 고객 대상 <b style="color:var(--ink-soft)">시공 가이드 · 관리(CS) 단계</b>
+      상향 판매(라이프사이클 락인).</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">04</span><h2>파이프라인 & 착지 전망</h2></div>
+    <table style="margin-bottom:16px">
+      <thead><tr><th>항목</th><th class="num-cell">금액</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>웜 파이프라인 (협의 9건, 액면)</td><td class="num-cell">6.12억</td><td>목표의 27%</td></tr>
+        <tr><td>〃 확률가중</td><td class="num-cell">약 3.2억</td><td>초기 단계 · 확률 보정 진행 중</td></tr>
+        <tr><td>선제 제안으로 메울 갭</td><td class="num-cell">약 16.4억</td><td>공급계획 단지 × 관계 교차 타겟</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>시나리오</th><th class="num-cell">하반기</th><th class="num-cell">연간</th><th>조건</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag c">Commit</span> 현실선</td><td class="num-cell">~13억</td>
+          <td class="num-cell">~20.5억</td><td>웜 전환 + 기존 계정 확장 · 업셀</td></tr>
+        <tr class="row-target"><td><span class="tag t">Target</span> 목표선</td><td class="num-cell">22.48억</td>
+          <td class="num-cell">30억</td><td>대형 HW deal 1~2건 + 포스코 도입 + 옵션몰 횡전개 적중</td></tr>
+        <tr><td><span class="tag s">Stretch</span> 상향선</td><td class="num-cell">~28억</td>
+          <td class="num-cell">~35억</td><td>신탁 · 대형 사업지 추가 적중</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:12px">
+      ※ 시나리오 금액은 영업 추정(확인 필요). 웜 9건 확률 확정 시 가중합 · 착지 전망 정밀화.</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">05</span><h2>분기 목표 & 역할 분담</h2>
+      <span class="sec-note">Q3 ~10억 · Q4 ~12.48억</span></div>
+    <div class="cols">
+      <div class="listcard"><h3><span class="dot"></span>역할 분담 <span style="font-weight:500;color:var(--muted);font-size:11px">(제안 · 확인 필요)</span></h3>
+        <ul>
+          <li><b>Charles</b> — 대형 HW deal(거제 옥포동) · 핵심 계정 확장 · 웜 9건 클로징 주관</li>
+          <li><b>Anna</b> — 옵션몰 횡전개(GS · 계룡) · 하이엔드(삼성물산) · 포스코 도입 지원</li>
+          <li><b>신규 1명</b> — 7~8월 온보딩 → 9월부터 신규 로고 · 조합 개척 전담</li>
+        </ul></div>
+      <div class="listcard"><h3><span class="dot"></span>주간 운영 캐던스</h3>
+        <ul>
+          <li>파이프라인 리뷰 — 웜 9건 확률 매주 갱신</li>
+          <li>대형 deal(&gt;1억) 별도 추적</li>
+          <li>7월 클로징 캘린더 가동 · 가중합으로 착지 전망 업데이트</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">06</span><h2>리스크 & 대응</h2></div>
+    <div class="cols">
+      <div class="listcard warn"><h3><span class="dot"></span>리스크</h3>
+        <ul>
+          <li><b>파이프라인 공백(최우선)</b> — 6월 0.15억 → 7월 회복 필수</li>
+          <li><b>목표 공격성</b> — 30억은 stretch → Commit/Target 이원 관리</li>
+          <li><b>계정 집중</b> — 상위 2개 계정 의존 → 신규 로고로 분산</li>
+        </ul></div>
+      <div class="listcard"><h3><span class="dot"></span>에스컬레이션 필요 (팀 외 지원)</h3>
+        <ul>
+          <li>영업 1명 <b>조기 온보딩</b></li>
+          <li>투명 LED · 키오스크 <b>구축 캐파 · 협력사 사전 확보</b></li>
+          <li>포스코 도입 확대 <b>임원 동행</b></li>
+          <li>하이브리드 옵션몰 <b>개발 리소스 우선순위</b></li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">07</span><h2>7월 즉시 실행</h2>
+      <span class="sec-note">목표 : 7월 1억+ 회복</span></div>
+    <div class="tl">
+      <div class="tl-col"><div class="wk">1주</div>
+        <p>송도 옵션몰 추가 계약서 발송<br><span class="owner">Charles</span></p>
+        <p>웜 9건 단계 · 확률 전수 재태깅</p>
+        <p>Tier1 선제 제안 착수 (에코델타12BL)</p></div>
+      <div class="tl-col"><div class="wk">2주</div>
+        <p>계룡 평택 계약 확정 · 삼성물산 목동 BANT<br><span class="owner">Charles</span></p>
+        <p>포스코 도입확대 미팅 요청 (SKU)<br><span class="owner">Anna</span></p></div>
+      <div class="tl-col"><div class="wk">3주</div>
+        <p>이편한세상 당산 제안 확정 · 한화 평택/창원 발송</p>
+        <p>DL 성남 상대원2 · GS 중계본동 선제 제안<br><span class="owner">Anna</span></p></div>
+      <div class="tl-col"><div class="wk">4주</div>
+        <p>7월 클로징 점검 · 8~9월 건 일정 고정</p>
+        <p>SM그룹 · 의정부 1차 미팅 · 한남동 시니어 접촉</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>2026 하반기 분양 파트 영업전략 · 팀 공유용</span>
+    <span>올림플래닛 · 대외비</span>
+  </footer>
+
+</div>
+</body>
+</html>
