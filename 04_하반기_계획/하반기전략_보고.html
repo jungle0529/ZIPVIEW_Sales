@@ -55,8 +55,8 @@
   .bar-col:hover{background:#F0F4F3}
   .bar-col:hover .bar{filter:brightness(1.06)}
   .bar-col.active{background:#EAF1EF}
-  .bar-val{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;
-    font-variant-numeric:tabular-nums}
+  .bar-val{font-size:10px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
   .bar{width:100%;max-width:54px;background:linear-gradient(180deg,#2E8C76,#1F6F5C);
     border-radius:6px 6px 0 0;transition:height .3s;pointer-events:none}
   .bar.peak{background:linear-gradient(180deg,#C99A45,#B0822E)}
@@ -156,15 +156,15 @@
   <!-- 1. 현황 진단 -->
   <section>
     <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 경고 신호</h2>
-      <span class="sec-note">월별 수주 (백만원) · 막대 클릭 시 상세</span></div>
+      <span class="sec-note">월별 수주 (원) · 막대 클릭 시 상세</span></div>
     <div class="panel">
       <div class="chart" id="chart">
-        <div class="bar-col" data-m="1"><div class="bar-val">59</div><div class="bar" style="height:18%"></div></div>
-        <div class="bar-col" data-m="2"><div class="bar-val">64</div><div class="bar" style="height:20%"></div></div>
-        <div class="bar-col" data-m="3"><div class="bar-val">213</div><div class="bar" style="height:67%"></div></div>
-        <div class="bar-col" data-m="4"><div class="bar-val">319</div><div class="bar peak" style="height:100%"></div></div>
-        <div class="bar-col" data-m="5"><div class="bar-val">83</div><div class="bar" style="height:26%"></div></div>
-        <div class="bar-col" data-m="6"><div class="bar-val">15</div><div class="bar low" style="height:5%"></div></div>
+        <div class="bar-col" data-m="1"><div class="bar-val">59,200,000</div><div class="bar" style="height:18%"></div></div>
+        <div class="bar-col" data-m="2"><div class="bar-val">63,636,364</div><div class="bar" style="height:20%"></div></div>
+        <div class="bar-col" data-m="3"><div class="bar-val">212,624,000</div><div class="bar" style="height:67%"></div></div>
+        <div class="bar-col" data-m="4"><div class="bar-val">318,756,000</div><div class="bar peak" style="height:100%"></div></div>
+        <div class="bar-col" data-m="5"><div class="bar-val">83,000,000</div><div class="bar" style="height:26%"></div></div>
+        <div class="bar-col" data-m="6"><div class="bar-val">15,000,000</div><div class="bar low" style="height:5%"></div></div>
       </div>
       <div class="bar-x"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span></div>
       <div class="chart-cap">⚠ 4월 피크(3.19억) 이후 5월 0.83억 → 6월 0.15억 급랭 — 7월 공백이 최대 단기 리스크</div>
