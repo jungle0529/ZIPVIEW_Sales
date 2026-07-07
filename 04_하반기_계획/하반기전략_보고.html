@@ -157,6 +157,26 @@
   <section>
     <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 분석</h2>
       <span class="sec-note">월별 수주 (원) · 막대 클릭 시 상세</span></div>
+
+    <!-- KPI 카드 행 -->
+    <div class="metrics" style="margin-bottom:16px">
+      <div class="mcard accent">
+        <div class="t">상반기 매출</div>
+        <div class="v">7.52억</div>
+        <div class="d">17건 수주 · 연간 목표의 25%</div>
+      </div>
+      <div class="mcard">
+        <div class="t">수주 건수</div>
+        <div class="v">17건</div>
+        <div class="d">1건 평균 약 4,424만원</div>
+      </div>
+      <div class="mcard" style="border-left:3px solid var(--warn)">
+        <div class="t">기존 관계 의존도</div>
+        <div class="v" style="color:var(--warn)">90%</div>
+        <div class="d">신규 고객 단 3건 · 10%</div>
+      </div>
+    </div>
+
     <div class="panel">
       <div class="chart" id="chart">
         <div class="bar-col" data-m="1"><div class="bar-val">59,200,000</div><div class="bar" style="height:18%"></div></div>
@@ -228,6 +248,49 @@
       </div>
       <p style="font-size:13px;color:var(--ink-soft);margin-top:14px">
         매출 <b>89.9%가 기존 관계 기반</b>. 새 고객을 꾸준히 만들어내는 장치가 사실상 없음 → 매출 확장·반복이 어려움.</p>
+    </div>
+
+    <!-- 상품별 매출 구성 -->
+    <div class="panel" style="margin-top:16px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:15px;font-weight:800">상품별 매출 구성 (상반기 7.52억)</span>
+        <span style="font-size:12.5px;color:var(--accent);font-weight:700">하드웨어 결합형이 최고 매출</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:13.5px;font-weight:700">하드웨어 결합</span>
+            <span style="font-size:13.5px;font-weight:800">3.67억 <span style="font-weight:400;color:var(--muted);font-size:12px">(48.8%)</span></span>
+          </div>
+          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
+            <div style="width:48.8%;height:100%;background:var(--accent);border-radius:99px"></div>
+          </div>
+          <div style="font-size:12px;color:var(--muted);margin-top:5px">거제 상동 2지구 · 동문 천안삼룡동 · 전주 삼천주공3 · 동문 용인고림2</div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:13.5px;font-weight:700">VR 사이버 모델하우스</span>
+            <span style="font-size:13.5px;font-weight:800">3.28억 <span style="font-weight:400;color:var(--muted);font-size:12px">(43.6%)</span></span>
+          </div>
+          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
+            <div style="width:43.6%;height:100%;background:#5B6675;border-radius:99px"></div>
+          </div>
+          <div style="font-size:12px;color:var(--muted);margin-top:5px">동문 장승배기역 · 송도 G5 · 포레나힐진주 · 소요한남 · 오산세교2 · 오티에르 반포 · 함안</div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:13.5px;font-weight:700">옵션몰 · 기타</span>
+            <span style="font-size:13.5px;font-weight:800">0.57억 <span style="font-weight:400;color:var(--muted);font-size:12px">(7.6%)</span></span>
+          </div>
+          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
+            <div style="width:7.6%;height:100%;background:#AEB6C0;border-radius:99px"></div>
+          </div>
+          <div style="font-size:12px;color:var(--muted);margin-top:5px">엘리프 세종 옵션행사 · GS 옵션몰 · 등촌역 펜타아르테</div>
+        </div>
+      </div>
+      <div style="background:var(--gold-soft);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:13px;color:var(--ink)">
+        <b>시사점</b> — <b>하드웨어 결합형이 매출 절반(48.8%)</b>을 점유. VR 단독 대비 HW 번들이 1건당 deal size를 3~5배 키운다는 점이 실증됨 → 하반기 전략의 핵심 근거.
+      </div>
     </div>
   </section>
 
@@ -461,6 +524,44 @@
       </div>
     </div>
 
+    <!-- 전략 4: 모델하우스 사인업체 컨소시엄 -->
+    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--gold);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">4</span>
+        <span style="font-size:17px;font-weight:800">모델하우스 사인업체 컨소시엄</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
+        모델하우스 사인·인테리어 업체와 컨소시엄을 구성해 <b>HW 결합 패키지를 사인업체의 영업망을 통해 확대</b>한다.
+        사인업체는 업체당 모델하우스 5개 이상을 연간 담당하므로, 채널 파트너십 1곳이 곧 5개+ 신규 현장 파이프라인이 된다.</p>
+
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
+          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">사인업체 영업망</div>
+          <div style="font-size:12.5px;color:var(--ink-soft)">업체당 5개+ 현장 연간 진행<br>1개 현장 평균 1~4억 규모 (확인 필요)</div>
+        </div>
+        <div style="font-size:20px;color:var(--gold);font-weight:800">+</div>
+        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
+          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">집뷰 HW 결합 패키지</div>
+          <div style="font-size:12.5px;color:var(--ink-soft)">사이니지 + VR 콘텐츠<br>+ 체험 마케팅 서비스</div>
+        </div>
+        <div style="font-size:20px;color:var(--gold);font-weight:800">=</div>
+        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
+          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">채널 확장 · deal 규모화</div>
+          <div style="font-size:12.5px;color:var(--ink)">직접 영업 외 채널 영업으로<br>단기 파이프라인 대규모 확대</div>
+        </div>
+      </div>
+
+      <div style="background:var(--gold-soft);border-radius:10px;padding:13px 16px;margin-top:14px;font-size:13px;color:var(--ink);line-height:1.65">
+        <b>핵심 효과</b> — 사인업체 1곳 파트너십 → 연간 5개+ 현장 × HW 결합 패키지. 직접 발굴 없이 <b>채널을 통해 접점을 단기간에 수배로 확장</b>할 수 있는 구조.</div>
+
+      <div style="background:var(--accent-soft);border-radius:10px;padding:13px 16px;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.7">
+        <b>확장 시나리오</b> — 기존 상품(하이브리드 옵션몰) 20~30억 + 사인업체 컨소시엄을 통한 하드웨어 결합 확대 15~25억 →
+        <b style="color:var(--accent)">총 매출 목표 40~60억</b> 도전 가능 (확인 필요 · 파트너 수·계약 조건에 따라 변동).</div>
+
+      <p style="font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.65">
+        ※ 사인업체 현장 수·단가는 추정치(확인 필요). 컨소시엄 구성 시 수익 배분·브랜딩 정책 결정 필요. 적합한 파트너사 리서치·접선부터 시작.</p>
+    </div>
+
     <p style="font-size:13px;color:var(--muted);margin-top:14px">
       아직 안 판 영역 : 옵션몰 고객에게 <b style="color:var(--ink-soft)">시공 단계 · 입주 후 관리(상담) 단계</b>까지
       추가 판매(분양→입주 전 과정을 묶어 이탈 방지).</p>
@@ -470,18 +571,41 @@
   <section>
     <div class="sec-h"><span class="sec-n">04</span><h2>신규 고객 만들기 — 마케팅 (별도 병행 과제)</h2>
       <span class="sec-note">중기 체질 개선 · 하반기 매출 직접 기여는 작음</span></div>
-    <div class="levers" style="grid-template-columns:repeat(3,1fr)">
+
+    <!-- 상반기 가장 효과적: 포럼 -->
+    <div class="panel" style="border-left:4px solid var(--accent);margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);padding:3px 10px;border-radius:20px">★ 상반기 최고 효과</span>
+        <span style="font-size:15px;font-weight:800">포럼 — 의사결정자 대면 접점</span>
+      </div>
+      <div class="metrics" style="margin-bottom:12px">
+        <div class="mcard"><div class="t">포럼 참석 기업</div><div class="v">16개</div><div class="d">건설사·시행사·대행사 의사결정자</div></div>
+        <div class="mcard accent"><div class="t">세일즈 미팅 규모</div><div class="v">3억</div><div class="d">포럼 접점 → 실제 제안으로 연결</div></div>
+        <div class="mcard"><div class="t">연간 계약 추진 중</div><div class="v">2곳</div><div class="d">현대엔지니어링 · 우미건설</div></div>
+      </div>
+      <div style="background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--ink)">
+        <b>하반기 방향</b> — 건설 팝업 담당자 / 모델하우스 브랜딩 협업으로 포럼 재진행. 단발성이 아닌 반기 1회 이상 정례화 필요.
+      </div>
+    </div>
+
+    <!-- 4개 채널 -->
+    <div class="levers" style="grid-template-columns:repeat(2,1fr)">
       <div class="lever"><div class="num" style="background:var(--gold)">A</div>
-        <h3>홈페이지 개선 <span style="font-weight:600;color:var(--muted);font-size:12px">문의 받는 중심 창구</span></h3>
-        <p>zipview.ai를 납품 실적·상품 소개·<b>문의 양식(문의 고객 정보 수집)</b> 중심으로 개편. 모든 경로의
-        방문자가 모이는 중심 창구 → 최우선 정비.</p></div>
+        <h3>포럼 정례화</h3>
+        <p>건설·시행·대행사 의사결정자 대면 포럼을 반기 1회 이상 진행. 상반기 1회로 3억 세일즈 미팅·연간 계약 2곳 확보 → <b>가장 직접적인 신규 고객 창구</b>.</p>
+        <span class="ev">반기 1회 이상 · 건설 팝업/브랜딩 협업</span></div>
       <div class="lever"><div class="num" style="background:var(--gold)">B</div>
-        <h3>뉴스레터</h3>
-        <p>분양 디지털 전환 동향 + 자사 납품 실적·신상품(AI 영상·하이브리드 옵션몰) 월간 발송. 기존 고객에게
-        추가 판매를 자연스럽게 유도하는 효과도.</p></div>
+        <h3>홈페이지 개선 <span style="font-weight:600;color:var(--muted);font-size:12px">중심 창구</span></h3>
+        <p>zipview.ai를 납품 실적·상품 소개·<b>문의 양식(문의 고객 정보 수집)</b> 중심으로 개편. 도입사례 업로드로 방문자를 제안 기회로 전환.</p>
+        <span class="ev">도입사례 업로드 최우선</span></div>
       <div class="lever"><div class="num" style="background:var(--gold)">C</div>
+        <h3>뉴스레터</h3>
+        <p>관계자 DB 1,500명 보유. 오픈율 <b>35.8%</b> · 클릭률 <b>16.4%</b>로 업계 평균 대비 양호하나, 현재 <b>매출 전환 0회</b>. 고객 핵심 키워드 + 도입사례를 연결한 콘텐츠로 CTA 클릭 → 문의 전환 개선이 과제.</p>
+        <span class="ev">오픈율 35.8% · 클릭 16.4% · 전환 개선 필요</span></div>
+      <div class="lever"><div class="num" style="background:var(--gold)">D</div>
         <h3>유튜브</h3>
-        <p>보유한 납품 실적 영상(몰입형·AI 건축영상·옵션몰 시연) 재활용. 검색 유입 + 영업 시 신뢰 자료.</p></div>
+        <p>6월 조회수 7,300회 · 평균 참여시간 8초 · 매출 전환 0회. 현재는 포트폴리오 용도로만 활용 중. 홍보용 편집 재제작으로 체류 시간·CTA 연결을 개선해야 영업 신뢰 자료로서 효과 발휘.</p>
+        <span class="ev">조회 7,300 · 체류 8초 → 홍보 편집 재제작 필요</span></div>
     </div>
   </section>
 
