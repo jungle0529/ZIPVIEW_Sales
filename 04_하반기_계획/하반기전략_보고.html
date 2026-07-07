@@ -159,11 +159,16 @@
       <span class="sec-note">월별 수주 (원) · 막대 클릭 시 상세</span></div>
 
     <!-- KPI 카드 행 -->
-    <div class="metrics" style="margin-bottom:16px">
+    <div class="metrics" style="margin-bottom:16px;grid-template-columns:repeat(4,1fr)">
+      <div class="mcard">
+        <div class="t">건설 제안 건수 (추정)</div>
+        <div class="v">57건<span style="font-size:16px;font-weight:500;color:var(--muted)">+</span></div>
+        <div class="d">계약완료 15 + 미계약 25 + 협의중 13 + 기타 (CRM 집계 기준 · 확인 필요)</div>
+      </div>
       <div class="mcard accent">
-        <div class="t">상반기 매출</div>
+        <div class="t">분양 파트 수주 금액</div>
         <div class="v">7.52억</div>
-        <div class="d">17건 수주 · 연간 목표의 25%</div>
+        <div class="d">연간 목표의 25%</div>
       </div>
       <div class="mcard">
         <div class="t">수주 건수</div>
@@ -248,6 +253,47 @@
       </div>
       <p style="font-size:13px;color:var(--ink-soft);margin-top:14px">
         매출 <b>89.9%가 기존 관계 기반</b>. 새 고객을 꾸준히 만들어내는 장치가 사실상 없음 → 매출 확장·반복이 어려움.</p>
+    </div>
+
+    <!-- 수주 내역 17건 -->
+    <div class="panel" style="margin-top:16px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+        <span style="font-size:15px;font-weight:800">상반기 수주 내역 — 17건 · 7.52억</span>
+        <span style="font-size:12px;color:var(--muted)">출처: 영업(매출)DB · 계약시작일 기준</span>
+      </div>
+      <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th>월</th><th>프로젝트</th><th>고객사</th>
+          <th class="num-cell">금액(원)</th><th>상품 유형</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>1월</td><td>오티에르 반포 XR 솔루션</td><td>포스코이앤씨</td><td class="num-cell">20,200,000</td><td>XR·VR</td></tr>
+          <tr><td>1월</td><td>동문 용인고림2지구 공동주택</td><td>동문건설</td><td class="num-cell">39,000,000</td><td>VR+HW</td></tr>
+          <tr><td>2월</td><td>동문 천안삼룡동 공동주택</td><td>동문건설</td><td class="num-cell">63,636,364</td><td>VR+HW</td></tr>
+          <tr><td>3월</td><td>포레나힐스테이트 진주 이현</td><td>(주)한화</td><td class="num-cell">57,600,000</td><td>VR</td></tr>
+          <tr><td>3월</td><td>동부 거제상동 2지구 LED DX 솔루션 추가</td><td>한국토지신탁</td><td class="num-cell">55,024,000</td><td>HW(사이니지)</td></tr>
+          <tr><td>3월</td><td>송도 더샵 G5</td><td>포스코이앤씨</td><td class="num-cell">58,000,000</td><td>VR</td></tr>
+          <tr><td>3월</td><td>등촌역 펜타아르테</td><td>지존애드</td><td class="num-cell">6,000,000</td><td>VR</td></tr>
+          <tr><td>3월</td><td>엘리프 세종 스마트시티 옵션행사 DX</td><td>계룡건설</td><td class="num-cell">36,000,000</td><td>옵션몰</td></tr>
+          <tr style="background:var(--gold-soft)"><td><b>4월</b></td><td>동부 거제상동 2지구 LED DX 솔루션</td><td>한국토지신탁</td><td class="num-cell"><b>140,456,000</b></td><td>HW(투명LED)</td></tr>
+          <tr><td>4월</td><td>동문 장승배기역 공동주택</td><td>동문건설</td><td class="num-cell">80,000,000</td><td>VR</td></tr>
+          <tr><td>4월</td><td>동부 거제상동 LED DX 솔루션 추가 2차</td><td>한국토지신탁</td><td class="num-cell">10,300,000</td><td>HW</td></tr>
+          <tr><td>4월</td><td>송도 더샵 G5 추가</td><td>포스코이앤씨</td><td class="num-cell">36,000,000</td><td>VR추가</td></tr>
+          <tr><td>4월</td><td>소요한남 하이엔드 시니어 레지던스 XR</td><td>브릭스인베스트먼트</td><td class="num-cell">40,000,000</td><td>XR</td></tr>
+          <tr><td>4월</td><td>전라남도 함안 주상복합 XR</td><td>(주)더시프트</td><td class="num-cell">12,000,000</td><td>VR</td></tr>
+          <tr><td>5월</td><td>코오롱 전주삼천주공</td><td>코오롱글로벌</td><td class="num-cell">59,000,000</td><td>VR+HW</td></tr>
+          <tr><td>5월</td><td>오산세교2 A-5BL 공공지원민간임대</td><td>우미건설</td><td class="num-cell">24,000,000</td><td>VR</td></tr>
+          <tr style="background:var(--warn-soft)"><td><b>6월</b></td><td>GS 옵션몰 고도화</td><td>GS건설</td><td class="num-cell">15,000,000</td><td>옵션몰</td></tr>
+          <tr style="border-top:2px solid var(--line)">
+            <td colspan="3"><b>합계 (17건)</b></td>
+            <td class="num-cell"><b>752,216,364</b></td><td style="color:var(--muted);font-size:12px">7.52억</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">
+        ※ 분양 파트(건설) 기준 17건. 별도 사업 포함 전사 건설 계약은 19건/9.54억 — 한양건설 DX 솔루션 20,000만원·포레나상인천초교 135만원 포함. 4월 거제상동 투명LED는 3월 계약기안 → 4월 수주 인식.</p>
     </div>
 
     <!-- 상품별 매출 구성 -->
