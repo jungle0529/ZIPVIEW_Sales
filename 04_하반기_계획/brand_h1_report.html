@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사업2실 브랜드부문 · 2026 상반기 성과 공유</title>
+<style>
+:root {
+  --bg:   #080C18;
+  --bg2:  #0F1826;
+  --bg3:  #162038;
+  --card: #111B2F;
+  --card2:#192440;
+  --gold: #C9A84C;
+  --gold2:#E5C875;
+  --gold-s:rgba(201,168,76,.14);
+  --cyan: #38C5F5;
+  --cyan-s:rgba(56,197,245,.13);
+  --purple:#A78BFA;
+  --purple-s:rgba(167,139,250,.13);
+  --blue: #4F87F8;
+  --blue-s:rgba(79,135,248,.13);
+  --green:#34D399;
+  --green-s:rgba(52,211,153,.12);
+  --ink:  #EEF3FF;
+  --ink2: #8CA0C0;
+  --ink3: #4A6080;
+  --line: rgba(255,255,255,.07);
+  --r:    10px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;background:var(--bg);color:var(--ink);scroll-behavior:smooth}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+     background:var(--bg);min-height:100vh;overflow-x:hidden}
+
+/* ── NAV ── */
+#nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;
+     display:flex;flex-direction:column;gap:10px}
+.nd{width:8px;height:8px;border-radius:50%;background:var(--ink3);cursor:pointer;
+    transition:.25s;border:1.5px solid transparent}
+.nd.on{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px var(--gold)}
+.nd:hover{background:var(--ink2)}
+
+/* ── SECTIONS ── */
+section{min-height:100vh;padding:48px 64px;display:flex;flex-direction:column;
+        justify-content:center;position:relative;page-break-after:always}
+@media(max-width:900px){section{padding:36px 24px}}
+
+/* ── LABEL ── */
+.label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);
+       font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.label::before{content:'';display:inline-block;width:28px;height:1.5px;background:var(--cyan)}
+
+/* ── HERO (cover) ── */
+#s-cover{background:radial-gradient(ellipse 70% 60% at 75% 40%,#0E2048 0%,var(--bg) 70%)}
+.hero-tag{font-size:11px;letter-spacing:.2em;color:var(--ink2);margin-bottom:28px}
+.hero-tag span{color:var(--ink3);margin:0 8px}
+.eyebrow{font-size:13px;letter-spacing:.18em;color:var(--cyan);font-weight:600;
+          margin-bottom:14px;text-transform:uppercase}
+h1.display{font-size:clamp(52px,7vw,88px);font-weight:900;line-height:1.08;
+            letter-spacing:-.02em;margin-bottom:32px}
+.cover-sub{font-size:20px;font-weight:700;color:var(--ink2);margin-bottom:36px}
+.badges{display:flex;flex-wrap:wrap;gap:10px}
+.badge{padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid}
+.badge.gold{background:var(--gold-s);border-color:var(--gold);color:var(--gold)}
+.badge.dim{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);color:var(--ink2)}
+.cover-foot{position:absolute;bottom:32px;left:64px;right:64px;display:flex;
+            align-items:center;gap:16px;font-size:11px;color:var(--ink3)}
+.conf-badge{padding:4px 10px;border-radius:999px;border:1px solid #C9300A;
+            color:#F87460;font-size:10px;font-weight:700;letter-spacing:.1em}
+
+/* ── SECTION TITLE ── */
+h2.stitle{font-size:clamp(26px,4vw,42px);font-weight:900;line-height:1.2;
+           letter-spacing:-.02em;margin-bottom:28px}
+h2 em{color:var(--gold);font-style:normal}
+h2 .cy{color:var(--cyan)}
+
+/* ── KPI ROW ── */
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.kpi{flex:1;min-width:120px;background:var(--card);border:1px solid var(--line);
+     border-radius:var(--r);padding:18px 20px}
+.kpi .kv{font-size:clamp(22px,3vw,34px);font-weight:900;letter-spacing:-.02em;
+          font-variant-numeric:tabular-nums;line-height:1}
+.kpi .kl{font-size:11px;color:var(--ink2);margin-top:6px}
+.kpi.gold{border-top:2px solid var(--gold)}
+.kpi.gold .kv{color:var(--gold)}
+.kpi.cyan .kv{color:var(--cyan)}
+.kpi.purple .kv{color:var(--purple)}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:rgba(255,255,255,.04);color:var(--ink2);font-weight:600;font-size:11px;
+   text-align:left;padding:10px 16px;letter-spacing:.05em;border-bottom:1px solid var(--line)}
+td{padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr.total td{font-weight:700;background:rgba(255,255,255,.03)}
+tr.total td:last-child{color:var(--gold)}
+
+.bar-cell{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+.bar{height:8px;border-radius:4px;background:var(--blue-s);position:relative;
+     border:1px solid rgba(79,135,248,.25)}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#2A4FA0,#4F87F8)}
+.bar-fill.gold{background:linear-gradient(90deg,#7A5A1A,var(--gold))}
+.bar-fill.star{background:linear-gradient(90deg,#7A5A1A,var(--gold));box-shadow:0 0 8px var(--gold)}
+.bar-fill.purple{background:linear-gradient(90deg,#4C2E8A,var(--purple))}
+.amt{font-weight:700;font-size:13px;min-width:48px;text-align:right;
+     font-variant-numeric:tabular-nums}
+.amt.gold{color:var(--gold)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;
+     font-weight:600;letter-spacing:.03em}
+.tag.hw{background:var(--blue-s);color:var(--blue);border:1px solid rgba(79,135,248,.3)}
+.tag.mk{background:var(--purple-s);color:var(--purple);border:1px solid rgba(167,139,250,.3)}
+.tag.ct{background:var(--green-s);color:var(--green);border:1px solid rgba(52,211,153,.3)}
+.tag.mi{background:rgba(255,255,255,.06);color:var(--ink2)}
+
+/* ── PANELS ── */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.panel-row{display:flex;gap:16px;flex-wrap:wrap}
+.panel-row .panel{flex:1;min-width:200px}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:800px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* ── STRAT CARDS ── */
+.strat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.strat .badge-sm{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;
+                  font-weight:700;margin-bottom:10px}
+.badge-sm.pri{background:rgba(248,108,60,.15);color:#F87A60;border:1px solid rgba(248,108,60,.3)}
+.badge-sm.new{background:var(--cyan-s);color:var(--cyan);border:1px solid rgba(56,197,245,.3)}
+.strat .sv{font-size:22px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}
+.strat .sl{font-size:11px;color:var(--ink2);margin-top:4px}
+.strat .sd{font-size:12px;color:var(--ink2);margin-top:10px;line-height:1.6}
+.strat .sn{font-size:13px;font-weight:700;margin-bottom:4px}
+
+/* ── ENGINE CARDS ── */
+.engine{background:var(--card2);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.engine .eid{font-size:10px;letter-spacing:.15em;color:var(--cyan);font-weight:600;
+              margin-bottom:6px;text-transform:uppercase}
+.engine .ename{font-size:15px;font-weight:700;margin-bottom:12px}
+.engine .eprice{font-size:26px;font-weight:900;color:var(--gold);
+                font-variant-numeric:tabular-nums;margin-bottom:8px}
+.engine .edesc{font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:16px}
+.engine .efoot{font-size:11px;color:var(--cyan);margin-top:auto;padding-top:12px;
+               border-top:1px solid var(--line)}
+.link-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 14px;
+          border-radius:999px;border:1px solid var(--gold);color:var(--gold);
+          font-size:11px;font-weight:600;background:var(--gold-s);margin:4px 4px 0 0;
+          text-decoration:none;cursor:default}
+
+/* ── FUNNEL / SCENARIO ── */
+.funnel-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.funnel-bar{height:12px;border-radius:6px;min-width:8px;transition:.3s}
+.funnel-lbl{font-size:12px;color:var(--ink2);flex:1}
+.funnel-val{font-size:14px;font-weight:700;min-width:52px;text-align:right;
+            font-variant-numeric:tabular-nums}
+
+/* ── MONTHLY CHART ── */
+.mchart{display:flex;align-items:flex-end;gap:8px;height:140px;padding-top:16px}
+.mbar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.mbar-amt{font-size:10px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.mbar-body{width:100%;border-radius:4px 4px 0 0;min-height:4px;position:relative}
+.mbar-lbl{font-size:10px;color:var(--ink2);text-align:center;margin-top:4px}
+.mbar-cnt{font-size:9px;color:var(--ink3)}
+
+/* ── INDUSTRY SIDE CARDS ── */
+.ind-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+          padding:14px 16px;margin-bottom:8px}
+.ind-card.hi{border-color:var(--gold);background:var(--gold-s)}
+.ind-title{font-size:13px;font-weight:700;margin-bottom:2px}
+.ind-cnt{font-size:11px;color:var(--ink2)}
+.ind-desc{font-size:10px;color:var(--ink3);margin-top:4px}
+.ind-val{font-size:13px;font-weight:700;color:var(--gold);float:right}
+
+/* ── FLOW BAR ── */
+.flow{display:flex;border-radius:var(--r);overflow:hidden;height:56px;margin:20px 0;
+      border:1px solid var(--line)}
+.flow-seg{display:flex;flex-direction:column;justify-content:center;padding:0 14px;
+          font-size:11px;transition:.2s}
+.flow-seg .fv{font-size:17px;font-weight:900;font-variant-numeric:tabular-nums}
+.flow-seg .fl{font-size:9px;opacity:.7;margin-top:2px}
+
+/* ── SUMMARY FOOTER ── */
+.sum-foot{font-size:18px;font-weight:800;line-height:1.5;margin-top:28px}
+.sum-foot em{color:var(--cyan);font-style:normal}
+.sum-foot strong{color:var(--gold)}
+
+/* ── NOTE ── */
+.note{font-size:11px;color:var(--ink3);margin-top:16px;line-height:1.7;
+      border-top:1px solid var(--line);padding-top:12px}
+.note strong{color:var(--ink2)}
+
+/* ── PAGE FOOTER ── */
+.sec-foot{position:absolute;bottom:24px;left:64px;right:64px;display:flex;
+          align-items:center;justify-content:space-between;font-size:10px;
+          color:var(--ink3);border-top:1px solid var(--line);padding-top:12px}
+@media(max-width:900px){.sec-foot,.cover-foot{left:24px;right:24px}}
+
+/* ── PRINT ── */
+@media print{
+  #nav,#print-btn{display:none!important}
+  section{page-break-after:always;min-height:auto;padding:32px 48px}
+  html,body{background:#080C18!important;color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav id="nav">
+  <div class="nd on" onclick="go('s-cover')" title="커버"></div>
+  <div class="nd" onclick="go('s01')" title="01 매출"></div>
+  <div class="nd" onclick="go('s02')" title="02 제안활동"></div>
+  <div class="nd" onclick="go('s03a')" title="03 잔여 리드"></div>
+  <div class="nd" onclick="go('s03b')" title="03 60억 목표"></div>
+  <div class="nd" onclick="go('s04a')" title="04 2축+퍼널"></div>
+  <div class="nd" onclick="go('s04b')" title="04 게임 플랜"></div>
+  <div class="nd" onclick="go('s04c')" title="04 스페이셜 플랜"></div>
+  <div class="nd" onclick="go('s-end')" title="핵심 요약"></div>
+</nav>
+
+<!-- ══════════ COVER ══════════ -->
+<section id="s-cover">
+  <div>
+    <p class="hero-tag">OLIMPLANET <span>·</span> 2026</p>
+    <p class="eyebrow">2026년 상반기 성과 공유</p>
+    <h1 class="display">상반기<br>성과 공유</h1>
+    <p class="cover-sub">사업2실 브랜드부문</p>
+    <div class="badges">
+      <span class="badge gold">상반기 확정 6.16억 · GPM 75%</span>
+      <span class="badge dim">하반기 리드 23.5억 +@</span>
+      <span class="badge dim">잔여 목표 ~30억</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span class="conf-badge">대외비 · 내부 보고용</span>
+    <span>2026.07.08 · 예산·전환율은 가정치(확인 필요) 포함</span>
+  </div>
+</section>
+
+<!-- ══════════ 01 매출 ══════════ -->
+<section id="s01">
+  <p class="label">01 · 상반기 매출 &amp; 매출총이익</p>
+  <h2 class="stitle">6월까지 <em>6.16억</em> 확정 · 매출총이익 <em>4.74억</em> <span class="cy" style="font-size:.7em">GPM 75.1%</span></h2>
+
+  <div class="tbl-wrap" style="margin-bottom:20px">
+    <table>
+      <thead>
+        <tr>
+          <th>프로젝트 (고객·파트너)</th>
+          <th>구분</th>
+          <th style="text-align:right">금액</th>
+          <th style="text-align:right;min-width:140px">막대 (막대 = 상대 규모)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>신화갤러리 전시 솔루션</strong></td>
+          <td><span class="tag ct">전시</span></td>
+          <td class="amt" style="text-align:right">1.50억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill gold" style="width:100%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>경북 AI 영상제 체험마케팅</strong> <small style="color:var(--ink3)">mbn·테크노파크</small></td>
+          <td><span class="tag mk">체험마케팅</span></td>
+          <td class="amt" style="text-align:right">1.09억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:73%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>삼성 디자인센터 상반기</strong> <small style="color:var(--ink3)">삼성전자</small></td>
+          <td><span class="tag hw">브랜드</span></td>
+          <td class="amt" style="text-align:right">0.93억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:62%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>사이시옷</strong> <small style="color:var(--ink3)">관광바우처</small></td>
+          <td><span class="tag hw">관광 XR</span></td>
+          <td class="amt" style="text-align:right">0.70억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:47%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>관광바우처 게임 개발</strong> <small style="color:var(--ink3)">트립네스트</small></td>
+          <td><span class="tag hw">관광 XR</span></td>
+          <td class="amt" style="text-align:right">0.56억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:37%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>SBA B2B 서비스 지원사업</strong> <small style="color:var(--ink3)">3건</small></td>
+          <td><span class="tag ct">솔루션</span></td>
+          <td class="amt" style="text-align:right">0.54억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:36%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>ABC 승무원아카데미 · 안토 멤버스 VR</strong> <small style="color:var(--ink3)">한화호텔 외</small></td>
+          <td><span class="tag mi">솔루션·브랜드</span></td>
+          <td class="amt" style="text-align:right">0.44억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:29%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>기타</strong> <small style="color:var(--ink3)">교보문고·영남대·KT&amp;G·한동대·올리브영</small></td>
+          <td><span class="tag mi">—</span></td>
+          <td class="amt" style="text-align:right">0.41억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:110px"><div class="bar-fill" style="width:27%"></div></div></div></td>
+        </tr>
+        <tr class="total">
+          <td colspan="2"><strong>매출 합계</strong> <span style="color:var(--ink2);font-weight:400;font-size:12px">6월까지</span></td>
+          <td colspan="2" class="amt" style="text-align:right"><strong>6.16억</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kv">6.16<span style="font-size:.5em">억</span></div>
+      <div class="kl">계약금액 (매출)</div>
+    </div>
+    <div class="kpi">
+      <div class="kv" style="color:var(--ink2)">1.43<span style="font-size:.5em">억</span></div>
+      <div class="kl">외주비</div>
+    </div>
+    <div class="kpi">
+      <div class="kv" style="color:var(--ink2)">24.9<span style="font-size:.5em">%</span></div>
+      <div class="kl">외주비율</div>
+    </div>
+    <div class="kpi cyan">
+      <div class="kv">4.74<span style="font-size:.5em">억</span></div>
+      <div class="kl">매출총이익 (GP)</div>
+    </div>
+    <div class="kpi gold">
+      <div class="kv">75.1<span style="font-size:.5em">%</span></div>
+      <div class="kl">매출총이익률 (GPM)</div>
+    </div>
+  </div>
+
+  <p class="note">* 계약금액 616,392,100 · 외주비 142,700,000 · 매출총이익 473,692,100 (전 사업실 브랜드 세그먼트 취합) — 외주비율 24.9%로 GPM 75.1%, 마진 구조 양호.</p>
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 02 제안활동 ══════════ -->
+<section id="s02">
+  <p class="label">02 · 상반기 제안 활동</p>
+  <h2 class="stitle">상반기 <em>27건</em> 제안 — 유형과 섹터 분포</h2>
+
+  <div class="kpis" style="margin-bottom:16px">
+    <div class="kpi" style="border-left:3px solid var(--blue)">
+      <div class="kv" style="color:var(--blue)">19<span style="font-size:.45em">건</span></div>
+      <div class="kl">하드웨어 × 콘텐츠 (LED·사이니지·체험)</div>
+    </div>
+    <div class="kpi" style="border-left:3px solid var(--purple)">
+      <div class="kv" style="color:var(--purple)">7<span style="font-size:.45em">건</span></div>
+      <div class="kl">마케팅 (캠페인·프로모션)</div>
+    </div>
+    <div class="kpi" style="border-left:3px solid var(--green)">
+      <div class="kv" style="color:var(--green)">1<span style="font-size:.45em">건</span></div>
+      <div class="kl">콘텐츠 (전시 영상)</div>
+    </div>
+    <div class="kpi gold">
+      <div class="kv">27<span style="font-size:.45em">건</span></div>
+      <div class="kl">제안 합계</div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-color:rgba(79,135,248,.3)">
+    <div>
+      <div style="font-size:11px;color:var(--ink2);margin-bottom:4px">제안 총 규모 (추정) <span class="tag mi">평균 2~4억 가정</span></div>
+      <div style="font-size:28px;font-weight:900;color:var(--gold)">약 54~108억</div>
+      <div style="font-size:12px;color:var(--ink2);margin-top:4px">27건 × 2~4억 · 중앙값 ~81억</div>
+    </div>
+    <div style="font-size:12px;color:var(--cyan);text-align:right">
+      확정+진행 리드 약 30억<br>→ 금액 기준 전환 ~30%대
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>섹터</th>
+          <th>제안처</th>
+          <th>주 유형</th>
+          <th style="text-align:right">건수</th>
+          <th style="text-align:right;min-width:100px">(막대)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>금융 (은행·금고)</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">새마을금고·하나·농협·신협·신한·기업·우리</td>
+          <td><span class="tag hw">HW×콘텐츠</span></td>
+          <td class="amt" style="text-align:right">7</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill" style="width:100%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>대기업·산업</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">강원랜드·현대자동차·현대중공업·한화</td>
+          <td><span class="tag hw">HW×콘텐츠</span></td>
+          <td class="amt" style="text-align:right">4</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill" style="width:57%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>지역 체험마케팅</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">영주시·경북·팡오락실·화순적벽</td>
+          <td><span class="tag mk">HW×C·마케팅</span></td>
+          <td class="amt" style="text-align:right">4</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill purple" style="width:57%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>전시·뮤지엄</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">신화갤러리·연천 성화미술관·경북 천지인 뮤지엄</td>
+          <td><span class="tag ct">콘텐츠·HW×C</span></td>
+          <td class="amt" style="text-align:right">3</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill" style="width:43%;background:linear-gradient(90deg,#1A5A3A,var(--green))"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>기타 마케팅</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">에코트로닉스·한부솔루션·비즈넵</td>
+          <td><span class="tag mk">마케팅</span></td>
+          <td class="amt" style="text-align:right">3</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill purple" style="width:43%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>모빌리티</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">지키(ZEEKR)·차지</td>
+          <td><span class="tag hw">HW×콘텐츠</span></td>
+          <td class="amt" style="text-align:right">2</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill" style="width:29%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>유통·편의점</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">GS25·CU</td>
+          <td><span class="tag hw">HW×콘텐츠</span></td>
+          <td class="amt" style="text-align:right">2</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill" style="width:29%"></div></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>패션·F&amp;B</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">마팸킴·메가커피</td>
+          <td><span class="tag mk">HW×C·마케팅</span></td>
+          <td class="amt" style="text-align:right">2</td>
+          <td><div class="bar-cell"><div class="bar" style="width:90px"><div class="bar-fill purple" style="width:29%"></div></div></div></td>
+        </tr>
+        <tr class="total">
+          <td><strong>합계</strong></td>
+          <td style="color:var(--ink2);font-size:12px">8개 섹터</td>
+          <td></td>
+          <td colspan="2" class="amt" style="text-align:right"><strong>27건</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size:13px;color:var(--cyan);margin-top:16px;font-weight:600">
+    → 제안 총액 ~80억대, HW×콘텐츠 19건이 축 — 확정·리드로 약 30억 전환, 나머지는 하반기 클로징 여지
+  </p>
+  <p class="note">* 규모는 평균 2~4억 가정 추정치(확인 필요) — 유형별 편차 큼(LED 1~3억·체험/전시 5~10억·마케팅 0.2~1억). 건별 금액 확정 시 규모 막대로 대체 가능.</p>
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 03A 잔여 리드 ══════════ -->
+<section id="s03a">
+  <p class="label">03 · 하반기 잔여 리드 (월별)</p>
+  <h2 class="stitle">7~11월 진행 리드 <em>23.5억</em> +@ <span style="font-size:.6em;color:var(--ink2)">· 15건</span></h2>
+
+  <div class="tbl-wrap" style="margin-bottom:16px">
+    <table>
+      <thead>
+        <tr>
+          <th style="min-width:40px">월</th>
+          <th>딜</th>
+          <th>고객·파트너</th>
+          <th style="text-align:right">기대매출</th>
+          <th style="text-align:right;min-width:110px">(막대)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="8" style="color:var(--cyan);font-weight:700;vertical-align:top;padding-top:14px">7월</td>
+          <td>영남대 미디어아트</td><td style="font-size:11px;color:var(--ink2)">제이솔루션</td>
+          <td class="amt" style="text-align:right">0.98억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:13%"></div></div></div></td></tr>
+        <tr><td>GH 미분양 필지</td><td style="font-size:11px;color:var(--ink2)">경기도사주택공사</td>
+          <td class="amt" style="text-align:right">0.50억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:7%"></div></div></div></td></tr>
+        <tr><td>삼성 메모리센터 필로티 사이니지</td><td style="font-size:11px;color:var(--ink2)">에스큐브랩</td>
+          <td class="amt" style="text-align:right">0.42억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:6%"></div></div></div></td></tr>
+        <tr><td>국립생태원 추가 콘텐츠</td><td style="font-size:11px;color:var(--ink2)">국립생태원</td>
+          <td class="amt" style="text-align:right">0.30억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:4%"></div></div></div></td></tr>
+        <tr><td>올리브영 티커영상</td><td style="font-size:11px;color:var(--ink2)">에스큐브랩</td>
+          <td class="amt" style="text-align:right">0.15억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:2%"></div></div></div></td></tr>
+        <tr><td>삼성 비스포크 시뮬레이터 유지보수</td><td style="font-size:11px;color:var(--ink2)">삼성전자</td>
+          <td class="amt" style="text-align:right">0.13억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:2%"></div></div></div></td></tr>
+        <tr><td>한수원 건식저장시설 콘텐츠 운영</td><td style="font-size:11px;color:var(--ink2)">한국농촌협회건설팅</td>
+          <td class="amt" style="text-align:right">0.10억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:1%"></div></div></div></td></tr>
+        <tr><td>울산 태화강역 미디어파사드 시연영상</td><td style="font-size:11px;color:var(--ink2)">제이솔루션</td>
+          <td class="amt" style="text-align:right">0.08억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:1%"></div></div></div></td></tr>
+
+        <tr style="background:rgba(201,168,76,.06)">
+          <td rowspan="2" style="color:var(--cyan);font-weight:700;vertical-align:top;padding-top:14px">8월</td>
+          <td><strong>울산 태화강역 미디어파사드 콘텐츠 제작</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">제이솔루션</td>
+          <td class="amt gold" style="text-align:right">7.45억 ★</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill star" style="width:100%"></div></div></div></td></tr>
+        <tr><td>삼성 디자인센터 하반기</td><td style="font-size:11px;color:var(--ink2)">삼성전자</td>
+          <td class="amt" style="text-align:right">0.83억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:11%"></div></div></div></td></tr>
+
+        <tr><td rowspan="3" style="color:var(--cyan);font-weight:700;vertical-align:top;padding-top:14px">9월</td>
+          <td>마팸킴 오프라인 콘텐츠</td><td style="font-size:11px;color:var(--ink2)">제이솔루션</td>
+          <td class="amt" style="text-align:right">1.50억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:20%"></div></div></div></td></tr>
+        <tr><td>화순 온라인 마케팅 컨설팅</td><td style="font-size:11px;color:var(--ink2)">화순군</td>
+          <td class="amt" style="text-align:right">1.00억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:13%"></div></div></div></td></tr>
+        <tr><td>교보교육재단 전시관</td><td style="font-size:11px;color:var(--ink2)">교보교육재단</td>
+          <td class="amt" style="text-align:right">0.01억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:1%"></div></div></div></td></tr>
+
+        <tr style="background:rgba(201,168,76,.06)">
+          <td style="color:var(--gold);font-weight:700">10월</td>
+          <td><strong>연천 갤러리 체험마케팅 ★</strong></td>
+          <td style="font-size:11px;color:var(--ink2)">성연갤러리·대표 주도</td>
+          <td class="amt gold" style="text-align:right">10.00억 ★</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill star" style="width:100%"></div></div></div></td></tr>
+
+        <tr><td style="color:var(--cyan);font-weight:700">11월</td>
+          <td>삼성 파라다이스 시티 대금</td><td style="font-size:11px;color:var(--ink2)">삼성전자</td>
+          <td class="amt" style="text-align:right">0.10억</td>
+          <td><div class="bar-cell"><div class="bar" style="width:100px"><div class="bar-fill" style="width:1%"></div></div></div></td></tr>
+
+        <tr class="total">
+          <td colspan="2"><strong>리드 합계</strong></td>
+          <td style="color:var(--ink2);font-size:12px">15건 · 7~11월</td>
+          <td colspan="2" class="amt" style="text-align:right"><strong>23.54억</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" style="border-color:rgba(79,135,248,.25)">
+    <div style="font-size:11px;color:var(--blue);font-weight:700;margin-bottom:6px">+@ 리드 대기</div>
+    <div style="font-size:12px;color:var(--ink2)">제안했으나 결정 대기 중(금액 미확정) — 금융 LED 7·대기업·유통 LED·지역 체험 등 다수. 금액엔 미포함, 확정 시 상향 여지(+@).</div>
+  </div>
+  <p class="note">* 성연·울산 2건이 74% 집중 — 이 2건 성사가 하반기 실적의 관건 · 비가중 파이프라인 기준</p>
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 03B 60억 목표 ══════════ -->
+<section id="s03b">
+  <p class="label">03 · 하반기 실행 &amp; 연 60억 목표</p>
+  <h2 class="stitle">연 <em>60억</em>까지 — 확보 <em>30억</em> · 신규 30억</h2>
+
+  <div class="kpis" style="margin-bottom:16px">
+    <div class="kpi" style="border:1px solid rgba(56,197,245,.35)">
+      <div class="kv" style="color:var(--cyan)">6.2<span style="font-size:.5em">억</span></div>
+      <div class="kl">상반기 확정 · GPM 75%</div>
+    </div>
+    <div class="kpi" style="border:1px solid rgba(79,135,248,.35)">
+      <div class="kv">23.5<span style="font-size:.5em">억</span></div>
+      <div class="kl">하반기 리드 +@ · 15건</div>
+    </div>
+    <div class="kpi" style="border:1px solid rgba(201,168,76,.4)">
+      <div class="kv" style="color:var(--gold)">30.3<span style="font-size:.5em">억</span></div>
+      <div class="kl">신규 확보 필요 · 2축+퍼널</div>
+    </div>
+    <div class="kpi gold">
+      <div class="kv">60<span style="font-size:.5em">억</span></div>
+      <div class="kl">연 목표</div>
+    </div>
+  </div>
+
+  <!-- flow bar -->
+  <div class="flow" style="margin-bottom:8px">
+    <div class="flow-seg" style="background:#1A2E5A;width:10%">
+      <div class="fl">상반기 확정</div>
+      <div class="fv" style="color:var(--cyan)">6.2억</div>
+    </div>
+    <div class="flow-seg" style="background:#1E3570;width:38%">
+      <div class="fl">① 이월 리드 클로징</div>
+      <div class="fv">23.5억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#1C2D4A,#1C2D4A 4px,#253D60 4px,#253D60 8px);width:22%">
+      <div class="fl">② 입찰 공동참여</div>
+      <div class="fv">~13.3억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#2A2510,#2A2510 4px,#3A3218 4px,#3A3218 8px);width:16%">
+      <div class="fl">③ 스페이셜</div>
+      <div class="fv" style="color:var(--gold)">~10억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#2A1A50,#2A1A50 4px,#3B2465 4px,#3B2465 8px);width:14%">
+      <div class="fl">④ 게임</div>
+      <div class="fv" style="color:var(--purple)">~7억</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--ink3);margin-bottom:20px">
+    확보 29.7억 · 목표의 49% — 잔여 ~30.3억을 전략 ②③④로 분해 <span class="tag mi">배분 가정</span>
+    <span style="float:right;color:var(--ink2)">② ~13.3억 + ③ ~10억 + ④ ~7억 = ~30.3억</span>
+  </div>
+
+  <div class="g4" style="margin-bottom:16px">
+    <div class="strat" style="border-top:2px solid var(--blue)">
+      <span class="badge-sm pri">최우선</span>
+      <div class="sn">① 이월 리드 클로징</div>
+      <div class="sv">23.5억</div>
+      <div class="sl">확보 대상</div>
+      <div class="sd">23.5억 파이프라인 계약까지 · 성연·울산.</div>
+    </div>
+    <div class="strat">
+      <span class="badge-sm new">신규</span>
+      <div class="sn">② HW 입찰 공동참여</div>
+      <div class="sv">~13.3억</div>
+      <div class="sl">기대</div>
+      <div class="sd">사이니지 입찰에 콘텐츠로 참여.</div>
+    </div>
+    <div class="strat" style="border-top:2px solid var(--gold)">
+      <span class="badge-sm new">신규</span>
+      <div class="sn">③ 스페이셜 상품화</div>
+      <div class="sv" style="color:var(--gold)">5~10억</div>
+      <div class="sl">기대</div>
+      <div class="sd">HW+콘텐츠 패키지 주력화.</div>
+    </div>
+    <div class="strat" style="border-top:2px solid var(--purple)">
+      <span class="badge-sm new">신규</span>
+      <div class="sn">④ 게임 콘텐츠 확산</div>
+      <div class="sv" style="color:var(--purple)">3~7억</div>
+      <div class="sl">기대</div>
+      <div class="sd">놀이터·이벤트 파트너 co-entry.</div>
+    </div>
+  </div>
+
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 04A 2축+퍼널 ══════════ -->
+<section id="s04a">
+  <p class="label">04 · 잔여 30억 — 신규 성장 엔진</p>
+  <h2 class="stitle">스페이셜·게임 <em>2축</em> + 제안 퍼널 <span style="font-size:.55em;color:var(--ink3)" class="tag mi">예산·전환 가정</span></h2>
+
+  <div class="g2" style="margin-bottom:16px">
+    <div class="engine" style="border-color:rgba(201,168,76,.4);border-top:2px solid var(--gold)">
+      <div class="eid">ENGINE 01 · 주력</div>
+      <div class="ename">스페이셜 사이니지</div>
+      <div class="eprice">HW+콘텐츠 ~5,000만원</div>
+      <div class="edesc">금융·유통·대기업·리테일 소룸 산업별 공략 · 딜 5천만~1억.</div>
+      <div style="margin-bottom:12px"><a class="link-btn">스페이셜 인터랙티브 카탈로그 ↗</a></div>
+      <div class="efoot">산업별 8~10건 → 기대 5~10억</div>
+    </div>
+    <div class="engine" style="border-color:rgba(167,139,250,.4);border-top:2px solid var(--purple)">
+      <div class="eid">ENGINE 02</div>
+      <div class="ename">게임 콘텐츠</div>
+      <div class="eprice" style="color:var(--purple)">협업 예산 3~5,000만원</div>
+      <div class="edesc">제안 구조가 검증된 블룸 파트너와 co-entry · 우리는 게임 콘텐츠로 참여.</div>
+      <div style="margin-bottom:12px">
+        <a class="link-btn" style="border-color:var(--purple);color:var(--purple);background:var(--purple-s)">디오스피스 데모 ↗</a>
+        <a class="link-btn" style="border-color:var(--purple);color:var(--purple);background:var(--purple-s)">SK뷰 놀이터 데모 ↗</a>
+      </div>
+      <div class="efoot" style="color:var(--purple)">co-entry 10~15건 · 건당 3~5천 → 기대 3~7억</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="panel">
+      <div style="font-size:10px;letter-spacing:.15em;color:var(--cyan);font-weight:600;margin-bottom:14px;text-transform:uppercase">FUNNEL · 제안 퍼널</div>
+      <div class="funnel-row">
+        <div class="funnel-lbl">신규 제안·기회</div>
+        <div class="funnel-bar" style="width:200px;background:linear-gradient(90deg,#1A3A7A,var(--blue))"></div>
+        <div class="funnel-val">300건+</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-lbl">미팅 성사 · ~30%</div>
+        <div class="funnel-bar" style="width:120px;background:linear-gradient(90deg,#1A5A3A,var(--green))"></div>
+        <div class="funnel-val" style="color:var(--cyan)">~90건</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-lbl">계약 · 제안 대비 &lt;10%</div>
+        <div class="funnel-bar" style="width:48px;background:linear-gradient(90deg,#4A1A7A,var(--purple))"></div>
+        <div class="funnel-val" style="color:var(--gold)">30건</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-lbl">기대 매출 · 평균 1억</div>
+        <div class="funnel-bar" style="width:160px;background:linear-gradient(90deg,#5A3A00,var(--gold))"></div>
+        <div class="funnel-val" style="color:var(--gold)">~30억</div>
+      </div>
+      <p style="font-size:10px;color:var(--ink3);margin-top:12px;line-height:1.6">제안 300건+는 자체 영업만으론 불가 — 블레이잼(연 210건 제안·합격률 35%)처럼 제안 구조가 검증된 볼륨 파트너 co-entry가 전제</p>
+    </div>
+
+    <div class="panel">
+      <div style="font-size:10px;letter-spacing:.15em;color:var(--gold);font-weight:600;margin-bottom:14px;text-transform:uppercase">SCENARIO · 시나리오</div>
+      <table style="width:100%">
+        <thead>
+          <tr>
+            <th>시나리오</th>
+            <th style="text-align:right">계약</th>
+            <th style="text-align:right">평균</th>
+            <th style="text-align:right;min-width:80px">기대매출</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>보수</td>
+            <td style="text-align:right;color:var(--ink2)">20건</td>
+            <td style="text-align:right;color:var(--ink2)">1.0억</td>
+            <td style="text-align:right"><div class="bar-cell"><div class="bar" style="width:60px"><div class="bar-fill" style="width:50%"></div></div><span class="amt">20억</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>기대</strong></td>
+            <td style="text-align:right">30건</td>
+            <td style="text-align:right">1.0억</td>
+            <td style="text-align:right"><div class="bar-cell"><div class="bar" style="width:60px"><div class="bar-fill" style="width:75%"></div></div><span class="amt">30억</span></div></td>
+          </tr>
+          <tr style="background:var(--gold-s)">
+            <td style="color:var(--gold)"><strong>최대</strong></td>
+            <td style="text-align:right;color:var(--gold)">40건</td>
+            <td style="text-align:right;color:var(--gold)">1.0억</td>
+            <td style="text-align:right"><div class="bar-cell"><div class="bar" style="width:60px"><div class="bar-fill gold" style="width:100%"></div></div><span class="amt gold">40억</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 04B 게임 플랜 ══════════ -->
+<section id="s04b" style="background:radial-gradient(ellipse 60% 50% at 80% 50%,#1A0A30 0%,var(--bg) 70%)">
+  <p class="label" style="color:var(--purple)">04 · 게임 콘텐츠 — 산업별 월별 기대매출 플랜</p>
+  <h2 class="stitle">산업별 <span style="color:var(--purple)">7~12월</span> 기대매출 플랜 <span class="tag mi" style="font-size:.45em">가정</span></h2>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <!-- LEFT CARDS -->
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:200px;flex:0 0 220px">
+      <div class="ind-card">
+        <span class="ind-val">~4.0억</span>
+        <div class="ind-title">팝업스토어</div>
+        <div class="ind-cnt">10건</div>
+        <div class="ind-desc">프로젝트렌트·팝플리 → 팝업 내 게임 존</div>
+      </div>
+      <div class="ind-card">
+        <span class="ind-val">~4.8억</span>
+        <div class="ind-title">이벤트·페스티벌</div>
+        <div class="ind-cnt">12건</div>
+        <div class="ind-desc">플레이컵·엔데버 → 행사·축제 현장 게임</div>
+      </div>
+      <div class="ind-card">
+        <span class="ind-val">~2.8억</span>
+        <div class="ind-title">엔터·IP</div>
+        <div class="ind-cnt">7건</div>
+        <div class="ind-desc">CJ ENM·더핑크퐁 → 방송·IP 연계</div>
+      </div>
+      <div class="ind-card hi">
+        <span class="ind-val">~4.8억</span>
+        <div class="ind-title">놀이시설</div>
+        <div class="ind-cnt" style="color:var(--gold)">12건</div>
+        <div class="ind-desc" style="color:var(--gold2)">플레이잼 — 연 210건 제안·합격률 35%</div>
+      </div>
+    </div>
+
+    <!-- RIGHT CHART -->
+    <div style="flex:1;min-width:260px">
+      <div style="font-size:11px;color:var(--purple);font-weight:600;margin-bottom:4px">놀이시설 · 플레이잼</div>
+      <div style="font-size:10px;color:var(--ink3);margin-bottom:8px">플레이잼(2025 271억) — 연 210건 제안·합격률 35%(반기 ~105건→~37건 수주) · 여름·겨울방학 피크, 검증된 제안 구조에 동반 진입</div>
+      <div class="mchart">
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.8억</div>
+          <div class="mbar-body" style="height:55%;background:linear-gradient(180deg,var(--purple),#4A1A8A)"></div>
+          <div class="mbar-lbl">7월</div>
+          <div class="mbar-cnt">2건 · 방학 시작</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">1.2억</div>
+          <div class="mbar-body" style="height:80%;background:linear-gradient(180deg,var(--purple),#4A1A8A);box-shadow:0 0 12px rgba(167,139,250,.4)"></div>
+          <div class="mbar-lbl">8월</div>
+          <div class="mbar-cnt">3건 · 여름방학 피크</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.4억</div>
+          <div class="mbar-body" style="height:27%;background:linear-gradient(180deg,#7060A0,#3A1A6A)"></div>
+          <div class="mbar-lbl">9월</div>
+          <div class="mbar-cnt">1건 · 추석 연휴</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.4억</div>
+          <div class="mbar-body" style="height:27%;background:linear-gradient(180deg,#7060A0,#3A1A6A)"></div>
+          <div class="mbar-lbl">10월</div>
+          <div class="mbar-cnt">1건 · 가을 나들이</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.8억</div>
+          <div class="mbar-body" style="height:55%;background:linear-gradient(180deg,var(--purple),#4A1A8A)"></div>
+          <div class="mbar-lbl">11월</div>
+          <div class="mbar-cnt">2건 · 겨울 준비</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">1.2억</div>
+          <div class="mbar-body" style="height:80%;background:linear-gradient(180deg,var(--purple),#4A1A8A);box-shadow:0 0 12px rgba(167,139,250,.4)"></div>
+          <div class="mbar-lbl">12월</div>
+          <div class="mbar-cnt">3건 · 겨울방학</div>
+        </div>
+      </div>
+
+      <div class="kpis" style="margin-top:16px">
+        <div class="kpi" style="border-color:rgba(167,139,250,.3)">
+          <div class="kv" style="color:var(--purple);font-size:22px">12<span style="font-size:.5em">건</span></div>
+          <div class="kl">하반기 계약 목표</div>
+        </div>
+        <div class="kpi" style="border-color:rgba(167,139,250,.3)">
+          <div class="kv" style="color:var(--purple);font-size:22px">~4.8<span style="font-size:.5em">억</span></div>
+          <div class="kl">기대 총매출 (7~12월)</div>
+        </div>
+        <div class="kpi">
+          <div class="kv" style="font-size:22px">~120<span style="font-size:.4em">건+</span></div>
+          <div class="kl">필요 제안(기회) · 전환 &lt;10%</div>
+        </div>
+        <div class="kpi">
+          <div class="kv" style="font-size:22px">~36<span style="font-size:.4em">건</span></div>
+          <div class="kl">필요 미팅 · 성사 ~30%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">* 퍼널 가정: 제안→미팅 성사 ~30%·미팅→계약 ~33% = 제안→계약 &lt;10%(확인 필요) — 제안(기회)의 대부분은 파트너 딜 플로우로 충당. 2~3개 산업 병행 시 엔진 목표(게임 ~7억) 달성.</p>
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 04C 스페이셜 플랜 ══════════ -->
+<section id="s04c" style="background:radial-gradient(ellipse 60% 50% at 80% 50%,#1A1200 0%,var(--bg) 70%)">
+  <p class="label" style="color:var(--gold)">04 · 스페이셜 사이니지 — 산업별 월별 기대매출 플랜</p>
+  <h2 class="stitle">산업별 <span style="color:var(--gold)">7~12월</span> 기대매출 플랜 <span class="tag mi" style="font-size:.45em">가정</span></h2>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <!-- LEFT CARDS -->
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:200px;flex:0 0 220px">
+      <div class="ind-card">
+        <span class="ind-val">~6.8억</span>
+        <div class="ind-title">금융·공공</div>
+        <div class="ind-cnt">9건</div>
+        <div class="ind-desc">하나·농협·신한·새마을금고 → 은행·금고·기관 LED</div>
+      </div>
+      <div class="ind-card">
+        <span class="ind-val">~3.9억</span>
+        <div class="ind-title">유통·리테일 쇼룸</div>
+        <div class="ind-cnt">7건</div>
+        <div class="ind-desc">GS25·CU·아모레·젠틀몬스터 → 편의점·플래그십</div>
+      </div>
+      <div class="ind-card">
+        <span class="ind-val">~8.0억</span>
+        <div class="ind-title">대기업·산업</div>
+        <div class="ind-cnt">4건</div>
+        <div class="ind-desc">강원랜드·현대·한화 → 사옥·대형 파사드</div>
+      </div>
+      <div class="ind-card hi">
+        <span class="ind-val">~6.8억</span>
+        <div class="ind-title">HW·공간 파트너</div>
+        <div class="ind-cnt" style="color:var(--gold)">9건</div>
+        <div class="ind-desc" style="color:var(--gold2)">제이솔루션·에스큐브랩 → 사이니지 통합·공간사</div>
+      </div>
+    </div>
+
+    <!-- RIGHT CHART -->
+    <div style="flex:1;min-width:260px">
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:4px">HW · 공간 파트너 · 제이솔루션 · 에스큐브랩</div>
+      <div style="font-size:10px;color:var(--ink3);margin-bottom:8px">울산 태화강역 7.45억·동시 4건+ 협업 중 — 하반기 발주 재개 → 연내 구축 마감 수요가 4분기에 몰림</div>
+      <div class="mchart">
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.75억</div>
+          <div class="mbar-body" style="height:50%;background:linear-gradient(180deg,var(--gold),#7A5010)"></div>
+          <div class="mbar-lbl">7월</div>
+          <div class="mbar-cnt">1건 · 협업 지속</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.75억</div>
+          <div class="mbar-body" style="height:50%;background:linear-gradient(180deg,var(--gold),#7A5010)"></div>
+          <div class="mbar-lbl">8월</div>
+          <div class="mbar-cnt">1건 · 발주 개시</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">1.5억</div>
+          <div class="mbar-body" style="height:100%;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 0 12px rgba(201,168,76,.5)"></div>
+          <div class="mbar-lbl">9월</div>
+          <div class="mbar-cnt">2건 · 공급 발주 재개</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">1.5억</div>
+          <div class="mbar-body" style="height:100%;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 0 12px rgba(201,168,76,.5)"></div>
+          <div class="mbar-lbl">10월</div>
+          <div class="mbar-cnt">2건 · 4Q 구축수요</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">1.5억</div>
+          <div class="mbar-body" style="height:100%;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 0 12px rgba(201,168,76,.5)"></div>
+          <div class="mbar-lbl">11월</div>
+          <div class="mbar-cnt">2건 · 연내마감 수요</div>
+        </div>
+        <div class="mbar-wrap">
+          <div class="mbar-amt">0.75억</div>
+          <div class="mbar-body" style="height:50%;background:linear-gradient(180deg,var(--gold),#7A5010)"></div>
+          <div class="mbar-lbl">12월</div>
+          <div class="mbar-cnt">1건 · 연말 오픈</div>
+        </div>
+      </div>
+
+      <div class="kpis" style="margin-top:16px">
+        <div class="kpi gold">
+          <div class="kv" style="font-size:22px">9<span style="font-size:.5em">건</span></div>
+          <div class="kl">하반기 계약 목표</div>
+        </div>
+        <div class="kpi gold">
+          <div class="kv" style="font-size:22px">~6.8<span style="font-size:.5em">억</span></div>
+          <div class="kl">기대 총매출 (7~12월)</div>
+        </div>
+        <div class="kpi">
+          <div class="kv" style="font-size:22px">~90<span style="font-size:.4em">건+</span></div>
+          <div class="kl">필요 제안(기회) · 전환 &lt;10%</div>
+        </div>
+        <div class="kpi">
+          <div class="kv" style="font-size:22px">~27<span style="font-size:.4em">건</span></div>
+          <div class="kl">필요 미팅 · 성사 ~30%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">* 퍼널 가정: 제안→미팅 성사 ~30%·미팅→계약 ~33% = 제안→계약 &lt;10%(확인 필요) — HW 파트너 축 중심 병행 시 엔진 목표(스페이셜 ~10억) 달성.</p>
+  <div class="sec-foot"><span>OLIMPLANET · 사업2실 브랜드부문</span><span>2026 상반기 성과 공유</span></div>
+</section>
+
+<!-- ══════════ 핵심 요약 ══════════ -->
+<section id="s-end">
+  <p class="label">2026 상반기 성과 공유 · 최종 요약</p>
+  <h2 class="stitle" style="font-size:clamp(32px,5vw,56px)">핵심 요약</h2>
+
+  <div class="kpis" style="margin-bottom:16px">
+    <div class="kpi" style="border:1px solid rgba(56,197,245,.4)">
+      <div class="kv" style="color:var(--cyan)">6.16<span style="font-size:.45em">억</span></div>
+      <div class="kl">상반기 확정 · GPM 75.1%</div>
+    </div>
+    <div class="kpi" style="border:1px solid rgba(79,135,248,.4)">
+      <div class="kv">23.5<span style="font-size:.45em">억 <span style="font-size:.6em;color:var(--ink2)">+@</span></span></div>
+      <div class="kl">하반기 리드 15건 · 성연·울산 관건</div>
+    </div>
+    <div class="kpi" style="border:1px solid rgba(201,168,76,.4)">
+      <div class="kv" style="color:var(--gold)">~30.3<span style="font-size:.45em">억</span></div>
+      <div class="kl">신규 = 입찰 13.3 + 스페이셜 10 + 게임 7</div>
+    </div>
+    <div class="kpi gold">
+      <div class="kv">60<span style="font-size:.45em">억</span></div>
+      <div class="kl">연 목표 · 달성 경로 확보</div>
+    </div>
+  </div>
+
+  <!-- flow bar summary -->
+  <div class="flow" style="margin-bottom:6px;height:64px">
+    <div class="flow-seg" style="background:#1A2E5A;width:10%">
+      <div class="fl">확정</div>
+      <div class="fv" style="color:var(--cyan)">6.2억</div>
+    </div>
+    <div class="flow-seg" style="background:#1E3570;width:37%">
+      <div class="fl">① 리드 클로징</div>
+      <div class="fv">23.5억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#1C2D4A,#1C2D4A 4px,#253D60 4px,#253D60 8px);width:21%">
+      <div class="fl">② 입찰 공동참여</div>
+      <div class="fv">~13.3억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#2A2510,#2A2510 4px,#3A3218 4px,#3A3218 8px);width:16%">
+      <div class="fl">③ 스페이셜</div>
+      <div class="fv" style="color:var(--gold)">~10억</div>
+    </div>
+    <div class="flow-seg" style="background:repeating-linear-gradient(45deg,#2A1A50,#2A1A50 4px,#3B2465 4px,#3B2465 8px);width:16%">
+      <div class="fl">④ 게임</div>
+      <div class="fv" style="color:var(--purple)">~7억</div>
+    </div>
+  </div>
+
+  <!-- 실행 커핏 -->
+  <div class="panel" style="margin-top:12px;margin-bottom:20px">
+    <div style="font-size:10px;color:var(--ink2);margin-bottom:10px;letter-spacing:.1em">실행 커밋</div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+      <div>
+        <div style="font-size:24px;font-weight:900">300건+</div>
+        <div style="font-size:11px;color:var(--ink2)">신규 제안·기회</div>
+      </div>
+      <div style="color:var(--ink3)">→</div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:var(--cyan)">~90건</div>
+        <div style="font-size:11px;color:var(--ink2)">미팅 성사 · ~30%</div>
+      </div>
+      <div style="color:var(--ink3)">→</div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:var(--gold)">30건</div>
+        <div style="font-size:11px;color:var(--ink2)">계약 목표 · 전환 &lt;10%</div>
+      </div>
+      <div style="color:var(--ink3)">→</div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:var(--purple)">8개 산업</div>
+        <div style="font-size:11px;color:var(--ink2)">월별 플랜 수립 완료</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sum-foot">
+    확보 <em>29.7억</em> 위에 전략 ②③④ <strong>~30.3억</strong> — 하반기, 볼륨 파트너와 함께 <em>연 60억</em>으로.
+  </div>
+
+  <div class="cover-foot">
+    <span class="conf-badge">대외비 · 내부 보고용</span>
+    <span>OLIMPLANET · 사업2실 브랜드부문 · 2026 상반기 성과 공유</span>
+  </div>
+</section>
+
+<script>
+const sections=['s-cover','s01','s02','s03a','s03b','s04a','s04b','s04c','s-end'];
+const dots=[...document.querySelectorAll('.nd')];
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const i=sections.indexOf(e.target.id);
+      dots.forEach((d,j)=>{d.classList.toggle('on',j===i)});
+    }
+  });
+},{threshold:.5});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)});
+</script>
+</body>
+</html>
