@@ -232,13 +232,6 @@
   .prin>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
   .prin b{display:block;font-size:15px;font-weight:800;color:var(--accent)}
   .prin span{display:block;font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.55;word-break:keep-all}
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-  .split>div{border-radius:14px;padding:16px 18px}
-  .split .in{background:var(--accent-soft)}.split .out{background:var(--gold-soft)}
-  .split .k{font-size:14px;font-weight:800;margin-bottom:10px}
-  .split .in .k{color:var(--accent)}.split .out .k{color:var(--gold)}
-  .chips{display:flex;flex-wrap:wrap;gap:6px}
-  .chips span{background:var(--card);border-radius:8px;padding:5px 10px;font-size:12.5px;font-weight:700;color:var(--ink)}
   .sens{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:12px;box-shadow:var(--shadow)}
   .sens .lbl{font-size:12px;font-weight:700;color:var(--muted)}
   .sens .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
@@ -260,6 +253,27 @@
   .ps .demo{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none}
   .ps .demo:hover{text-decoration:underline}
   .prin.mk{grid-template-columns:repeat(4,1fr)}
+  .tm{display:grid;grid-template-columns:1fr auto 1fr auto 2.3fr auto .8fr;gap:10px;align-items:stretch;margin-top:16px}
+  .tm .k{font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--muted)}
+  .tm b{display:block;font-size:14.5px;font-weight:800;margin-top:2px}
+  .tm span{display:block;font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:4px;word-break:keep-all}
+  .tm em{display:block;font-style:normal;font-size:11.5px;font-weight:700;color:var(--muted);margin-top:6px}
+  .tm-arr{display:flex;align-items:center;font-size:18px;font-weight:800;color:var(--muted)}
+  .tm-demand,.tm-node,.tm-in,.tm-out{border-radius:14px;padding:14px 16px}
+  .tm-demand{background:#EEF1F4}
+  .tm-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .tm-tags span{display:inline-block;margin:0;background:var(--card);border-radius:6px;padding:3px 8px;font-size:11.5px;font-weight:700;color:var(--ink)}
+  .tm-node.s{background:var(--accent-soft)}.tm-node.s b{color:var(--accent)}
+  .tm-node.cx{background:#E8EFF7}.tm-node.cx b{color:#2F5D8A}
+  .tm-node.done{background:var(--ink)}.tm-node.done b{color:#fff}.tm-node.done span,.tm-node.done .k{color:#B9C3CE}
+  .tm-prod{display:flex;flex-direction:column;gap:8px}
+  .tm-fork{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch;flex:1}
+  .tm-in{background:var(--card);border:1.5px solid #2F5D8A}
+  .tm-out{background:var(--gold-soft);border:1.5px dashed var(--gold)}.tm-out b{color:var(--gold)}
+  .tm-plus{display:flex;align-items:center;font-weight:800;color:var(--muted)}
+  .tm-loop{grid-column:3/-1;background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:8px 14px;
+    font-size:12.5px;font-weight:700;text-align:center}
+  .tm-loop b{display:inline;font-size:inherit;color:var(--accent)}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -286,12 +300,14 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.split,.pstrat{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.tm,.tm-fork{grid-template-columns:1fr}
+    .tm-arr,.tm-plus{justify-content:center;transform:rotate(90deg)}.tm-plus{transform:none}.tm-loop{grid-column:auto}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
+    .sec-h{flex-wrap:wrap;row-gap:4px}.sec-note{margin-left:0;width:100%}
     .org,.depts,.org-notes{grid-template-columns:1fr}
     .org{padding:20px 18px}
     .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
@@ -302,7 +318,7 @@
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.og{break-inside:avoid}.appx{break-before:page}}
+    .find,.lever,.role,.og,.tm{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -397,65 +413,58 @@
 
   <!-- 3. 팀 운영 -->
   <section>
-    <div class="sec-h"><span class="sec-n">03</span><h2>팀 운영 — 운영 목표 · 역할 · 운영 원칙</h2>
-      <span class="sec-note">초안 · 확인 필요</span></div>
-    <div class="sub-h">운영 목표 — 합쳐진 10명을 어떻게 운용하나</div>
-    <div class="why-box">4분기 매출 목표(11.62억)를 채우면 프로덕션 1인당 약 <b>8.5건</b>(3분기 5.3건)을 맡는다. 지금처럼 직접 제작만 해서는 감당할 수 없어, <b>제작 인원의 역할부터 바꾼다.</b></div>
-    <div class="ogoals">
-      <div class="og"><div class="n">1</div><h3>제작자에서 PM으로</h3>
-        <p>프로덕션 4명은 각자 <b>담당 프로젝트의 PM</b>이 된다. 품질을 좌우하는 핵심 작업만 직접 하고, 표준 물량은 외주에 맡겨 일정 · 품질 · 원가를 관리한다.</p>
-        <div class="kpi">지표 · 1인당 동시 PM 건수 · 외주 관리 건수</div></div>
-      <div class="og"><div class="n">2</div><h3>프로젝트 단위 팀</h3>
-        <p>수주 건마다 <b>세일즈 1명 + PM 1명</b>(+ 필요 시 지원)으로 팀을 짠다. 착수부터 납품 · 추가 제안까지 같은 팀이 끝까지 맡아 인계 손실을 없앤다.</p>
-        <div class="kpi">지표 · 착수 인계서 작성률 100%</div></div>
-      <div class="og"><div class="n">3</div><h3>건설 · 비건설 교차 배정</h3>
-        <p>전 인원을 건설 · 비건설 구분 없이 배정해 <b>누구나 두 영역을 수행</b>할 수 있게 만든다. 지원 인원은 제작 지원과 함께 <b>기획 작업</b>까지 맡는다.</p>
-        <div class="kpi">지표 · 인원별 두 영역 수행 경험</div></div>
-      <div class="og"><div class="n">4</div><h3>가동률 기준 외주 전환</h3>
-        <p>주간 리소스 보드로 <b>인원별 일정을 공개</b>한다. 내부 일정이 기준을 넘으면 새 건은 바로 외주로 돌려, 수주가 몰려도 납기를 지킨다.</p>
-        <div class="kpi">지표 · 내부 가동률 기준선 (확인 필요)</div></div>
+    <div class="sec-h"><span class="sec-n">03</span><h2>팀 운영</h2>
+      <span class="sec-note">세일즈기획이 수주하고, 프로덕션이 내부 + 외주로 수행</span></div>
+    <div class="why-box">10명으로 VR · 하드웨어 · 개발 · CG · 영상 · 전시까지 <b>체험 마케팅 전 분야를 내부 인원만으로 커버할 수는 없다.</b>
+      그래서 앞단의 세일즈기획은 분야를 가리지 않고 수주하고, 프로덕션은 <b>내부 인원과 외주 인원을 함께 써서 모든 프로젝트를 진행</b>한다.</div>
+
+    <div class="tm">
+      <div class="tm-demand">
+        <div class="k">고객 수요</div>
+        <b>체험 마케팅 전 분야</b>
+        <div class="tm-tags"><span>VR · XR</span><span>하드웨어</span><span>개발</span><span>CG · 영상</span><span>전시 · 콘텐츠</span></div>
+      </div>
+      <div class="tm-arr">→</div>
+      <div class="tm-node s">
+        <div class="k">앞단</div>
+        <b>세일즈기획</b>
+        <span>분야 구분 없이 수주<br>견적 단계 이익 확인</span>
+        <em>Charles · Lucia · Anna</em>
+      </div>
+      <div class="tm-arr">→</div>
+      <div class="tm-prod">
+        <div class="tm-node cx">
+          <div class="k">수행</div>
+          <b>프로덕션 — 모든 프로젝트의 PM</b>
+          <span>건마다 내부 / 외주 배정 · 일정 · 품질 · 원가 책임</span>
+          <em>James · Awesome · Jude · Hani</em>
+        </div>
+        <div class="tm-fork">
+          <div class="tm-in"><div class="k">내부 인원</div><b>핵심 작업</b>
+            <span>기획 · PM · 핵심 개발(옵션몰 · 집뷰) · AI 영상 · 최종 검수</span>
+            <em>프로덕션 + 지원(Rhea · Sianu · Seok)</em></div>
+          <div class="tm-plus">+</div>
+          <div class="tm-out"><div class="k">외주 인원</div><b>물량 작업</b>
+            <span>표준 VR 모델링 · 렌더링 · CG · 영상 물량 · HW 설치 · 시공</span>
+            <em>분야별 협력사 2곳 이상</em></div>
+        </div>
+      </div>
+      <div class="tm-arr">→</div>
+      <div class="tm-node done">
+        <div class="k">결과</div>
+        <b>납품</b>
+        <span>내부 검수 후 납품</span>
+      </div>
+      <div class="tm-loop">← 납품 현장에서 <b>다음 건 제안</b> — 다시 세일즈기획으로 (반복 수주)</div>
     </div>
 
-    <div class="sub-h">역할 · 업무 흐름</div>
-    <div class="flow">
-      <div class="fstep s"><b>제안 · 수주</b><span>세일즈기획 · 견적 단계에서 예상 이익 확인</span></div>
-      <div class="farr">→</div>
-      <div class="fstep cx"><b>착수 · 제작 · 검수 · 납품</b><span>프로덕션 · 내부 제작 + 외주 발주</span></div>
-      <div class="farr">→</div>
-      <div class="fstep s"><b>추가 제안</b><span>세일즈기획 · 납품 현장에서 다음 건</span></div>
-      <div class="fbase sp">지원 — 제안 단계의 기획 자료 · 시연 영상, 수행 단계의 개발 · 영상 · 하드웨어를 양쪽에 공급</div>
-    </div>
-    <div class="roles">
-      <div class="role s"><div class="dept-card">
-        <div class="dept-h"><b>세일즈기획 (고객대응)</b><span>Charles · Lucia · Anna</span></div>
-        <ul class="rl-list">
-          <li><b>Charles</b> — 실 총괄 · 1억 이상 대형 HW 결합 건 · 해모로(HJ) · 위너케이</li>
-          <li><b>Lucia</b> — 비건설 계정(삼성전자 2027) · 반도건설</li>
-          <li><b>Anna</b> — 동부건설 다음 현장 · GS 옵션몰 · 소요한남(브릭스)</li>
-          <li>견적 전에 <b>외주 원가를 먼저 받아 예상 이익</b>을 확인한 뒤 가격을 낸다</li>
-        </ul></div></div>
-      <div class="role cx"><div class="dept-card">
-        <div class="dept-h"><b>프로덕션 (PM, 제작)</b><span>James 외 3명</span></div>
-        <ul class="rl-list">
-          <li>모든 수주 건의 <b>PM과 최종 검수</b>를 맡는다 — 외주 건도 품질 책임은 내부</li>
-          <li>건별로 <b>내부 제작 / 외주를 배정</b>하고, 외주 발주의 단일 창구가 된다</li>
-          <li>완료 시 <b>실제 원가 · 이익을 정산</b>해 월간 리뷰에 보고</li>
-        </ul></div></div>
-      <div class="role sp"><div class="dept-card">
-        <div class="dept-h"><b>지원 (개발, 영상, 하드웨어)</b><span>Rhea · Sianu · Seok</span></div>
-        <ul class="rl-list">
-          <li>제안서용 <b>기획 자료 · 시연 영상</b> 제작으로 수주 단계 지원</li>
-          <li>옵션몰 · 집뷰 솔루션 개발 — <b>외주가 대신하기 어려운 핵심 영역</b></li>
-          <li>대형 HW 건의 사양 정리와 <b>설치 협력사</b> 관리</li>
-        </ul></div></div>
-    </div>
     <div class="sub-h">운영 원칙</div>
     <div class="prin">
-      <div><b>매주 맞춘다</b><span>주간 회의로 수주 현황과 제작 일정을 함께 본다</span></div>
-      <div><b>이익으로 판단한다</b><span>예상 이익이 기준에 못 미치는 건은 실장이 결정한다</span></div>
-      <div><b>외주 창구는 하나</b><span>외주 발주와 관리는 프로덕션이 맡는다</span></div>
+      <div><b>수주는 줄이지 않는다</b><span>내부 인력이 차면 외주로 수행 범위를 넓힌다</span></div>
+      <div><b>품질 · 원가는 내부가 책임</b><span>외주 건도 PM · 검수 · 이익 정산은 프로덕션이 맡는다</span></div>
+      <div><b>매주 맞춘다</b><span>주간 회의로 수주 현황과 제작 · 외주 일정을 함께 본다</span></div>
     </div>
-    <p class="foot">※ 담당 배정은 3분기 실제 수주 담당 기준이다.</p>
+    <p class="foot">※ 4분기 매출 목표를 채우면 프로덕션 1인당 약 8.5건(3분기 5.3건)을 맡게 된다.</p>
   </section>
 
   <!-- 4. 4분기 매출 목표 -->
@@ -495,14 +504,7 @@
         <div><div class="k">4분기 프로덕션 1인당</div><div class="v warn-v">약 8.5건</div><div class="d">3분기 수주분 납품과 겹침</div></div>
       </div>
       <p>목표를 채우면 수행할 일이 3분기의 1.6배가 되고, 3분기에 수주한 21건의 납품도 겹친다. <b>내부 인력만으로는 다 할 수 없다.</b>
-      그래서 수주를 줄이지 않고, 광고대행사처럼 <b>내부는 기획 · PM · 검수를 쥐고 제작 물량은 외주 협력사로 넓힌다.</b> 대신 건마다 남는 이익을 관리해야 한다.</p>
-    </div>
-
-    <div class="split">
-      <div class="in"><div class="k">내부가 쥔다</div>
-        <div class="chips"><span>고객 대응 · 기획 · PM</span><span>핵심 개발 (옵션몰 · 집뷰)</span><span>최종 검수</span></div></div>
-      <div class="out"><div class="k">외주로 넓힌다</div>
-        <div class="chips"><span>표준 VR 모델링 · 렌더링</span><span>CG · 영상 물량</span><span>HW 설치 · 시공</span></div></div>
+      그래서 03의 구조처럼 <b>제작 물량은 외주로 넓히고</b>, 대신 건마다 남는 이익을 관리해야 한다.</p>
     </div>
 
     <div class="sub-h">매출총이익 관리</div>
