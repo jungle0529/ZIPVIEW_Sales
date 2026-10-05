@@ -232,6 +232,34 @@
   .prin>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
   .prin b{display:block;font-size:15px;font-weight:800;color:var(--accent)}
   .prin span{display:block;font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.55;word-break:keep-all}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  .split>div{border-radius:14px;padding:16px 18px}
+  .split .in{background:var(--accent-soft)}.split .out{background:var(--gold-soft)}
+  .split .k{font-size:14px;font-weight:800;margin-bottom:10px}
+  .split .in .k{color:var(--accent)}.split .out .k{color:var(--gold)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips span{background:var(--card);border-radius:8px;padding:5px 10px;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .sens{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:12px;box-shadow:var(--shadow)}
+  .sens .lbl{font-size:12px;font-weight:700;color:var(--muted)}
+  .sens .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .sens .row>div{border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  .sens .row>div.hl{background:var(--accent-soft);border-color:var(--accent)}
+  .sens i{display:block;font-style:normal;font-size:12px;color:var(--muted);font-weight:600}
+  .sens .row b{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+  .sens p{font-size:13px;color:var(--ink-soft);margin-top:10px}
+  .pstrat{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .ps{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:8px}
+  .ps .t{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800}
+  .ps .t span{width:24px;height:24px;border-radius:7px;background:var(--accent);color:#fff;font-size:12px;
+    display:flex;align-items:center;justify-content:center;flex:none}
+  .ps p{font-size:12.8px;color:var(--ink-soft);line-height:1.6;word-break:keep-all;flex:1}
+  .ps p b{color:var(--ink)}
+  .ps .ev2{font-size:12px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+  .ps .tg{font-size:11.5px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:8px;padding:5px 9px}
+  .ps .demo{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none}
+  .ps .demo:hover{text-decoration:underline}
+  .prin.mk{grid-template-columns:repeat(4,1fr)}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -258,7 +286,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.split,.pstrat{grid-template-columns:1fr}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
@@ -470,396 +498,108 @@
       그래서 수주를 줄이지 않고, 광고대행사처럼 <b>내부는 기획 · PM · 검수를 쥐고 제작 물량은 외주 협력사로 넓힌다.</b> 대신 건마다 남는 이익을 관리해야 한다.</p>
     </div>
 
-    <div class="cols" style="margin-top:16px">
-      <div class="listcard"><h3><span class="dot"></span>내부에서 하는 일 — 차별화 · 품질 책임</h3>
-        <ul>
-          <li><b>고객 대응 · 기획 · PM</b> — 고객 관계와 범위 관리는 넘기지 않는다</li>
-          <li><b>옵션몰 · 집뷰 솔루션 개발</b> — 견적 엔진 · 데이터 모델 등 외주 업체가 쉽게 복제하지 못하는 영역</li>
-          <li><b>AI 영상 등 표준화된 자체 제작물</b> — 반복 제작으로 원가를 낮출 수 있는 영역</li>
-          <li><b>최종 검수 · 납품</b> — 외주 건도 품질 책임은 내부</li>
-        </ul></div>
-      <div class="listcard"><h3><span class="dot" style="background:var(--gold)"></span>외주로 맡기는 일 — 표준 · 반복 · 물량</h3>
-        <ul>
-          <li><b>표준 유닛 VR 모델링 · 렌더링</b> — 외주 업체가 많고 단가가 평준화된 영역</li>
-          <li><b>CG · 영상 촬영 · 편집</b> 등 물량이 많은 작업</li>
-          <li><b>투명 LED · 키오스크 설치 · 시공</b> — 장비 매입과 현장 설치</li>
-          <li>내부 일정이 꽉 찬 시기의 <b>초과 물량</b></li>
-        </ul></div>
+    <div class="split">
+      <div class="in"><div class="k">내부가 쥔다</div>
+        <div class="chips"><span>고객 대응 · 기획 · PM</span><span>핵심 개발 (옵션몰 · 집뷰)</span><span>최종 검수</span></div></div>
+      <div class="out"><div class="k">외주로 넓힌다</div>
+        <div class="chips"><span>표준 VR 모델링 · 렌더링</span><span>CG · 영상 물량</span><span>HW 설치 · 시공</span></div></div>
     </div>
 
-    <div class="sub-h">매출총이익 관리 구조</div>
+    <div class="sub-h">매출총이익 관리</div>
     <div class="gp-eq">
       <div><span>수주 금액</span></div><b>−</b>
       <div><span>직접원가</span><small>외주비 · 장비 매입 · 설치비</small></div><b>=</b>
       <div class="hl"><span>매출총이익</span><small>건별로 관리</small></div>
     </div>
-    <div class="flow" style="margin-top:12px">
-      <div class="fstep s"><b>① 견적</b><span>외주 견적을 먼저 받고 예상 이익률 계산 → 기준 미만이면 가격 · 범위 조정 또는 실장 승인</span></div>
-      <div class="farr">→</div>
-      <div class="fstep cx"><b>② 착수</b><span>협력사 발주 · 발주 금액으로 원가 확정 · 착수 인계서에 기록</span></div>
-      <div class="farr">→</div>
-      <div class="fstep cx"><b>③ 완료</b><span>실제 원가 · 이익 정산 → 예상 대비 차이를 월간 리뷰에 보고</span></div>
+    <div class="prin" style="margin-top:12px">
+      <div><b>① 견적</b><span>외주 원가를 먼저 받고 예상 이익을 확인한다</span></div>
+      <div><b>② 착수</b><span>발주 금액으로 원가를 확정한다</span></div>
+      <div><b>③ 완료</b><span>실제 이익을 정산해 월간 보고한다</span></div>
+    </div>
+    <div class="sens">
+      <div class="lbl">4분기 매출 11.62억 기준 매출총이익</div>
+      <div class="row"><div><i>이익률 30%</i><b>3.49억</b></div><div class="hl"><i>이익률 40%</i><b>4.65억</b></div><div><i>이익률 50%</i><b>5.81억</b></div></div>
+      <p>이익률 10%p 차이 = 매출총이익 <b>1.16억</b> 차이. 외주를 늘릴수록 견적 단계의 이익 확인이 중요하다.</p>
     </div>
 
-    <div class="cols" style="margin-top:16px">
-      <div>
-        <div class="tbl-wrap"><table>
-          <thead><tr><th>상품 유형</th><th>수행 방식</th><th class="num-cell">기준 이익률</th></tr></thead>
-          <tbody>
-            <tr><td>옵션몰 · 솔루션 개발</td><td>내부 중심</td><td class="num-cell">확인 필요</td></tr>
-            <tr><td>VR 사이버 모델하우스</td><td>외주 제작 + 내부 PM · 검수</td><td class="num-cell">확인 필요</td></tr>
-            <tr><td>HW 결합 (투명 LED 등)</td><td>장비 매입 + 설치 외주</td><td class="num-cell">확인 필요</td></tr>
-            <tr><td>영상 · AI 영상</td><td>내부 + 외주</td><td class="num-cell">확인 필요</td></tr>
-          </tbody></table></div>
-        <p class="foot">HW 결합은 금액이 크지만 장비 매입 비중 때문에 이익률은 낮을 수 있다(추정). 금액과 이익률을 함께 본다.</p>
-      </div>
-      <div>
-        <div class="tbl-wrap"><table>
-          <thead><tr><th>4분기 이익률</th><th class="num-cell">매출총이익 (11.62억 기준)</th></tr></thead>
-          <tbody>
-            <tr><td>30%</td><td class="num-cell">3.49억</td></tr>
-            <tr class="row-target"><td>40%</td><td class="num-cell">4.65억</td></tr>
-            <tr><td>50%</td><td class="num-cell">5.81억</td></tr>
-          </tbody></table></div>
-        <p class="foot">이익률이 10%p 달라지면 같은 매출에서 매출총이익이 <b>1.16억</b> 달라진다. 외주를 늘릴수록 수주 단계의 이익 확인이 중요한 이유다.</p>
-      </div>
+    <div class="sub-h">협력사 운영</div>
+    <div class="prin">
+      <div><b>분야별 2곳 이상</b><span>모델링 · 영상 · HW 설치 협력사를 복수로 둔다</span></div>
+      <div><b>단가 계약</b><span>반복 작업은 원가를 미리 고정한다</span></div>
+      <div><b>수금에 맞춘 지급</b><span>고객 수금 일정에 맞춰 단계별로 지급한다</span></div>
     </div>
-
-    <div class="listcard" style="margin-top:16px"><h3><span class="dot"></span>협력사 운영 원칙</h3>
-      <ul>
-        <li>모델링 · 영상 · HW 설치 <b>분야별로 협력사를 2곳 이상</b> 확보해 일정과 단가를 비교한다</li>
-        <li>반복 작업은 <b>단가 계약</b>으로 원가를 미리 고정한다</li>
-        <li>외주 대금은 <b>고객 수금 일정에 맞춰 단계별</b>로 지급해 현금 부담을 줄인다</li>
-        <li>협력사별 <b>품질 · 납기를 평가</b>해 분기마다 다시 고른다</li>
-      </ul></div>
-    <p class="foot">※ 상품별 실제 원가율과 외주 비중 데이터가 없어 기준 이익률은 비워 두었다. 1~3분기 건별 원가 자료를 받으면 상품별 기준과 4분기 매출총이익 목표를 채운다.</p>
+    <p class="foot">※ 상품별 실제 원가율 자료가 들어오면 4분기 매출총이익 목표를 확정한다.</p>
   </section>
 
   <!-- 6. 4분기 실행 전략 -->
   <section>
     <div class="sec-h"><span class="sec-n">06</span><h2>4분기 실행 전략</h2>
-      <span class="sec-note">세일즈 방향성 · 우선순위 · 상품 전략 · 마케팅</span></div>
+      <span class="sec-note">세일즈 방향성 · 우선순위 · 상품 · 마케팅</span></div>
 
     <div class="sub-h">세일즈 방향성</div>
     <div class="ogoals" style="margin-bottom:8px">
       <div class="og"><div class="n">1</div><h3>체험 마케팅 원스톱 제안</h3>
-        <p>한 고객에게 VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다. 단품 VR 견적으로 끝내지 않는다.</p>
+        <p>VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다.</p>
         <div class="kpi">지표 · 2개 이상 영역 결합 제안 비중</div></div>
       <div class="og"><div class="n">2</div><h3>수주는 줄이지 않는다</h3>
-        <p>내부 인력이 모자라도 <b>수주 범위를 인력에 맞추지 않는다.</b> 광고대행사처럼 외주 협력사로 수행 범위를 넓힌다.</p>
+        <p>인력이 모자라면 <b>외주로 수행 범위를 넓힌다.</b></p>
         <div class="kpi">지표 · 분기 수주 건수 · 금액</div></div>
       <div class="og"><div class="n">3</div><h3>이익을 확인하고 수주</h3>
-        <p>견적 전에 외주 원가를 받아 <b>예상 매출총이익</b>을 확인한다. 기준에 못 미치면 가격 · 범위를 조정하거나 실장 승인을 받는다.</p>
+        <p>견적 전에 <b>예상 매출총이익</b>을 확인한다.</p>
         <div class="kpi">지표 · 견적 단계 이익 확인률 100%</div></div>
       <div class="og"><div class="n">4</div><h3>반복 수주 고객 만들기</h3>
-        <p>납품 현장에서 다음 건을 제안해 <b>한 번 거래한 고객이 다시 맡기게</b> 한다. 동문 · 동부 · HJ중공업이 이미 보여준 방식이다.</p>
-        <div class="kpi">지표 · 재수주 고객 수 · 납품 후 추가 제안 건수</div></div>
+        <p>납품 현장에서 <b>다음 건을 제안</b>한다. 동문 · 동부 · HJ중공업이 보여준 방식이다.</p>
+        <div class="kpi">지표 · 재수주 고객 수</div></div>
     </div>
 
     <div class="sub-h">4분기 우선순위</div>
     <div class="levers">
       <div class="lever"><div class="num">1</div>
-        <h3>3분기 신규 고객사에서 다음 현장 따내기</h3>
-        <p>동부건설 · HJ중공업(해모로)은 이미 2개 현장을 연달아 맡겼고, 상반기 동문건설도 같은 방식으로 3개 현장을 수주했다. 동부 · HJ · 반도 · 위너케이의 <b>4분기 분양 예정 현장을 먼저 찾아 선제 제안</b>한다.</p>
-        <span class="ev">대상 4개사 · 3분기 3.81억</span></div>
+        <h3>신규 고객사의 다음 현장</h3>
+        <p>3분기에 새로 연 동부 · HJ중공업 · 반도 · 위너케이의 <b>4분기 분양 현장에 먼저 제안</b>한다.</p>
+        <span class="ev">4개사 · 3분기 3.81억</span></div>
       <div class="lever"><div class="num">2</div>
-        <h3>1억 이상 대형 건 되살리기</h3>
-        <p>4분기 분양 대단지에 <b>투명 LED · 키오스크 결합 패키지</b>를 모델하우스 협의 단계부터 제안한다. 대상 후보는 성남 상대원2(DL, 10월 · 1,866세대), 포항 장성동 · 대구 노원2 · 광주 양동3(11월), 래미안 마크더스위트(삼성물산, 12월)다.</p>
-        <span class="ev">목표 달성 = 대형 건 3건 · 상태 확인 필요</span></div>
+        <h3>1억 이상 대형 건 3건</h3>
+        <p>4분기 분양 대단지에 <b>HW 결합 패키지</b>를 모델하우스 협의 단계부터 제안한다.</p>
+        <span class="ev">성남 상대원2 · 포항 · 대구 · 광주 · 래미안 마크더스위트</span></div>
       <div class="lever"><div class="num">3</div>
         <h3>멈춘 협의 건 정리</h3>
-        <p>6월 협의 9건 중 남은 8건(송도 G5 옵션몰 추가 · 계룡 평택/천안 · 삼성물산 목동 · 이편한세상 당산 · 포레나 평택/창원 · SM그룹 인천)을 <b>10월 중 진행 / 연기 / 종료로 판정</b>한다. 진행 중인 건만 4분기 클로징 목록에 남긴다.</p>
-        <span class="ev">10월 판정 · 8건 액면 5.59억</span></div>
+        <p>6월 협의 8건을 10월 중 <b>진행 / 연기 / 종료로 판정</b>하고, 살아 있는 건만 클로징한다.</p>
+        <span class="ev">8건 · 액면 5.59억</span></div>
       <div class="lever"><div class="num">4</div>
         <h3>비건설 계정 넓히기</h3>
-        <p>삼성 디자인센터는 상반기(4월) · 하반기(9월) 두 번 계약됐다. <b>2027년 상반기 건을 4분기 안에 미리 확보</b>하고, 올리브영 티커영상처럼 정기 정산되는 건은 유지한다. 동시에 새 비건설 고객을 늘려 삼성전자 비중을 낮춘다.</p>
+        <p>삼성 디자인센터 <b>2027 상반기 건을 미리 확보</b>하고, 새 비건설 고객으로 삼성 비중을 낮춘다.</p>
         <span class="ev">삼성 비중 44% → 분산</span></div>
     </div>
 
-    <div class="sub-h">상품 전략 — 6월 수립, 4분기에도 이어서 진행</div>
-    <p class="foot" style="margin:-4px 0 14px">※ 아래 사업지 목록은 6월 기준으로 뽑은 것이다. 거제 옥포동은 8월에 수주(8,490만원)했고, 나머지는 4분기 제안 전에 상태를 다시 확인해야 한다.</p>
-
-    <!-- 전략 1: 하이브리드 옵션몰 (도식 장표) -->
-    <div class="panel" style="border-top:3px solid var(--accent)">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">A</span>
-        <span style="font-size:17px;font-weight:800">하이브리드 옵션몰</span>
-      </div>
-      <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
-        분양 때 만든 VR을 <b>옵션행사 단계에서 그대로 다시 활용</b>하는 방식. 분양에는 핵심 타입만 VR로 만들고,
-        옵션행사에는 그 VR을 연계해 나머지 타입을 목록형으로 더해 <b>고객이 직접 옵션을 고르고 견적까지 확인</b>한다.</p>
-
-      <!-- 도식 -->
-      <div style="display:flex;align-items:stretch;gap:0;flex-wrap:wrap">
-        <div style="flex:1;min-width:220px;background:var(--accent-soft);border-radius:12px;padding:16px 18px">
-          <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:8px">1단계 · 분양</div>
-          <div style="font-size:13.5px;color:var(--ink);font-weight:700;margin-bottom:4px">핵심 타입만 VR 제작</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">예: 84A · 84B 등 대표 타입<br>사이버 모델하우스에 활용</div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 14px;min-width:110px">
-          <div style="font-size:11.5px;font-weight:700;color:var(--accent)">VR 그대로</div>
-          <div style="font-size:24px;color:var(--accent);line-height:1.1">→</div>
-          <div style="font-size:11.5px;font-weight:700;color:var(--accent)">연계 · 재활용</div>
-        </div>
-        <div style="flex:1;min-width:220px;background:#F2F5F4;border-radius:12px;padding:16px 18px">
-          <div style="font-size:12px;font-weight:800;color:var(--ink-soft);margin-bottom:8px">2단계 · 옵션행사</div>
-          <div style="font-size:13.5px;color:var(--ink);font-weight:700;margin-bottom:4px">같은 VR 재사용 + 나머지 타입 목록형 추가</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">고객이 직접 옵션 선택 → 실시간 견적 확인</div>
-        </div>
-      </div>
-
-      <!-- 효과 -->
-      <div style="background:var(--gold-soft);border-radius:10px;padding:13px 16px;margin-top:14px;font-size:13px;color:var(--ink);line-height:1.65">
-        <b>핵심 효과</b> — 한 번 만든 VR을 분양·옵션행사 <b>두 단계에서 활용</b> → 고객 입장에서 제작비 절감,
-        같은 콘텐츠를 더 다양하게 써서 <b>일회성으로 소모되지 않음</b>.</div>
-
-      <!-- 영업 기회 -->
-      <div style="background:var(--accent-soft);border-radius:10px;padding:13px 16px;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.65">
-        💡 <b>영업 기회</b> — 분양 VR이 있고 <b>옵션행사가 남은 사업지</b>는 적은 추가 비용으로 옵션몰을
-        얹는 <b>추가 제안</b>이 가능. (진행 중인 사업지를 점검해 옵션몰 제안 대상으로 리스트화)</div>
-
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px">
-        <div style="font-size:12px;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:7px 11px;border-radius:7px">
-          참고 예시 · 송도 G5 : 분양 VR 5,800만 → 옵션 솔루션 추가로 9,400만 / GS 옵션몰 · 엘리프 세종 옵션행사</div>
-        <a href="https://htmlpreview.github.io/?https://github.com/jungle0529/Option-Mall/blob/claude/gifted-brahmagupta-accsi0/prototype/index.html?v=3" target="_blank" rel="noopener"
-           style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#fff;background:var(--accent);padding:8px 14px;border-radius:8px;text-decoration:none">▶ 옵션몰 솔루션 데모 보기</a>
-      </div>
-
-      <div style="margin-top:18px;border-top:1px dashed var(--line);padding-top:16px">
-        <div style="font-size:14px;font-weight:800;margin-bottom:4px">옵션몰 추가 제안 가능 사업지 (예상 견적)</div>
-        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">
-          분양 VR이 있거나 <b>분양 예정</b>인 사업지 중 옵션몰을 제안할 수 있는 곳. 사업지당 개발비 약 <b>3,000만원</b> 가정(확인 필요).</p>
-        <div class="tbl-wrap"><table>
-          <thead><tr><th>사업지</th><th>고객사</th><th>상태</th><th class="num-cell">옵션몰 추가(예상)</th></tr></thead>
-          <tbody>
-            <tr><td>포레나힐스테이트진주</td><td>(주)한화</td><td>분양 VR 진행 중 → 옵션몰 추가 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>오산세교2 A-5BL</td><td>우미건설</td><td>분양 VR 진행 중 → 옵션몰 추가 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>포레나평택</td><td>(주)한화</td><td>하반기 분양예정 · 옵션몰 결합 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>포레나창원</td><td>(주)한화</td><td>하반기 분양예정 · 옵션몰 결합 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>이천 가좌2지구 공동주택</td><td>동문건설</td><td>하반기 분양예정 · 옵션몰 결합 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>KTX울산역 복합특화단지 A3블록</td><td>동문건설</td><td>하반기 분양예정 · 옵션몰 결합 제안</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>대구 노원2재개발</td><td>포스코이앤씨</td><td>분양예정 · G5 성과 후 확대 기대</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>포항 장성동 재개발</td><td>포스코이앤씨</td><td>분양예정 · G5 성과 후 확대 기대</td><td class="num-cell">30,000,000</td></tr>
-            <tr><td>광주 양동3구역 재개발</td><td>포스코이앤씨</td><td>분양예정 · G5 성과 후 확대 기대</td><td class="num-cell">30,000,000</td></tr>
-            <tr style="border-top:2px solid var(--line)"><td colspan="3"><b>합계 (9개 사업지)</b></td><td class="num-cell"><b>270,000,000</b></td></tr>
-          </tbody>
-        </table></div>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px">
-          ※ 사업지당 3,000만원 = 계룡 사례 기준 <b>개발비 2,500만원 + 콘텐츠 제작비 500만원</b>을 일괄 적용한 추정치. 실제 프로젝트 진행 시 타입 수·범위에 따라 변동될 수 있음.</p>
-      </div>
+    <div class="sub-h">상품 전략</div>
+    <div class="pstrat">
+      <div class="ps"><div class="t"><span>A</span>하이브리드 옵션몰</div>
+        <p>분양 때 만든 VR을 <b>옵션행사에 다시 활용</b>해, 고객이 직접 옵션을 고르고 견적을 확인하게 한다.</p>
+        <div class="ev2">송도 G5 5,800만 → 옵션몰 추가로 9,400만</div>
+        <div class="tg">6월 발굴 9곳 · 예상 2.7억</div>
+        <a class="demo" href="https://htmlpreview.github.io/?https://github.com/jungle0529/Option-Mall/blob/claude/gifted-brahmagupta-accsi0/prototype/index.html?v=3" target="_blank" rel="noopener">옵션몰 데모 보기 →</a></div>
+      <div class="ps"><div class="t"><span>B</span>하드웨어 결합</div>
+        <p>투명 LED · 키오스크 + VR + 체험 연출을 묶어 <b>모델하우스 협의 단계부터</b> 제안한다.</p>
+        <div class="ev2">거제 상동 5,600만 → HW 결합으로 2.06억</div>
+        <div class="tg">6월 발굴 8곳 · 예상 4.0억 · 거제 옥포동 수주</div></div>
+      <div class="ps"><div class="t"><span>C</span>AI 영상</div>
+        <p>분양용으로 이미 만든 <b>CG를 AI 영상으로</b> 만든다. 추가 촬영 없이 저가로 제안할 수 있다.</p>
+        <div class="ev2">건당 1,500 ~ 2,000만</div>
+        <div class="tg">6월 발굴 10곳 · 예상 2.0억</div></div>
+      <div class="ps"><div class="t"><span>D</span>사인업체 컨소시엄</div>
+        <p>모델하우스 사인 · 인테리어 업체의 <b>영업망을 채널로</b> 써서 HW 결합 패키지를 넓힌다.</p>
+        <div class="ev2">업체당 연 5개 이상 현장</div>
+        <div class="tg">파트너 리서치부터 착수</div></div>
     </div>
+    <p class="foot">※ 대상 사업지와 예상 금액은 6월 발굴 기준이며, 4분기 제안 전에 상태를 다시 확인한다.</p>
 
-    <!-- 전략 2: 하드웨어 결합 상품 (도식 장표) -->
-    <div class="panel" style="border-top:3px solid var(--accent);margin-top:16px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">B</span>
-        <span style="font-size:17px;font-weight:800">하드웨어 결합 상품 판매</span>
-      </div>
-      <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
-        단순히 하드웨어를 파는 게 아니라, <b>하드웨어 + VR + 체험 마케팅 서비스</b>를 하나로 묶어 제안한다.
-        모델하우스를 '보는 곳'에서 '체험하는 곳'으로 바꿔, 1건당 금액을 콘텐츠 단독 대비 크게 끌어올린다.</p>
-
-      <!-- 결합 구성 도식 -->
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <div style="flex:1;min-width:150px;background:var(--accent-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:6px">하드웨어</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">투명 LED · 키오스크 · 사이니지 등<br>(다양한 HW 리서치 · 발굴)</div>
-        </div>
-        <div style="font-size:20px;color:var(--accent);font-weight:800">+</div>
-        <div style="flex:1;min-width:150px;background:var(--accent-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:6px">VR 콘텐츠 결합</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">커뮤니티 · 유닛 VR을 하드웨어에 연동</div>
-        </div>
-        <div style="font-size:20px;color:var(--accent);font-weight:800">+</div>
-        <div style="flex:1;min-width:150px;background:var(--accent-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:6px">체험 마케팅 서비스</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">현장 체험형 연출 등 특별 제안</div>
-        </div>
-      </div>
-      <div style="text-align:center;font-size:13px;color:var(--ink);font-weight:700;margin-top:12px">
-        ↓ 단순 하드웨어 납품이 아닌 <span style="color:var(--accent)">'체험 마케팅 솔루션'</span>으로 제안</div>
-
-      <!-- 효과 -->
-      <div style="background:var(--gold-soft);border-radius:10px;padding:13px 16px;margin-top:12px;font-size:13px;color:var(--ink);line-height:1.65">
-        <b>핵심 효과</b> — 콘텐츠 단독 4~6천만원 → 하드웨어 결합 시 <b>1.4억원+</b>. 1건당 금액이 3배 이상으로.</div>
-
-      <!-- 영업 포인트 -->
-      <div style="background:var(--accent-soft);border-radius:10px;padding:13px 16px;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.75">
-        <b>대상</b> — 모델하우스 비용 산정을 진행하는 <b>시행사</b> (예: 한국토지신탁 · 신영 · 포스코 등).<br>
-        <b>진입 시점</b> — <b>모델하우스 건립 협의 단계</b>부터 올림플래닛이 들어가 하드웨어를 제안 → 설계 초기에 반영돼 채택률이 높아짐.</div>
-
-      <p style="font-size:12.5px;color:var(--ink-soft);margin-top:12px;line-height:1.65">
-        ※ <b>하드웨어 라인업 확장</b> — 사이니지에 국한하지 않고 다양한 하드웨어를 지속 리서치·발굴해 제안. 올림의 강점은 하드웨어 단독 판매가 아니라, <b>하드웨어 + 콘텐츠를 결합</b>해 고부가가치 체험 솔루션으로 만드는 데 있음.</p>
-
-      <div style="display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:5px 11px;border-radius:7px">
-        참고 예시 · 거제 상동 : 하드웨어 + 커뮤니티 영상 5,600만 → 사이니지 추가 결합으로 2.06억 (3.7배)</div>
-
-      <div style="margin-top:18px;border-top:1px dashed var(--line);padding-top:16px">
-        <div style="font-size:14px;font-weight:800;margin-bottom:4px">하드웨어 결합 제안 타겟 — 9~12월 분양 예정 (예상 견적)</div>
-        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">
-          9~12월 분양 예정 대단지 중 모델하우스 HW 결합이 가능한 사업지. 거제 상동 사례 기준 투명 LED 결합 시 콘텐츠 단독 대비 <b>3~5배</b> deal size 확대(확인 필요).</p>
-        <div class="tbl-wrap"><table>
-          <thead><tr><th>사업지</th><th>시공사·발주처</th><th class="num-cell">일반분양</th><th>접점 · 분양시기</th><th>제안 HW</th><th class="num-cell">예상 견적</th></tr></thead>
-          <tbody>
-            <tr><td>거제 옥포동 공동주택</td><td>현대ENG</td><td class="num-cell">1,963</td><td>거제상동 LED 레퍼런스 · 9월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>디에이치 클래스트(반포)</td><td>현대건설</td><td class="num-cell">1,803</td><td>오티에르 반포 XR 레퍼런스 · 9월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>중계본동(백사마을)</td><td>GS건설</td><td class="num-cell">1,335</td><td>GS 옵션몰 기존 고객 · 9월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>대전 도마변동 3구역</td><td>파트너 채널(주간사)</td><td class="num-cell">2,364</td><td>분양마케팅그룹 경유 · 9월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>성남 상대원2구역</td><td>DL이앤씨</td><td class="num-cell">1,866</td><td>이편한세상 당산 협의 中 · 10월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>포항 장성동 재개발</td><td>파트너 채널(당사)</td><td class="num-cell">1,935</td><td>분양마케팅그룹 경유 · 11월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>대구 노원2재개발</td><td>파트너 채널(당사)</td><td class="num-cell">1,035</td><td>분양마케팅그룹 경유 · 11월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr><td>광주 양동3구역 재개발</td><td>파트너 채널(당사)</td><td class="num-cell">781</td><td>분양마케팅그룹 경유 · 11월</td><td>사이니지 + VR 결합</td><td class="num-cell">50,000,000</td></tr>
-            <tr style="border-top:2px solid var(--line)"><td colspan="5"><b>합계 (8개 사업지)</b></td><td class="num-cell"><b>400,000,000</b></td></tr>
-          </tbody>
-        </table></div>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px">
-          ※ 사업지당 5,000만원 = 거제 상동 사이니지 추가건(투명 LED 2면 + 설치) 기준 일괄 추정치. 투명 LED 수량·사양에 따라 변동(확인 필요). 거제 옥포동·디에이치 클래스트는 대형 HW deal로 확대 시 1.4억+까지 가능.</p>
-      </div>
-    </div>
-
-    <!-- 전략 3: AI 영상 (도식 장표) -->
-    <div class="panel" style="border-top:3px solid var(--accent);margin-top:16px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">C</span>
-        <span style="font-size:17px;font-weight:800">AI 영상 적극 도입</span>
-      </div>
-      <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
-        분양을 위해 <b>어차피 제작하는 CG</b>를 활용해 AI 영상을 만들어 판매한다. 추가 촬영·모델링 없이 보유 CG 기반이라
-        제작 부담이 작고, Full 3D 건축영상 대비 저가라 가격 경쟁력이 높다.</p>
-
-      <!-- 도식 -->
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <div style="flex:1;min-width:160px;background:var(--accent-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:6px">분양용 CG</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">분양 위해 어차피 제작<br>(추가 비용 없이 보유)</div>
-        </div>
-        <div style="font-size:22px;color:var(--accent);font-weight:800">→</div>
-        <div style="flex:1;min-width:160px;background:#F2F5F4;border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--ink-soft);margin-bottom:6px">AI 영상화</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">보유 CG를 AI로 영상 제작</div>
-        </div>
-        <div style="font-size:22px;color:var(--accent);font-weight:800">→</div>
-        <div style="flex:1;min-width:160px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">추가 매출</div>
-          <div style="font-size:12.5px;color:var(--ink)">건당 1,500 ~ 2,000만원</div>
-        </div>
-      </div>
-
-      <!-- 효과 -->
-      <div style="background:var(--gold-soft);border-radius:10px;padding:13px 16px;margin-top:14px;font-size:13px;color:var(--ink);line-height:1.65">
-        <b>핵심 효과</b> — 이미 만든 CG를 재활용해 제작 부담 최소. Full 3D 건축영상(고가) 대비 <b>저가</b>라 도입 문턱이 낮음.</div>
-
-      <!-- 대상 -->
-      <div style="background:var(--accent-soft);border-radius:10px;padding:13px 16px;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.7">
-        <b>대상</b> — <b>CG만 진행하고 영상은 진행하지 않은 사업지</b>. 기존·진행 사업지를 전수 점검해 AI 영상 추가 제안(대상 선별 필요 · 확인 필요).</div>
-
-      <div style="display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:5px 11px;border-radius:7px">
-        참고 예시 · 코오롱 상인천 · 코오롱 엄궁 : 분양 CG를 활용한 AI 영상 제작</div>
-
-      <div style="margin-top:18px;border-top:1px dashed var(--line);padding-top:16px">
-        <div style="font-size:14px;font-weight:800;margin-bottom:4px">AI 영상 추가 제안 가능 사업지 — 1,000세대 이상 대단지 (예상 견적)</div>
-        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">
-          분양 PJT 현황 + 시공사 공급계획 중 <b>1,000세대 이상</b>이면서 하반기 분양 예정인 사업지를 우리 관계 우선으로 선별. 컷수 많은 대단지 기준 사업지당 약 <b>2,000만원</b> 가정(확인 필요).</p>
-        <div class="tbl-wrap"><table>
-          <thead><tr><th>사업지</th><th>시공사·발주처</th><th class="num-cell">일반분양</th><th>접점 · 상태</th><th class="num-cell">AI 영상(예상)</th></tr></thead>
-          <tbody>
-            <tr><td>거제 옥포동 공동주택</td><td>현대ENG</td><td class="num-cell">1,963</td><td>거제상동 LED 레퍼런스 인접 · 9월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>디에이치 클래스트(반포)</td><td>현대건설</td><td class="num-cell">1,803</td><td>오티에르 반포 XR 레퍼런스 · 9월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>중계본동(백사마을)</td><td>GS건설</td><td class="num-cell">1,335</td><td>GS 옵션몰 기존 고객 · 3분기</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>성남 상대원2구역</td><td>DL이앤씨</td><td class="num-cell">1,866</td><td>이편한세상 당산 협의 中 · 10월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>천안 성정동</td><td>대우건설</td><td class="num-cell">1,438</td><td>신규 접점 · <b>7월 분양 임박</b></td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>대전 도마변동 3구역</td><td>파트너 채널(주간사)</td><td class="num-cell">2,364</td><td>분양마케팅그룹 경유 · 9월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>포항 장성동 재개발</td><td>파트너 채널(당사)</td><td class="num-cell">1,935</td><td>분양마케팅그룹 경유 · 11월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>천안 대흥4구역 재개발</td><td>파트너 채널(당사)</td><td class="num-cell">2,050</td><td>분양마케팅그룹 경유 · 시기 미정</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>대구 노원2재개발</td><td>파트너 채널(당사)</td><td class="num-cell">1,035</td><td>분양마케팅그룹 경유 · 11월</td><td class="num-cell">20,000,000</td></tr>
-            <tr><td>광주 양동3구역 재개발</td><td>파트너 채널(당사)</td><td class="num-cell">781</td><td>분양마케팅그룹 경유 · 11월</td><td class="num-cell">20,000,000</td></tr>
-            <tr style="border-top:2px solid var(--line)"><td colspan="4"><b>합계 (10개 사업지)</b></td><td class="num-cell"><b>200,000,000</b></td></tr>
-          </tbody>
-        </table></div>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px">
-          ※ 사업지당 2,000만원 = AI 영상 실판매 사례(1,500~2,000만원) 상단 적용 추정치. 컷수·분량 확정 후 제작팀 협의로 변동. 검단레이크파크·분당 느티마을 등 <b>이미 분양 완료된 1,000세대+ 단지</b>는 AI 영상 대신 옵션몰 전환 대상으로 분류.</p>
-      </div>
-    </div>
-
-    <!-- 전략 4: 모델하우스 사인업체 컨소시엄 -->
-    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--gold);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">D</span>
-        <span style="font-size:17px;font-weight:800">모델하우스 사인업체 컨소시엄</span>
-      </div>
-      <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
-        모델하우스 사인·인테리어 업체와 컨소시엄을 구성해 <b>HW 결합 패키지를 사인업체의 영업망을 통해 확대</b>한다.
-        사인업체는 업체당 모델하우스 5개 이상을 연간 담당하므로, 채널 파트너십 1곳이 곧 5개+ 신규 현장 파이프라인이 된다.</p>
-
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">사인업체 영업망</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">업체당 5개+ 현장 연간 진행<br>1개 현장 평균 1~4억 규모 (확인 필요)</div>
-        </div>
-        <div style="font-size:20px;color:var(--gold);font-weight:800">+</div>
-        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">집뷰 HW 결합 패키지</div>
-          <div style="font-size:12.5px;color:var(--ink-soft)">사이니지 + VR 콘텐츠<br>+ 체험 마케팅 서비스</div>
-        </div>
-        <div style="font-size:20px;color:var(--gold);font-weight:800">=</div>
-        <div style="flex:1;min-width:150px;background:var(--gold-soft);border-radius:12px;padding:14px 16px">
-          <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">채널 확장 · deal 규모화</div>
-          <div style="font-size:12.5px;color:var(--ink)">직접 영업 외 채널 영업으로<br>단기 파이프라인 대규모 확대</div>
-        </div>
-      </div>
-
-      <div style="background:var(--gold-soft);border-radius:10px;padding:13px 16px;margin-top:14px;font-size:13px;color:var(--ink);line-height:1.65">
-        <b>핵심 효과</b> — 사인업체 1곳 파트너십 → 연간 5개+ 현장 × HW 결합 패키지. 직접 발굴 없이 <b>채널을 통해 접점을 단기간에 수배로 확장</b>할 수 있는 구조.</div>
-
-      <div style="background:var(--accent-soft);border-radius:10px;padding:13px 16px;margin-top:10px;font-size:13px;color:var(--ink);line-height:1.7">
-        <b>확장 시나리오</b> — 기존 상품(하이브리드 옵션몰) 20~30억 + 사인업체 컨소시엄을 통한 하드웨어 결합 확대 15~25억 →
-        <b style="color:var(--accent)">총 매출 목표 40~60억</b> 도전 가능 (확인 필요 · 파트너 수·계약 조건에 따라 변동).</div>
-
-      <p style="font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.65">
-        ※ 사인업체 현장 수·단가는 추정치(확인 필요). 컨소시엄 구성 시 수익 배분·브랜딩 정책 결정 필요. 적합한 파트너사 리서치·접선부터 시작.</p>
-    </div>
-
-    <p style="font-size:13px;color:var(--muted);margin-top:14px">
-      아직 안 판 영역 : 옵션몰 고객에게 <b style="color:var(--ink-soft)">시공 단계 · 입주 후 관리(상담) 단계</b>까지
-      추가 판매(분양→입주 전 과정을 묶어 이탈 방지).</p>
-
-    <div class="sub-h">신규 고객 만들기 — 마케팅 (별도 병행)</div>
-    <p class="foot" style="margin:-4px 0 14px">중기 체질 개선 과제로, 4분기 매출에 직접 기여하는 몫은 작다.</p>
-
-    <!-- 상반기 가장 효과적: 포럼 -->
-    <div class="panel" style="border-left:4px solid var(--accent);margin-bottom:16px">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-        <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);padding:3px 10px;border-radius:20px">★ 상반기 최고 효과</span>
-        <span style="font-size:15px;font-weight:800">포럼 — 의사결정자 대면 접점</span>
-      </div>
-      <div class="metrics" style="margin-bottom:12px">
-        <div class="mcard"><div class="t">포럼 참석 기업</div><div class="v">16개</div><div class="d">건설사·시행사·대행사 의사결정자</div></div>
-        <div class="mcard accent"><div class="t">세일즈 미팅 규모</div><div class="v">3억</div><div class="d">포럼 접점 → 실제 제안으로 연결</div></div>
-        <div class="mcard"><div class="t">연간 계약 추진 중</div><div class="v">2곳</div><div class="d">현대엔지니어링 · 우미건설</div></div>
-      </div>
-      <div style="background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--ink)">
-        <b>4분기 방향</b> — 건설 팝업 담당자 / 모델하우스 브랜딩 협업으로 포럼 재진행. 단발성이 아닌 반기 1회 이상 정례화 필요.
-      </div>
-    </div>
-
-    <!-- 4개 채널 -->
-    <div class="levers" style="grid-template-columns:repeat(2,1fr)">
-      <div class="lever"><div class="num" style="background:var(--gold)">A</div>
-        <h3>포럼 정례화</h3>
-        <p>건설·시행·대행사 의사결정자 대면 포럼을 반기 1회 이상 진행. 상반기 1회로 3억 세일즈 미팅·연간 계약 2곳 확보 → <b>가장 직접적인 신규 고객 창구</b>.</p>
-        <span class="ev">반기 1회 이상 · 건설 팝업/브랜딩 협업</span></div>
-      <div class="lever"><div class="num" style="background:var(--gold)">B</div>
-        <h3>홈페이지 개선 <span style="font-weight:600;color:var(--muted);font-size:12px">중심 창구</span></h3>
-        <p>zipview.ai를 납품 실적·상품 소개·<b>문의 양식(문의 고객 정보 수집)</b> 중심으로 개편. 도입사례 업로드로 방문자를 제안 기회로 전환.</p>
-        <span class="ev">도입사례 업로드 최우선</span></div>
-      <div class="lever"><div class="num" style="background:var(--gold)">C</div>
-        <h3>뉴스레터</h3>
-        <p>관계자 DB 1,500명 보유. 오픈율 <b>35.8%</b> · 클릭률 <b>16.4%</b>로 업계 평균 대비 양호하나, 현재 <b>매출 전환 0회</b>. 고객 핵심 키워드 + 도입사례를 연결한 콘텐츠로 CTA 클릭 → 문의 전환 개선이 과제.</p>
-        <span class="ev">오픈율 35.8% · 클릭 16.4% · 전환 개선 필요</span></div>
-      <div class="lever"><div class="num" style="background:var(--gold)">D</div>
-        <h3>유튜브</h3>
-        <p>6월 조회수 7,300회 · 평균 참여시간 8초 · 매출 전환 0회. 현재는 포트폴리오 용도로만 활용 중. 홍보용 편집 재제작으로 체류 시간·CTA 연결을 개선해야 영업 신뢰 자료로서 효과 발휘.</p>
-        <span class="ev">조회 7,300 · 체류 8초 → 홍보 편집 재제작 필요</span></div>
+    <div class="sub-h">마케팅 — 신규 고객 만들기 (병행)</div>
+    <div class="prin mk">
+      <div><b>포럼 정례화</b><span>상반기 1회로 16개사 · 세일즈 미팅 3억 확보 → 반기 1회 이상</span></div>
+      <div><b>홈페이지 개선</b><span>도입사례 · 문의 양식 중심으로 개편</span></div>
+      <div><b>뉴스레터</b><span>DB 1,500명 · 오픈율 35.8% · 매출 전환 0 → 문의 연결 개선</span></div>
+      <div><b>유튜브</b><span>포트폴리오 용도 → 홍보용 편집으로 재제작</span></div>
     </div>
   </section>
 
@@ -869,19 +609,16 @@
     <div class="cols">
       <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
         <ul>
-          <li><b>대형 건 공백</b> — 3분기 건설 1억 이상 0건. 4분기 목표 중 4.37억은 대형 건 몫이라, 이 건들이 없으면 30억은 어렵다</li>
-          <li><b>비건설 집중</b> — 3분기 비건설의 83%가 삼성전자. 2027 계약 시점이 늦어지면 공백이 생긴다</li>
-          <li><b>제작 부하</b> — 3분기 21건 납품과 4분기 약 34건 착수가 겹친다 → 외주로 수행 범위 확대</li>
-          <li><b>외주 확대의 부작용</b> — 품질 · 납기 · 이익률 관리가 어려워진다 → 내부 검수 · 견적 단계 이익 확인</li>
-          <li><b>월 런레이트</b> — 매달 3.87억이 필요해 3분기 최고인 9월(3.25억)보다 높다</li>
+          <li><b>대형 건 공백</b> — 대형 건 3건이 없으면 연 30억은 어렵다</li>
+          <li><b>비건설 집중</b> — 3분기 비건설의 83%가 삼성전자</li>
+          <li><b>외주 확대 부담</b> — 품질 · 납기 · 이익률 관리 → 내부 검수와 견적 단계 이익 확인으로 대응</li>
         </ul></div>
       <div class="listcard"><h3><span class="dot"></span>결정 · 지원 요청</h3>
         <ul>
-          <li>4분기 목표 11.62억의 <b>월별 · 담당별 배분 합의</b></li>
-          <li>분야별 <b>외주 협력사 풀 구축 · 단가 계약</b> 승인 (모델링 · 영상 · HW 설치)</li>
-          <li>건별 이익률 <b>기준 확정</b> (상품 유형별)</li>
-          <li>대형 건 · 삼성전자 2027 협의에 <b>임원 동행</b></li>
-          <li>지원 조직의 <b>개발 · 영상 우선순위 합의</b> (대형 건 우선)</li>
+          <li>4분기 목표의 <b>월별 · 담당별 배분</b></li>
+          <li><b>외주 협력사 풀 · 단가 계약</b> 승인</li>
+          <li>상품별 <b>이익률 기준</b> 확정</li>
+          <li>대형 건 · 삼성전자 2027 협의 <b>임원 동행</b></li>
         </ul></div>
     </div>
   </section>
