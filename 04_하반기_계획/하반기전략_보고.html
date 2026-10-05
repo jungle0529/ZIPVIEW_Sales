@@ -236,15 +236,16 @@
   .ps .demo{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none}
   .ps .demo:hover{text-decoration:underline}
   .prin.mk{grid-template-columns:repeat(4,1fr)}
-  .cmp{font-size:13px;box-shadow:none}
-  .cmp th,.cmp td{padding:11px 14px;white-space:nowrap}
-  .cmp td b{color:var(--ink)}
-  .cmp td.src{font-size:11.5px;color:var(--muted)}
-  .cmp tr.ax td{background:var(--accent-soft);color:var(--ink);font-weight:700}
-  .cmp tr.ax td b{color:var(--accent)}
-  .cmp th:nth-child(2){color:#2F5D8A}.cmp th:nth-child(3){color:var(--gold)}
-  .cases-note{font-size:13px;color:var(--ink-soft);margin-top:10px;word-break:keep-all}
-  .cases-note b{color:var(--accent)}
+  .ref{margin-top:28px;padding-top:14px;border-top:1px dashed var(--line)}
+  .ref-lbl{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px}
+  .cmp{font-size:12px;background:transparent;border:none;border-radius:0;box-shadow:none}
+  .cmp th,.cmp td{padding:6px 10px;white-space:nowrap;color:var(--muted);background:transparent;border-bottom:1px solid var(--line)}
+  .cmp th{font-size:11px;font-weight:700}
+  .cmp td b{color:var(--ink-soft);font-weight:700}
+  .cmp td.src{font-size:11px}
+  .cmp tr.ax td{color:var(--ink-soft)}
+  .cases-note{font-size:12px;color:var(--muted);margin-top:8px;word-break:keep-all}
+  .cases-note b{color:var(--muted);font-weight:700}
   .fl-scope{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:16px 0 12px}
   .fl-scope span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
   .fl-scope .k{border:none;background:none;padding:0 6px 0 0;color:var(--muted);font-size:12px}
@@ -454,7 +455,8 @@
       <div class="floop">← 후속 제안으로 재구매 — 다시 세일즈기획으로</div>
     </div>
 
-    <div class="sub-h">같은 방식으로 운영하는 사례</div>
+    <div class="ref">
+      <div class="ref-lbl">참고 · 같은 방식으로 운영하는 사례</div>
     <div class="tbl-wrap"><table class="cmp">
       <thead><tr><th>구분</th><th>내부</th><th>협력업체</th><th>출처</th></tr></thead>
       <tbody>
@@ -464,6 +466,7 @@
         <tr class="ax"><td><b>AX사업실</b></td><td>수주 · PM · 핵심 프로젝트 · 퀄리티 관리</td><td>하드웨어 · 개발 · CG · 영상</td><td class="src">—</td></tr>
       </tbody></table></div>
     <p class="cases-note">공통점 — 내부는 <b>기획 · PM · 품질</b>, 실행은 <b>협력업체</b>. 그래서 이 업계는 매출보다 <b>매출총이익</b>을 핵심 지표로 본다 (제일기획은 매출총이익을 따로 발표).</p>
+    </div>
 
   </section>
 
