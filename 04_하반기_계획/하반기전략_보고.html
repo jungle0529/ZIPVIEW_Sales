@@ -120,15 +120,6 @@
   .tag.t{background:var(--accent);color:#fff}
   .tag.s{background:var(--gold-soft);color:var(--gold)}
 
-  .levers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
-    box-shadow:var(--shadow)}
-  .lever .num{font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:24px;height:24px;
-    border-radius:7px;display:flex;align-items:center;justify-content:center}
-  .lever h3{font-size:15.5px;font-weight:800;margin:12px 0 7px;letter-spacing:-0.01em}
-  .lever p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
-  .lever .ev{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);
-    background:var(--gold-soft);padding:3px 9px;border-radius:7px}
 
 
   .tl{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);
@@ -270,15 +261,20 @@
   .dg-lbl{position:absolute;z-index:2;transform:translate(-50%,-50%);background:var(--bg);border-radius:6px;padding:1px 7px;
     font-size:11px;font-weight:800;white-space:nowrap}
   .fl{display:none}
-  .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
-    display:flex;flex-direction:column;gap:6px}
-  .og .n{width:24px;height:24px;border-radius:7px;background:var(--ink);color:#fff;font-size:12px;font-weight:800;
-    display:flex;align-items:center;justify-content:center}
-  .og h3{font-size:15px;font-weight:800;margin-top:4px}
-  .og p{font-size:12.8px;color:var(--ink-soft);line-height:1.6;word-break:keep-all;flex:1}
-  .og p b{color:var(--ink)}
-  .og .kpi{font-size:11.5px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:8px;padding:6px 9px;line-height:1.5}
+  .rule-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+  .rule-strip .k{font-size:12px;font-weight:800;color:var(--muted);margin-right:4px}
+  .rule-strip span:not(.k){font-size:12.5px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 12px}
+  .task{font-size:13px}
+  .task td{vertical-align:top;padding:14px 16px}
+  .task td:first-child{min-width:320px}
+  .task td b{display:block;color:var(--ink);font-size:14px}
+  .task td small{display:block;color:var(--muted);font-size:12px;margin-top:3px;line-height:1.5;padding-left:32px;word-break:keep-all}
+  .task td b{padding-left:32px;position:relative}
+  .task .tn{position:absolute;width:22px;height:22px;border-radius:6px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;margin-top:-1px}
+  .task td:first-child{position:relative}
+  .task td:nth-child(2){color:var(--ink-soft);word-break:keep-all}
+  .task td:nth-child(3){color:var(--accent);font-weight:700;white-space:nowrap}
   .fstep span{display:block;margin-top:3px;line-height:1.5;word-break:keep-all}
   .appx{margin-top:64px;padding:14px 0;border-top:2px solid var(--ink);display:flex;align-items:baseline;gap:12px;
     font-size:13px;color:var(--muted);font-weight:600}
@@ -288,7 +284,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.fl{grid-template-columns:1fr}
+    .metrics,.gr-row,.roles,.prin,.prin.mk,.pstrat,.fl{grid-template-columns:1fr}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
@@ -296,6 +292,9 @@
     .dg{display:none}.fl{display:grid!important}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
+    .task thead{display:none}.task tr,.task td{display:block}.task td{border-bottom:none;padding:4px 14px}
+    .task td:first-child{min-width:0;padding-top:14px}.task td:nth-child(2),.task td:nth-child(3){padding-left:46px}
+    .task tr{border-bottom:1px solid var(--line);padding-bottom:12px}
     .sec-h{flex-wrap:wrap;row-gap:4px}.sec-note{margin-left:0;width:100%}
     .org,.depts{grid-template-columns:1fr}
     .org{padding:20px 18px}
@@ -304,9 +303,9 @@
   }
   @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.mission,.head-card,.dept-h,.rl,.seg,.gtag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org{break-inside:avoid}
-    .mcard,.lever,.panel,table,.tl,.org{box-shadow:none}
+    .mcard,.panel,table,.tl,.org{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .lever,.role,.og,.dg,.cmp{break-inside:avoid}.appx{break-before:page}}
+    .role,.dg,.cmp,.task{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -505,43 +504,23 @@
   <!-- 6. 4분기 실행 전략 -->
   <section>
     <div class="sec-h"><span class="sec-n">06</span><h2>4분기 실행 전략</h2>
-      <span class="sec-note">세일즈 방향성 · 우선순위 · 상품 · 마케팅</span></div>
+      <span class="sec-note">핵심 과제 · 상품 · 마케팅</span></div>
 
-    <div class="sub-h">세일즈 방향성</div>
-    <div class="ogoals" style="margin-bottom:8px">
-      <div class="og"><div class="n">1</div><h3>체험 마케팅 원스톱 제안</h3>
-        <p>VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다.</p>
-        <div class="kpi">지표 · 2개 이상 영역 결합 제안 비중</div></div>
-      <div class="og"><div class="n">2</div><h3>수주는 줄이지 않는다</h3>
-        <p>인력이 모자라면 <b>협력업체로 수행 범위를 넓힌다.</b></p>
-        <div class="kpi">지표 · 분기 수주 건수 · 금액</div></div>
-      <div class="og"><div class="n">3</div><h3>이익을 확인하고 수주</h3>
-        <p>견적 전에 <b>예상 매출총이익</b>을 확인한다.</p>
-        <div class="kpi">지표 · 견적 단계 이익 확인률 100%</div></div>
-      <div class="og"><div class="n">4</div><h3>반복 수주 고객 만들기</h3>
-        <p>납품 현장에서 <b>다음 건을 제안</b>한다. 동문 · 동부 · HJ중공업이 보여준 방식이다.</p>
-        <div class="kpi">지표 · 재수주 고객 수</div></div>
-    </div>
+    <div class="rule-strip"><span class="k">세일즈 원칙</span><span>체험 마케팅 원스톱 묶음 제안</span><span>견적 단계 이익 확인</span><span>납품 후 후속 제안</span></div>
 
-    <div class="sub-h">4분기 우선순위</div>
-    <div class="levers">
-      <div class="lever"><div class="num">1</div>
-        <h3>신규 고객사의 다음 현장</h3>
-        <p>3분기에 새로 연 동부 · HJ중공업 · 반도 · 위너케이의 <b>4분기 분양 현장에 먼저 제안</b>한다.</p>
-        <span class="ev">4개사 · 3분기 3.81억</span></div>
-      <div class="lever"><div class="num">2</div>
-        <h3>1억 이상 대형 건 3건</h3>
-        <p>4분기 분양 대단지에 <b>HW 결합 패키지</b>를 모델하우스 협의 단계부터 제안한다.</p>
-        <span class="ev">성남 상대원2 · 포항 · 대구 · 광주 · 래미안 마크더스위트</span></div>
-      <div class="lever"><div class="num">3</div>
-        <h3>멈춘 협의 건 정리</h3>
-        <p>6월 협의 8건을 10월 중 <b>진행 / 연기 / 종료로 판정</b>하고, 살아 있는 건만 클로징한다.</p>
-        <span class="ev">8건 · 액면 5.59억</span></div>
-      <div class="lever"><div class="num">4</div>
-        <h3>비건설 계정 넓히기</h3>
-        <p>삼성 디자인센터 <b>2027 상반기 건을 미리 확보</b>하고, 새 비건설 고객으로 삼성 비중을 낮춘다.</p>
-        <span class="ev">삼성 비중 44% → 분산</span></div>
-    </div>
+    <div class="sub-h">4분기 핵심 과제</div>
+    <div class="tbl-wrap"><table class="task">
+      <thead><tr><th>과제</th><th>대상</th><th>규모 · 기준</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tn">1</span><b>신규 고객사의 다음 현장</b><small>3분기에 새로 연 고객사의 4분기 분양 현장에 먼저 제안</small></td>
+          <td>동부 · HJ중공업 · 반도 · 위너케이</td><td>3분기 거래 3.81억</td></tr>
+        <tr><td><span class="tn">2</span><b>1억 이상 대형 건 3건</b><small>HW 결합 패키지를 모델하우스 협의 단계부터 제안</small></td>
+          <td>성남 상대원2 · 포항 · 대구 · 광주 · 래미안 마크더스위트</td><td>대형 건 4.37억</td></tr>
+        <tr><td><span class="tn">3</span><b>멈춘 협의 건 정리</b><small>10월 중 진행 / 연기 / 종료로 판정하고 살아 있는 건만 클로징</small></td>
+          <td>6월 협의 8건</td><td>액면 5.59억</td></tr>
+        <tr><td><span class="tn">4</span><b>비건설 계정 확대</b><small>삼성 디자인센터 2027 상반기 건을 미리 확보하고 신규 비건설 고객 발굴</small></td>
+          <td>삼성전자 · 신규 비건설 고객</td><td>삼성 비중 44% → 분산</td></tr>
+      </tbody></table></div>
 
     <div class="sub-h">상품 전략</div>
     <div class="pstrat">
