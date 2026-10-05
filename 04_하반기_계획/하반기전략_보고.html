@@ -274,6 +274,21 @@
   .tm-loop{grid-column:3/-1;background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:8px 14px;
     font-size:12.5px;font-weight:700;text-align:center}
   .tm-loop b{display:inline;font-size:inherit;color:var(--accent)}
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:8px}
+  .case .ct{font-size:15px;font-weight:800;margin-bottom:2px}
+  .case.ax{border:1.5px solid var(--accent);background:var(--accent-soft)}
+  .case.ax .ct{color:var(--accent)}
+  .cr{display:flex;gap:10px;align-items:baseline}
+  .cr i{font-style:normal;flex:none;width:58px;font-size:11px;font-weight:800;text-align:center;border-radius:6px;padding:2px 0;
+    background:#E8EFF7;color:#2F5D8A}
+  .cr:nth-of-type(3) i{background:var(--gold-soft);color:var(--gold)}
+  .cr span{font-size:12.8px;color:var(--ink-soft);line-height:1.55;word-break:keep-all}
+  .cr b{color:var(--ink)}
+  .case.ax .cr i{background:var(--card)}
+  .cases-note{font-size:13px;color:var(--ink-soft);margin-top:10px;word-break:keep-all}
+  .cases-note b{color:var(--accent)}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -300,7 +315,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.tm,.tm-fork{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.tm,.tm-fork,.cases{grid-template-columns:1fr}
     .tm-arr,.tm-plus{justify-content:center;transform:rotate(90deg)}.tm-plus{transform:none}.tm-loop{grid-column:auto}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
@@ -318,7 +333,7 @@
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.og,.tm{break-inside:avoid}.appx{break-before:page}}
+    .find,.lever,.role,.og,.tm,.cases{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -457,6 +472,20 @@
       </div>
       <div class="tm-loop">← 납품 현장에서 <b>다음 건 제안</b> — 다시 세일즈기획으로 (반복 수주)</div>
     </div>
+
+    <div class="sub-h">같은 방식으로 운영하는 사례</div>
+    <div class="cases">
+      <div class="case"><div class="ct">분양 광고대행사</div>
+        <div class="cr"><i>내부</i><span>현장별 <b>PM</b>이 기획 · 일정 · 고객 대응</span></div>
+        <div class="cr"><i>협력업체</i><span>제작 · 시공 · 영상 등 실제 작업</span></div></div>
+      <div class="case"><div class="ct">인터내셔널</div>
+        <div class="cr"><i>내부</i><span><b>기획 · PM</b>으로 사업을 설계하고 관리</span></div>
+        <div class="cr"><i>협력업체</i><span>협력업체를 통해 <b>사업을 오픈</b></span></div></div>
+      <div class="case ax"><div class="ct">AX사업실</div>
+        <div class="cr"><i>내부</i><span>세일즈기획 수주 · 프로덕션 <b>PM</b> · 핵심 제작 · 검수</span></div>
+        <div class="cr"><i>협력업체</i><span>VR 모델링 · CG · 영상 · HW 설치</span></div></div>
+    </div>
+    <p class="cases-note">공통점 — 내부는 <b>기획 · PM · 품질</b>을 쥐고, 실행 물량은 <b>협력업체</b>로 넓혀 인원 이상의 일을 수행한다.</p>
 
     <div class="sub-h">운영 원칙</div>
     <div class="prin">
