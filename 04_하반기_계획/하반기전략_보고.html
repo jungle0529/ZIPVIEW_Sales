@@ -243,6 +243,17 @@
   .cmp th,.cmp td{padding:6px 10px;white-space:nowrap;color:var(--muted);background:transparent;border-bottom:1px solid var(--line)}
   .cmp th{font-size:11px;font-weight:700}
   .cmp td b{color:var(--ink-soft);font-weight:700}
+  .mr-lead{font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;word-break:keep-all}
+  .mr-lead b{color:var(--ink)}
+  .mr{font-size:13px}
+  .mr td small{color:var(--muted);font-weight:600;margin-left:4px}
+  .mr td[rowspan]{vertical-align:middle}
+  .mr tr.sum td{background:#FAFBFC}
+  .mr .ok,.mr .warn{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px}
+  .mr .ok{background:var(--accent-soft);color:var(--accent)}
+  .mr .warn{background:var(--warn-soft);color:var(--warn)}
+  .mr-warn{margin-top:10px;background:var(--warn-soft);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--ink-soft);word-break:keep-all}
+  .mr-warn b{color:var(--warn)}
   .cases-note{font-size:12px;color:var(--muted);margin-top:8px;word-break:keep-all}
   .cases-note b{color:var(--muted);font-weight:700}
   .fl-scope{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:16px 0 12px}
@@ -514,24 +525,38 @@
       <div class="hl"><span>매출총이익</span><small>건별로 관리</small></div>
     </div>
     <div class="prin" style="margin-top:12px">
-      <div><b>① 견적</b><span>협력업체 원가를 먼저 받고 예상 이익을 확인한다</span></div>
+      <div><b>① 견적</b><span>협력업체 원가를 먼저 받고 <b>최소 이익률</b>을 확인한다</span></div>
       <div><b>② 착수</b><span>발주 금액으로 원가를 확정한다</span></div>
       <div><b>③ 완료</b><span>실제 이익을 정산해 월간 보고한다</span></div>
     </div>
+    <div class="sub-h">협력업체 최소 이익률 기준</div>
+    <p class="mr-lead">협력업체로 진행하는 모든 건은 아래 <b>최소 이익률</b>을 지킨다. 기준에 못 미치면 가격 · 범위를 조정하거나 실장 승인을 받는다.</p>
+    <div class="tbl-wrap"><table class="mr">
+      <thead><tr><th>분야</th><th>협력업체</th><th class="num-cell">최소 이익률</th><th class="num-cell">AX 실적 (2023~2026)</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="2"><b>VR · 콘텐츠 제작</b></td><td>프리랜서</td><td class="num-cell"><b>50% 이상</b></td><td class="num-cell" rowspan="2">63.9% <small>34건</small></td><td rowspan="2"><span class="ok">충족</span></td></tr>
+        <tr><td>업체</td><td class="num-cell"><b>20% 이상</b></td></tr>
+        <tr><td><b>하드웨어</b></td><td>업체</td><td class="num-cell"><b>20% 이상</b></td><td class="num-cell">26.9% <small>10건</small></td><td><span class="ok">충족</span></td></tr>
+        <tr><td><b>영상</b></td><td>업체</td><td class="num-cell"><b>30% 이상</b></td><td class="num-cell">37.6% <small>9건</small></td><td><span class="ok">충족</span></td></tr>
+        <tr><td><b>CG</b></td><td>업체</td><td class="num-cell"><b>20% 이상</b></td><td class="num-cell">21.8% <small>1건</small></td><td><span class="ok">충족</span></td></tr>
+        <tr class="sum"><td><b>전체</b></td><td>—</td><td class="num-cell">—</td><td class="num-cell"><b>45.4%</b> <small>56건 · 매출 60.9억</small></td><td><span class="warn">미달 4건</span></td></tr>
+      </tbody></table></div>
+    <div class="mr-warn"><b>기준 미달 4건</b> — 가장 큰 건은 교보생명 디지털 사이니지(18.3억, 하드웨어)로 이익률 <b>7.0%</b>. 금액이 큰 건일수록 견적 단계에서 최소 이익률을 먼저 확인한다.</div>
+
     <div class="sens">
       <div class="lbl">4분기 매출 11.62억 기준 매출총이익</div>
-      <div class="row"><div><i>이익률 30%</i><b>3.49억</b></div><div class="hl"><i>이익률 40%</i><b>4.65억</b></div><div><i>이익률 50%</i><b>5.81억</b></div></div>
+      <div class="row"><div><i>이익률 30%</i><b>3.49억</b></div><div class="hl"><i>이익률 45.4% · 실적 수준</i><b>5.28억</b></div><div><i>이익률 50%</i><b>5.81억</b></div></div>
       <p>이익률 10%p 차이 = 매출총이익 <b>1.16억</b> 차이. 협력업체 활용을 늘릴수록 견적 단계의 이익 확인이 중요하다.</p>
       <p class="case-ref">참고 · HS애드는 2012년 매출이 14억 줄었지만 외주비를 24억 줄여 매출총이익이 617억 → 627억으로 늘고 영업이익도 4.9% 증가했다 (아주경제 · 2013.3.21).</p>
     </div>
 
-    <div class="sub-h">협력업체 운영</div>
+    <div class="sub-h">협력업체 운용 원칙</div>
     <div class="prin">
       <div><b>분야별 2곳 이상</b><span>모델링 · 영상 · HW 설치 협력업체를 복수로 둔다</span></div>
       <div><b>단가 계약</b><span>반복 작업은 원가를 미리 고정한다</span></div>
       <div><b>수금에 맞춘 지급</b><span>고객 수금 일정에 맞춰 단계별로 지급한다</span></div>
     </div>
-    <p class="foot">※ 상품별 실제 원가율 자료가 들어오면 4분기 매출총이익 목표를 확정한다.</p>
+    <p class="foot">※ 실적은 계약 관리 시트(매출 · 매입) 기준 AX 담당(Charles · Lucia · Anna) 계약 중 협력업체 매입이 있는 56건. 분야는 매입 금액이 가장 큰 항목 기준이며, VR은 프리랜서 · 업체를 합산했다. 매입이 매출보다 크게 기록된 데이터 오류 13건은 제외.</p>
   </section>
 
   <!-- 6. 4분기 실행 전략 -->
