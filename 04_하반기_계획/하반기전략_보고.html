@@ -81,16 +81,6 @@
   .foot{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
 
   /* Q3 findings */
-  .finds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .find{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
-    display:flex;flex-direction:column;gap:6px}
-  .ftag{align-self:flex-start;font-size:11px;font-weight:800;padding:2px 9px;border-radius:999px}
-  .find.pos .ftag{background:var(--accent-soft);color:var(--accent)}
-  .find.neg .ftag{background:var(--warn-soft);color:var(--warn)}
-  .find h3{font-size:15px;font-weight:800;letter-spacing:-0.01em;margin-top:4px;text-wrap:balance}
-  .fnum{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
-  .find.pos .fnum{color:var(--accent)}.find.neg .fnum{color:var(--warn)}
-  .find p{font-size:13px;color:var(--ink-soft);line-height:1.6;word-break:keep-all}
 
   /* Q4 goal */
   .gr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:14px}
@@ -332,8 +322,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.fl{grid-template-columns:1fr}
-    .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
+    .metrics,.levers,.cols,    .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
     .fa{text-align:center;transform:rotate(90deg);line-height:1}
@@ -347,11 +336,9 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .org,.org-notes{break-inside:avoid}
-    .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
-    .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.og,.dg,.cmp{break-inside:avoid}.appx{break-before:page}}
+  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,    .org,.org-notes{break-inside:avoid}
+    .mcard,.lever,.panel,table,.listcard,.tl,.org,    .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
+.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -505,7 +492,7 @@
         <div><div class="k">1~3분기 누적</div><div class="v">18.38억</div><div class="d">달성률 61%</div></div>
         <div><div class="k">4분기 목표</div><div class="v warn-v">11.62억</div><div class="d">월 3.87억 · 3분기(7.20억)의 1.6배</div></div>
       </div>
-      <p>2 · 3분기 평균(7.25억)만 유지하면 연간 25.6억으로 <b>4.37억이 모자란다</b>. 이 차이는 <b>1억 이상 대형 건 3건</b>(거제 상동 1.40억 수준)으로 메운다. 실적 근거는 부록 A · B에 있다.
+      <p>2 · 3분기 평균(7.25억)만 유지하면 연간 25.6억으로 <b>4.37억이 모자란다</b>. 이 차이는 <b>1억 이상 대형 건 3건</b>(거제 상동 1.40억 수준)으로 메운다. 실적 근거는 부록에 있다.
       월 기준으로는 매달 3.87억 — 3분기 최고였던 9월(3.25억)보다 높은 수준을 10~12월 석 달 연속 내야 한다.</p>
     </div>
     <div class="tbl-wrap" style="margin-top:16px"><table>
@@ -667,11 +654,11 @@
     </div>
   </section>
 
-  <div class="appx"><span>부록</span> 4분기 목표의 근거가 된 1~3분기 실적과 분석</div>
+  <div class="appx"><span>부록</span> 4분기 목표의 근거가 된 1~3분기 실적</div>
 
-  <!-- 부록 A. 분기별 실적 -->
+  <!-- 부록. 분기별 실적 -->
   <section>
-    <div class="sec-h"><span class="sec-n">부록 A</span><h2>1~3분기 실적</h2>
+    <div class="sec-h"><span class="sec-n">부록</span><h2>1~3분기 실적</h2>
       <span class="sec-note">계약일 기준 · 분기 막대를 누르면 상세</span></div>
     <div class="metrics">
       <div class="mcard accent"><div class="t">1~3분기 누적 수주</div><div class="v">18.38억</div><div class="d">49건 · 연간 목표 30억의 61%</div></div>
@@ -770,37 +757,6 @@
     <p class="foot">※ 출처: AX사업실 수주 실적표(계약서 작성 또는 작성 확정 후 실행 오더를 받은 프로젝트). 4분기는 10월 5일 기준 수주 없음.</p>
   </section>
 
-  <!-- 부록 B. 3분기 분석 -->
-  <section>
-    <div class="sec-h"><span class="sec-n">부록 B</span><h2>3분기 분석 — 잘된 점과 남은 과제</h2>
-      <span class="sec-note">7~9월 21건 · 7.20억</span></div>
-    <div class="finds">
-      <div class="find pos"><span class="ftag">성과</span>
-        <h3>규모 유지, 월별로는 상승세</h3>
-        <div class="fnum">7월 1.47억 → 8월 2.49억 → 9월 3.25억</div>
-        <p>2분기(7.30억)와 같은 수준을 지키면서 건수는 15건 → 21건으로 늘었다. 분기 안에서 매달 수주가 커졌다.</p></div>
-      <div class="find pos"><span class="ftag">성과</span>
-        <h3>새로 연 고객사가 실적의 2/3</h3>
-        <div class="fnum">4.80억 · 3분기의 67%</div>
-        <p>상반기에 거래가 없던 고객사에서 나왔다. 동부건설 2개 현장 1.57억 · 위너케이(거제 옥포동) 0.85억 · 반도건설 0.70억 · HJ중공업 해모로 2개 현장 0.69억.</p></div>
-      <div class="find pos"><span class="ftag">성과</span>
-        <h3>한 사람에 몰리지 않는 구조</h3>
-        <div class="fnum">Charles 33% · Anna 30% · Lucia 36%</div>
-        <p>상반기에는 Charles 1인 비중이 60%였다. 3분기에는 세 명이 고르게 수주해 특정 담당자가 빠져도 실적이 버티는 구조가 됐다.</p></div>
-      <div class="find neg"><span class="ftag">과제</span>
-        <h3>대형 건이 없고 단가가 내려감</h3>
-        <div class="fnum">건설 건당 5,022만 → 3,280만</div>
-        <p>2분기에는 거제 상동 투명 LED(1.40억) 같은 1억 이상 건설 건이 있었지만, 3분기에는 0건이었다. 건수는 늘었는데 한 건의 크기가 작아졌다.</p></div>
-      <div class="find neg"><span class="ftag">과제</span>
-        <h3>6월 협의 9건 중 수주 1건</h3>
-        <div class="fnum">의정부역 펠리스타워 2,200만 (계획 5,300만)</div>
-        <p>6월에 잡아둔 협의 건은 대부분 수주로 이어지지 않았고, 3분기 실적은 새 고객에서 나왔다. 나머지 8건이 진행 중인지 종료됐는지 판정이 필요하다.</p></div>
-      <div class="find neg"><span class="ftag">과제</span>
-        <h3>비건설은 삼성전자 한 곳에 집중</h3>
-        <div class="fnum">3분기 비건설 1.96억 중 1.63억 (83%)</div>
-        <p>삼성 디자인센터 하반기(1.40억)가 대부분이다. 누적으로도 비건설 실적의 44%가 삼성전자라, 이 한 건이 흔들리면 비건설 실적이 크게 줄어든다.</p></div>
-    </div>
-  </section>
 
   <footer>
     <span>2026 AX사업실 운영계획 · 대표 보고용</span>
