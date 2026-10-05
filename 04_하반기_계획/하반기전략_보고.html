@@ -213,15 +213,34 @@
   .org-note .v s{color:var(--muted);font-weight:500;text-decoration:none}
   .org-note .v em{font-style:normal;color:var(--accent)}
 
-  /* summary · GP · appendix */
-  .sum4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .sum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
+  /* mission · goals · GP · appendix */
+  .mission{background:var(--ink);color:#fff;border-radius:14px;padding:22px 26px}
+  .mission .lbl{font-size:11.5px;font-weight:700;color:#8FE3CF;letter-spacing:.06em}
+  .mission .mt{font-size:24px;font-weight:800;color:#fff;margin-top:6px;letter-spacing:-0.02em}
+  .mission .mt b{color:#F2D79B}
+  .mission p{font-size:15.5px;line-height:1.6;margin-top:4px;color:#C9D3DC;word-break:keep-all}
+  .mission p b{color:#fff}
+  .shift{display:grid;grid-template-columns:1fr auto 2.4fr;gap:12px;align-items:stretch;margin-top:14px}
+  .shift>div{border-radius:14px;padding:16px 18px}
+  .shift .k{font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:4px}
+  .shift b{display:block;font-size:15px;font-weight:800}
+  .shift-from{background:#EEF1F4}.shift-from span{font-size:12.5px;color:var(--ink-soft)}
+  .shift-arr{display:flex;align-items:center;font-size:20px;font-weight:800;color:var(--accent);padding:0!important}
+  .shift-to{background:var(--card);border:1px solid var(--accent)}
+  .shift-to b{color:var(--accent)}
+  .xp{display:grid;gap:6px;margin-top:10px}
+  .xp div{font-size:12.5px;color:var(--ink-soft);display:flex;gap:10px;align-items:baseline;word-break:keep-all}
+  .xp i{font-style:normal;flex:none;width:86px;font-size:11.5px;font-weight:800;color:var(--accent);background:var(--accent-soft);
+    border-radius:6px;padding:2px 8px;text-align:center}
+  .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
-  .sum .k{font-size:12px;font-weight:700;color:var(--muted)}
-  .sum .v{font-size:17px;font-weight:800;line-height:1.35;letter-spacing:-0.01em}
-  .sum .d{font-size:12.3px;color:var(--ink-soft);line-height:1.55;word-break:keep-all}
-  .sum.accent{background:var(--accent);border-color:var(--accent)}
-  .sum.accent .k,.sum.accent .d{color:#CDE8E1}.sum.accent .v{color:#fff;font-size:28px}
+  .og .n{width:24px;height:24px;border-radius:7px;background:var(--ink);color:#fff;font-size:12px;font-weight:800;
+    display:flex;align-items:center;justify-content:center}
+  .og h3{font-size:15px;font-weight:800;margin-top:4px}
+  .og p{font-size:12.8px;color:var(--ink-soft);line-height:1.6;word-break:keep-all;flex:1}
+  .og p b{color:var(--ink)}
+  .og .kpi{font-size:11.5px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:8px;padding:6px 9px;line-height:1.5}
   .gp-eq{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .gp-eq>div{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;
     display:flex;flex-direction:column;gap:2px}
@@ -239,8 +258,8 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles{grid-template-columns:1fr}
-    .sum4{grid-template-columns:1fr 1fr}.gp-eq>b{display:none}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals{grid-template-columns:1fr}
+    .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
@@ -251,11 +270,11 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg,.sum.accent,.gp-eq>div.hl,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.sum{break-inside:avoid}.appx{break-before:page}}
+    .find,.lever,.role,.og{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -270,24 +289,53 @@
     </div>
   </header>
 
-  <!-- 0. 요약 -->
+  <!-- 1. 미션과 운영 목표 -->
   <section>
-    <div class="sec-h"><span class="sec-n">00</span><h2>한 장 요약</h2></div>
-    <div class="sum4">
-      <div class="sum"><div class="k">조직</div><div class="v">1 총괄 · 3개 조직 · 10명</div>
-        <div class="d">세일즈기획 · 프로덕션 · 지원<br>전 인원 건설 · 비건설 대응</div></div>
-      <div class="sum"><div class="k">운영 방식</div><div class="v">수주는 최대로,<br>수행은 내부 + 외주</div>
-        <div class="d">기획 · PM · 검수는 내부, 표준 제작은 외주<br>건별 매출총이익으로 관리</div></div>
-      <div class="sum accent"><div class="k">4분기 목표</div><div class="v">11.62억</div>
-        <div class="d">연간 30억 (건설 + 비건설)<br>1~3분기 18.38억 · 달성률 61%</div></div>
-      <div class="sum"><div class="k">4분기 핵심 실행</div><div class="v">4가지</div>
-        <div class="d">신규 고객사 다음 현장 · 대형 건 3건<br>협의 건 정리 · 비건설 계정 확장</div></div>
+    <div class="sec-h"><span class="sec-n">01</span><h2>미션과 팀 운영 목표</h2>
+      <span class="sec-note">초안 · 확인 필요</span></div>
+    <div class="mission">
+      <div class="lbl">AX사업실 미션</div>
+      <p class="mt">VR 제작에서 <b>체험 마케팅</b>으로</p>
+      <p>공간과 브랜드의 체험 마케팅을 <b>기획부터 납품까지 한 번에 책임지는 팀</b></p>
     </div>
+
+    <div class="shift">
+      <div class="shift-from"><div class="k">이전</div>
+        <b>VR 프로젝트 중심 수주</b>
+        <span>분양 사이버 모델하우스 · 단위세대 VR</span></div>
+      <div class="shift-arr">→</div>
+      <div class="shift-to"><div class="k">1~3분기 실제 수주</div>
+        <b>체험 마케팅 전 영역</b>
+        <div class="xp">
+          <div><i>VR · XR</i>오티에르 반포 XR · 송도 G5 · 해모로 집뷰 솔루션</div>
+          <div><i>하드웨어</i>거제 상동 투명 LED DX (본 계약 + 추가 2건)</div>
+          <div><i>개발</i>GS 옵션몰 고도화 · 비스포크 시뮬레이터 유지보수 · 한동대 XROO</div>
+          <div><i>CG · 영상</i>올리브영 티커영상 · 데이코 마케팅 영상 · 삼표 갤러리 AI영상</div>
+          <div><i>전시 · 콘텐츠</i>신화갤러리 전시 · 삼성 디자인센터 · 교보문고 팝업스토어 · 국립생태원</div>
+        </div></div>
+    </div>
+
+    <div class="sub-h">팀 운영 목표</div>
+    <div class="ogoals">
+      <div class="og"><div class="n">1</div><h3>체험 마케팅 원스톱</h3>
+        <p>한 고객에게 VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다. 단품 VR 견적으로 끝내지 않는다.</p>
+        <div class="kpi">지표 · 2개 이상 영역을 결합한 제안 비중</div></div>
+      <div class="og"><div class="n">2</div><h3>대행사형 수행 체계</h3>
+        <p>내부는 기획 · PM · 검수 · 핵심 개발을 맡고, 제작 물량은 <b>외주 협력사 네트워크</b>로 수행한다.</p>
+        <div class="kpi">지표 · 분야별 협력사 2곳 이상 · 외주 건 내부 검수 100%</div></div>
+      <div class="og"><div class="n">3</div><h3>건별 이익 관리</h3>
+        <p>모든 건을 견적 때 <b>예상 매출총이익</b>, 완료 때 <b>실제 매출총이익</b>으로 관리한다.</p>
+        <div class="kpi">지표 · 건별 이익 정산률 100%</div></div>
+      <div class="og"><div class="n">4</div><h3>반복 수주 고객 만들기</h3>
+        <p>납품 현장에서 다음 건을 제안해 <b>한 번 거래한 고객이 다시 맡기게</b> 한다. 동문 · 동부 · HJ중공업이 이미 보여준 방식이다.</p>
+        <div class="kpi">지표 · 재수주 고객 수 · 납품 후 추가 제안 건수</div></div>
+    </div>
+    <p class="foot">※ 미션 · 운영 목표 · 지표는 초안이다. 영역 구분은 실적표의 프로젝트명 기준 예시다.</p>
   </section>
 
-  <!-- 1. 4분기 목표 -->
+  <!-- 2. 4분기 매출 목표 -->
   <section>
-    <div class="sec-h"><span class="sec-n">01</span><h2>4분기 목표</h2>
+    <div class="sec-h"><span class="sec-n">02</span><h2>4분기 매출 목표</h2>
       <span class="sec-note">연간 30억 · 건설 + 비건설 통합</span></div>
     <div class="panel goal-reset">
       <div class="gr-row">
@@ -310,9 +358,9 @@
       </tbody></table></div>
   </section>
 
-  <!-- 2. 조직 체계 -->
+  <!-- 3. 조직 체계 -->
   <section>
-    <div class="sec-h"><span class="sec-n">02</span><h2>조직 체계 — AX사업실</h2>
+    <div class="sec-h"><span class="sec-n">03</span><h2>조직 체계 — AX사업실</h2>
       <span class="sec-note">총 10명 · 1 총괄 · 3개 부서</span></div>
     <div class="org">
         <div class="head-wrap">
@@ -361,9 +409,9 @@
     </div>
   </section>
 
-  <!-- 3. 운영 방식 -->
+  <!-- 4. 운영 방식 -->
   <section>
-    <div class="sec-h"><span class="sec-n">03</span><h2>운영 방식 — 역할 · 업무 흐름 · 협업 규칙</h2>
+    <div class="sec-h"><span class="sec-n">04</span><h2>운영 방식 — 역할 · 업무 흐름 · 협업 규칙</h2>
       <span class="sec-note">제안 · 확인 필요</span></div>
     <div class="flow">
       <div class="fstep s"><b>제안 · 수주</b><span>세일즈기획 · 견적 단계에서 예상 이익 확인</span></div>
@@ -415,9 +463,9 @@
     <p class="foot">※ 담당 배정은 3분기 실제 수주 담당을 기준으로 정리했다. 회의 요일과 이익률 기준은 정해야 한다.</p>
   </section>
 
-  <!-- 4. 외주 활용과 매출총이익 -->
+  <!-- 5. 외주 활용과 매출총이익 -->
   <section>
-    <div class="sec-h"><span class="sec-n">04</span><h2>외주 활용과 매출총이익 관리</h2>
+    <div class="sec-h"><span class="sec-n">05</span><h2>외주 활용과 매출총이익 관리</h2>
       <span class="sec-note">제안 · 실제 원가율 확인 필요</span></div>
 
     <div class="panel goal-reset">
@@ -441,7 +489,7 @@
       <div class="listcard"><h3><span class="dot" style="background:var(--gold)"></span>외주로 맡기는 일 — 표준 · 반복 · 물량</h3>
         <ul>
           <li><b>표준 유닛 VR 모델링 · 렌더링</b> — 외주 업체가 많고 단가가 평준화된 영역</li>
-          <li><b>영상 촬영 · 편집</b> 등 물량이 많은 작업</li>
+          <li><b>CG · 영상 촬영 · 편집</b> 등 물량이 많은 작업</li>
           <li><b>투명 LED · 키오스크 설치 · 시공</b> — 장비 매입과 현장 설치</li>
           <li>내부 일정이 꽉 찬 시기의 <b>초과 물량</b></li>
         </ul></div>
@@ -495,9 +543,9 @@
     <p class="foot">※ 상품별 실제 원가율과 외주 비중 데이터가 없어 기준 이익률은 비워 두었다. 1~3분기 건별 원가 자료를 받으면 상품별 기준과 4분기 매출총이익 목표를 채운다.</p>
   </section>
 
-  <!-- 5. 4분기 실행 전략 -->
+  <!-- 6. 4분기 실행 전략 -->
   <section>
-    <div class="sec-h"><span class="sec-n">05</span><h2>4분기 실행 전략</h2>
+    <div class="sec-h"><span class="sec-n">06</span><h2>4분기 실행 전략</h2>
       <span class="sec-note">우선순위 4가지 · 상품 전략 · 마케팅</span></div>
 
     <div class="levers">
@@ -806,9 +854,9 @@
     </div>
   </section>
 
-  <!-- 6. 위험 -->
+  <!-- 7. 위험 -->
   <section>
-    <div class="sec-h"><span class="sec-n">06</span><h2>위험 & 지원 요청</h2></div>
+    <div class="sec-h"><span class="sec-n">07</span><h2>위험 & 지원 요청</h2></div>
     <div class="cols">
       <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
         <ul>
@@ -833,7 +881,7 @@
   <section>
     <div class="keymsg">
       <div class="lbl">결론 · 종합</div>
-      <p>AX사업실의 1~3분기 누적 수주는 <b>18.38억(49건)</b>이다. 2 · 3분기 연속 <b>7억대</b>를 지켰고,
+      <p>AX사업실은 VR 제작을 넘어 <b>체험 마케팅 전 영역</b>을 수주하는 팀으로 바뀌었다. 1~3분기 누적 수주는 <b>18.38억(49건)</b>이다. 2 · 3분기 연속 <b>7억대</b>를 지켰고,
       3분기에는 <span class="hl">새로 연 고객사(67%)와 세 명이 고르게 나눠 맡는 영업 구조</span>가 실적을 만들었다.
       반면 <b>건설 1억 이상 대형 건이 끊기고 건당 단가가 내려갔으며</b>, 비건설은 삼성전자에 집중돼 있다.
       4분기에는 <b>신규 고객사의 다음 현장 수주 · 대형 HW 결합 건 회복 · 멈춘 협의 건 정리 · 비건설 계정 확장</b>으로
