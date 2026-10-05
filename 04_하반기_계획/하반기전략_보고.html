@@ -232,6 +232,14 @@
   .xp div{font-size:12.5px;color:var(--ink-soft);display:flex;gap:10px;align-items:baseline;word-break:keep-all}
   .xp i{font-style:normal;flex:none;width:86px;font-size:11.5px;font-weight:800;color:var(--accent);background:var(--accent-soft);
     border-radius:6px;padding:2px 8px;text-align:center}
+  .crew{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-bottom:14px}
+  .crew>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-align:center}
+  .crew>div.hl{border-color:#2F5D8A;background:#E8EFF7}
+  .crew b{display:block;font-size:14px;font-weight:800}
+  .crew span{font-size:11.5px;color:var(--muted);font-weight:600}
+  .crew>div.plus{border:none;background:none;padding:0;font-weight:800;color:var(--muted)}
+  .crew p{grid-column:1/-1;font-size:13px;color:var(--ink-soft);line-height:1.6;word-break:keep-all}
+  .crew p b{display:inline;font-size:inherit;color:var(--ink)}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -258,7 +266,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles,.ogoals,.crew{grid-template-columns:1fr}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
@@ -315,20 +323,28 @@
         </div></div>
     </div>
 
-    <div class="sub-h">팀 운영 목표</div>
+    <div class="sub-h">팀 운영 목표 — 합쳐진 10명을 어떻게 운용하나</div>
+    <div class="crew">
+      <div><b>세일즈기획 3명</b><span>Charles · Lucia · Anna</span></div>
+      <div class="plus">+</div>
+      <div class="hl"><b>프로덕션 4명</b><span>James · Awesome · Jude · Hani</span></div>
+      <div class="plus">+</div>
+      <div><b>지원 3명</b><span>Rhea · Sianu · Seok</span></div>
+      <p>4분기 목표를 채우면 프로덕션 1인당 약 <b>8.5건</b>(3분기 5.3건)을 맡는다. 지금처럼 직접 제작만 해서는 감당할 수 없어, <b>제작 인원의 역할부터 바꾼다.</b></p>
+    </div>
     <div class="ogoals">
-      <div class="og"><div class="n">1</div><h3>체험 마케팅 원스톱</h3>
-        <p>한 고객에게 VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다. 단품 VR 견적으로 끝내지 않는다.</p>
-        <div class="kpi">지표 · 2개 이상 영역을 결합한 제안 비중</div></div>
-      <div class="og"><div class="n">2</div><h3>대행사형 수행 체계</h3>
-        <p>내부는 기획 · PM · 검수 · 핵심 개발을 맡고, 제작 물량은 <b>외주 협력사 네트워크</b>로 수행한다.</p>
-        <div class="kpi">지표 · 분야별 협력사 2곳 이상 · 외주 건 내부 검수 100%</div></div>
-      <div class="og"><div class="n">3</div><h3>건별 이익 관리</h3>
-        <p>모든 건을 견적 때 <b>예상 매출총이익</b>, 완료 때 <b>실제 매출총이익</b>으로 관리한다.</p>
-        <div class="kpi">지표 · 건별 이익 정산률 100%</div></div>
-      <div class="og"><div class="n">4</div><h3>반복 수주 고객 만들기</h3>
-        <p>납품 현장에서 다음 건을 제안해 <b>한 번 거래한 고객이 다시 맡기게</b> 한다. 동문 · 동부 · HJ중공업이 이미 보여준 방식이다.</p>
-        <div class="kpi">지표 · 재수주 고객 수 · 납품 후 추가 제안 건수</div></div>
+      <div class="og"><div class="n">1</div><h3>제작자에서 PM으로</h3>
+        <p>프로덕션 4명은 각자 <b>담당 프로젝트의 PM</b>이 된다. 품질을 좌우하는 핵심 작업만 직접 하고, 표준 물량은 외주에 맡겨 일정 · 품질 · 원가를 관리한다.</p>
+        <div class="kpi">지표 · 1인당 동시 PM 건수 · 외주 관리 건수</div></div>
+      <div class="og"><div class="n">2</div><h3>프로젝트 단위 팀</h3>
+        <p>수주 건마다 <b>세일즈 1명 + PM 1명</b>(+ 필요 시 지원)으로 팀을 짠다. 착수부터 납품 · 추가 제안까지 같은 팀이 끝까지 맡아 인계 손실을 없앤다.</p>
+        <div class="kpi">지표 · 착수 인계서 작성률 100%</div></div>
+      <div class="og"><div class="n">3</div><h3>건설 · 비건설 교차 배정</h3>
+        <p>전 인원을 건설 · 비건설 구분 없이 배정해 <b>누구나 두 영역을 수행</b>할 수 있게 만든다. 지원 인원은 제작 지원과 함께 <b>기획 작업</b>까지 맡는다.</p>
+        <div class="kpi">지표 · 인원별 두 영역 수행 경험</div></div>
+      <div class="og"><div class="n">4</div><h3>가동률 기준 외주 전환</h3>
+        <p>주간 리소스 보드로 <b>인원별 일정을 공개</b>한다. 내부 일정이 기준을 넘으면 새 건은 바로 외주로 돌려, 수주가 몰려도 납기를 지킨다.</p>
+        <div class="kpi">지표 · 내부 가동률 기준선 (확인 필요)</div></div>
     </div>
     <p class="foot">※ 미션 · 운영 목표 · 지표는 초안이다. 영역 구분은 실적표의 프로젝트명 기준 예시다.</p>
   </section>
@@ -546,8 +562,25 @@
   <!-- 6. 4분기 실행 전략 -->
   <section>
     <div class="sec-h"><span class="sec-n">06</span><h2>4분기 실행 전략</h2>
-      <span class="sec-note">우선순위 4가지 · 상품 전략 · 마케팅</span></div>
+      <span class="sec-note">세일즈 방향성 · 우선순위 · 상품 전략 · 마케팅</span></div>
 
+    <div class="sub-h">세일즈 방향성</div>
+    <div class="ogoals" style="margin-bottom:8px">
+      <div class="og"><div class="n">1</div><h3>체험 마케팅 원스톱 제안</h3>
+        <p>한 고객에게 VR · 하드웨어 · 개발 · CG · 영상을 <b>묶어서 제안</b>한다. 단품 VR 견적으로 끝내지 않는다.</p>
+        <div class="kpi">지표 · 2개 이상 영역 결합 제안 비중</div></div>
+      <div class="og"><div class="n">2</div><h3>수주는 줄이지 않는다</h3>
+        <p>내부 인력이 모자라도 <b>수주 범위를 인력에 맞추지 않는다.</b> 광고대행사처럼 외주 협력사로 수행 범위를 넓힌다.</p>
+        <div class="kpi">지표 · 분기 수주 건수 · 금액</div></div>
+      <div class="og"><div class="n">3</div><h3>이익을 확인하고 수주</h3>
+        <p>견적 전에 외주 원가를 받아 <b>예상 매출총이익</b>을 확인한다. 기준에 못 미치면 가격 · 범위를 조정하거나 실장 승인을 받는다.</p>
+        <div class="kpi">지표 · 견적 단계 이익 확인률 100%</div></div>
+      <div class="og"><div class="n">4</div><h3>반복 수주 고객 만들기</h3>
+        <p>납품 현장에서 다음 건을 제안해 <b>한 번 거래한 고객이 다시 맡기게</b> 한다. 동문 · 동부 · HJ중공업이 이미 보여준 방식이다.</p>
+        <div class="kpi">지표 · 재수주 고객 수 · 납품 후 추가 제안 건수</div></div>
+    </div>
+
+    <div class="sub-h">4분기 우선순위</div>
     <div class="levers">
       <div class="lever"><div class="num">1</div>
         <h3>3분기 신규 고객사에서 다음 현장 따내기</h3>
