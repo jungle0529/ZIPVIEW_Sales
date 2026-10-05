@@ -188,14 +188,6 @@
   .dept-h b{font-size:13.5px;font-weight:800;color:var(--c)}
   .role .dept-h span{font-size:11.5px}
   .dept .rl{background:var(--cs);color:var(--c)}
-  .org-notes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;
-    border-top:1px dashed var(--line);padding-top:18px}
-  .org-note{padding:0 16px;border-left:1px solid var(--line);word-break:keep-all}
-  .org-note:first-child{border-left:none;padding-left:0}
-  .org-note .k{font-size:11.5px;font-weight:700;color:var(--muted)}
-  .org-note .v{font-size:13.5px;font-weight:700;margin-top:5px;line-height:1.55}
-  .org-note .v s{color:var(--muted);font-weight:500;text-decoration:none}
-  .org-note .v em{font-style:normal;color:var(--accent)}
 
   /* mission · goals · GP · appendix */
   .mission{background:var(--ink);color:#fff;border-radius:14px;padding:22px 26px}
@@ -330,14 +322,11 @@
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
     .sec-h{flex-wrap:wrap;row-gap:4px}.sec-note{margin-left:0;width:100%}
-    .org,.depts,.org-notes{grid-template-columns:1fr}
-    .org{padding:20px 18px}
+    .org,.depts,    .org{padding:20px 18px}
     .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
     .head-wrap{margin-bottom:14px}
-    .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,    .org,.org-notes{break-inside:avoid}
-    .mcard,.lever,.panel,table,.listcard,.tl,.org,    .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
+  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,    .org,    .mcard,.lever,.panel,table,.listcard,.tl,.org,    .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
 .appx{break-before:page}}
 </style>
 </head>
@@ -418,14 +407,6 @@
               <li><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">Intern</span></li>
             </ul>
           </div></div>
-        </div>
-        <div class="org-notes">
-          <div class="org-note"><div class="k">조직</div>
-            <div class="v"><em>AX사업실</em> 단일 조직 (세일즈 · 제작 통합)</div></div>
-          <div class="org-note"><div class="k">구성</div>
-            <div class="v"><em>세일즈기획 · 프로덕션 · 지원</em> 3개 부서</div></div>
-          <div class="org-note"><div class="k">대응 범위</div>
-            <div class="v">전 인원 <em>건설 · 비건설</em> 모두 대응</div></div>
         </div>
     </div>
   </section>
