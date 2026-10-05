@@ -859,13 +859,15 @@
       var con=R("con"),sal=R("sal"),non=R("non"),inn=R("inn"),prd=R("prd"),par=R("par"),del=R("del");
       path("M"+con.r+","+sal.cy+" H"+(sal.x-2),"g"); lbl((con.r+sal.x)/2,sal.cy-14,"수주","g");
       path("M"+non.x+","+sal.cy+" H"+(sal.r+2),"o"); lbl((non.x+sal.r)/2,sal.cy-14,"수주","o");
-      path("M"+sal.cx+","+sal.b+" V"+(prd.y-2),"g"); lbl(sal.cx,(sal.b+prd.y)/2,"프로젝트 인계","g");
+      var ph=host.querySelector('[data-n="prd"] .hd').getBoundingClientRect().top-host.getBoundingClientRect().top;
+      var sh=host.querySelector('[data-n="sal"] .hd').getBoundingClientRect().top-host.getBoundingClientRect().top;
+      path("M"+sal.cx+","+sal.b+" V"+(ph-3),"g"); lbl(sal.cx,(sal.b+ph)/2,"프로젝트 인계","g");
       path("M"+prd.r+","+(prd.cy-12)+" H"+(par.x-2),"o"); lbl((prd.r+par.x)/2,prd.cy-26,"발주","o");
       path("M"+par.x+","+(prd.cy+12)+" H"+(prd.r+2),"o",true); lbl((prd.r+par.x)/2,prd.cy+26,"결과물","o");
       path("M"+(inn.r+2)+","+prd.cy+" H"+(prd.x-2),"b",false,true); lbl((inn.r+prd.x)/2,prd.cy-14,"핵심 · 품질","b");
       path("M"+prd.cx+","+prd.b+" V"+(del.y-2),"b"); lbl(prd.cx,(prd.b+del.y)/2,"최종 검수","b");
       var top=12;
-      path("M"+del.x+","+del.cy+" H8 V"+top+" H"+sal.cx+" V"+(sal.y-14),"g",true); lbl(con.cx,top,"재구매 재제안","g");
+      path("M"+del.x+","+del.cy+" H8 V"+top+" H"+sal.cx+" V"+(sh-3),"g",true); lbl(con.cx,top,"재구매 재제안","g");
     }
     window.addEventListener("resize",draw); window.addEventListener("beforeprint",draw);
     if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw); draw();
