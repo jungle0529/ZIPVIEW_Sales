@@ -128,19 +128,6 @@
   .lever .ev{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);
     background:var(--gold-soft);padding:3px 9px;border-radius:7px}
 
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .listcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
-    box-shadow:var(--shadow)}
-  .listcard h3{font-size:14px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-  .listcard h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-  .listcard.warn h3 .dot{background:var(--warn)}
-  .listcard ul{list-style:none}
-  .listcard li{font-size:13.5px;color:var(--ink-soft);padding:7px 0 7px 18px;position:relative;
-    border-bottom:1px dashed var(--line)}
-  .listcard li:last-child{border-bottom:none}
-  .listcard li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;
-    border-radius:50%;background:var(--line)}
-  .listcard li b{color:var(--ink)}
 
   .tl{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);
     border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
@@ -151,11 +138,6 @@
   .tl-col p:last-child{margin-bottom:0}
   .owner{font-size:10.5px;font-weight:700;color:var(--muted)}
 
-  /* conclusion */
-  .keymsg{background:var(--ink);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow)}
-  .keymsg .lbl{font-size:12px;font-weight:700;color:#8FE3CF;letter-spacing:.06em;text-transform:uppercase}
-  .keymsg p{margin-top:12px;font-size:16.5px;line-height:1.75;color:#E9EEF2}
-  .keymsg b{color:#fff;font-weight:700}.keymsg .hl{color:#F2D79B;font-weight:700}
 
   /* org chart */
   .org{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
@@ -312,7 +294,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.fl{grid-template-columns:1fr}
+    .metrics,.levers,.gr-row,.roles,.ogoals,.prin,.prin.mk,.pstrat,.fl{grid-template-columns:1fr}
     .shift{grid-template-columns:1fr}.shift-arr{justify-content:center;transform:rotate(90deg)}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
@@ -326,9 +308,9 @@
     .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
     .head-wrap{margin-bottom:14px}
   }
-  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.head-card,.dept-h,.rl,.seg,.gtag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.mission,.head-card,.dept-h,.rl,.seg,.gtag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org{break-inside:avoid}
-    .mcard,.lever,.panel,table,.listcard,.tl,.org{box-shadow:none}
+    .mcard,.lever,.panel,table,.tl,.org{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
     .lever,.role,.og,.dg,.cmp{break-inside:avoid}.appx{break-before:page}}
 </style>
@@ -596,39 +578,6 @@
       <div><b>홈페이지 개선</b><span>도입사례 · 문의 양식 중심으로 개편</span></div>
       <div><b>뉴스레터</b><span>DB 1,500명 · 오픈율 35.8% · 매출 전환 0 → 문의 연결 개선</span></div>
       <div><b>유튜브</b><span>포트폴리오 용도 → 홍보용 편집으로 재제작</span></div>
-    </div>
-  </section>
-
-  <!-- 7. 위험 -->
-  <section>
-    <div class="sec-h"><span class="sec-n">07</span><h2>위험 & 지원 요청</h2></div>
-    <div class="cols">
-      <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
-        <ul>
-          <li><b>대형 건 공백</b> — 대형 건 3건이 없으면 연 30억은 어렵다</li>
-          <li><b>비건설 집중</b> — 3분기 비건설의 83%가 삼성전자</li>
-          <li><b>협력업체 확대 부담</b> — 품질 · 납기 · 이익률 관리 → 내부 검수와 견적 단계 이익 확인으로 대응</li>
-        </ul></div>
-      <div class="listcard"><h3><span class="dot"></span>결정 · 지원 요청</h3>
-        <ul>
-          <li>4분기 목표의 <b>월별 · 담당별 배분</b></li>
-          <li><b>협력업체 풀 · 단가 계약</b> 승인</li>
-          <li>상품별 <b>이익률 기준</b> 확정</li>
-          <li>대형 건 · 삼성전자 2027 협의 <b>임원 동행</b></li>
-        </ul></div>
-    </div>
-  </section>
-
-  <!-- 결론 -->
-  <section>
-    <div class="keymsg">
-      <div class="lbl">결론 · 종합</div>
-      <p>AX사업실은 VR 제작을 넘어 <b>체험 마케팅 전 영역</b>을 수주하는 팀으로 바뀌었다. 1~3분기 누적 수주는 <b>18.38억(49건)</b>이다. 2 · 3분기 연속 <b>7억대</b>를 지켰고,
-      3분기에는 <span class="hl">새로 연 고객사(67%)와 세 명이 고르게 나눠 맡는 영업 구조</span>가 실적을 만들었다.
-      반면 <b>건설 1억 이상 대형 건이 끊기고 건당 단가가 내려갔으며</b>, 비건설은 삼성전자에 집중돼 있다.
-      4분기에는 <b>신규 고객사의 다음 현장 수주 · 대형 HW 결합 건 회복 · 멈춘 협의 건 정리 · 비건설 계정 확장</b>으로
-      건설 + 비건설 통합 연간 목표 <b>30억</b>을 달성한다. AX사업실은 <b>일은 최대한 수주하고, 내부는 기획 · PM · 검수를 쥐고 제작 물량은 협력업체로 넓히되 건별 매출총이익으로 관리</b>한다. 이를 위한 4분기 목표는 <span class="hl">11.62억</span>이며,
-      지금 수준(7.25억)에 <b>1억 이상 대형 건 3건</b>을 더해야 채울 수 있다.</p>
     </div>
   </section>
 
