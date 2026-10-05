@@ -129,23 +129,9 @@
   .keymsg b{color:#fff;font-weight:700}.keymsg .hl{color:#F2D79B;font-weight:700}
 
   /* org chart */
-  .org{display:grid;grid-template-columns:3fr 9fr;background:var(--card);border:1px solid var(--line);
-    border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
-  .org-before{background:#FAFBFC;border-right:1px solid var(--line);padding:22px 20px;position:relative;
-    display:flex;flex-direction:column;gap:12px}
-  .org-before::after{content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);
-    width:30px;height:30px;border-radius:50%;background:var(--card);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;
-    color:var(--accent);z-index:1;box-shadow:var(--shadow)}
-  .org-after{padding:22px 26px 24px;display:flex;flex-direction:column}
-  .org-lbl{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
-    display:flex;align-items:center;gap:8px}
-  .org-lbl .n{margin-left:auto;font-weight:600;letter-spacing:0;text-transform:none;font-size:11.5px}
-  .org-after .org-lbl{color:var(--accent);margin-bottom:16px}
-  .og{border:1px solid var(--line);border-radius:10px;background:var(--card)}
-  .og-h{font-size:12.5px;font-weight:800;padding:9px 12px;border-bottom:1px solid var(--line);
-    display:flex;justify-content:space-between;align-items:baseline}
-  .og-h span,.dept-h span{color:var(--muted);font-weight:600;font-size:11.5px;font-variant-numeric:tabular-nums}
+  .org{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:26px 28px 24px}
+  .dept-h span{color:var(--muted);font-weight:600;font-size:11.5px;font-variant-numeric:tabular-nums}
   .pl{list-style:none;padding:5px 0}
   .pl li{display:flex;align-items:center;gap:9px;padding:5px 12px;font-size:12.5px;line-height:1.3}
   .av{width:24px;height:24px;border-radius:50%;flex:none;font-size:10.5px;font-weight:800;
@@ -178,9 +164,8 @@
   .dept .rl{background:var(--cs);color:var(--c)}
   .pl li.dual .av{background:transparent;border:1.5px dashed var(--c)}
   .pl li.dual .nm{color:var(--ink-soft)}
-  .org-notes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;
+  .org-notes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;
     border-top:1px dashed var(--line);padding-top:18px}
-  .org-notes-gap{min-height:22px;flex:1}
   .org-note{padding:0 16px;border-left:1px solid var(--line);word-break:keep-all}
   .org-note:first-child{border-left:none;padding-left:0}
   .org-note .k{font-size:11.5px;font-weight:700;color:var(--muted)}
@@ -196,16 +181,14 @@
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
     .org,.depts,.org-notes{grid-template-columns:1fr}
-    .org-before{border-right:none;border-bottom:1px solid var(--line)}
-    .org-before::after{content:"↓";right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}
-    .org-after{padding:26px 18px 20px}
+    .org{padding:20px 18px}
     .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
   @media print{body{background:#fff}.keymsg,.head-card,.dept-h,.av,.rl{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
-    .mcard,.lever,.panel,table,.listcard,.tl,.org,.org-note,.org-before::after{box-shadow:none}
+    .mcard,.lever,.panel,table,.listcard,.tl,.org{box-shadow:none}
     #detail{max-height:none!important}.hint{display:none}}
 </style>
 </head>
@@ -819,35 +802,9 @@
 
   <!-- 6. 조직 체계 -->
   <section>
-    <div class="sec-h"><span class="sec-n">06</span><h2>조직 체계 — AX사업실 개편</h2>
-      <span class="sec-note">개편 전 → 후 · 총 10명</span></div>
+    <div class="sec-h"><span class="sec-n">06</span><h2>조직 체계 — AX사업실</h2>
+      <span class="sec-note">총 10명 · 1 총괄 · 3개 부서</span></div>
     <div class="org">
-      <div class="org-before">
-        <div class="org-lbl">개편 전</div>
-        <div class="og">
-          <div class="og-h">세일즈 · 기획 · PM <span>3명</span></div>
-          <ul class="pl">
-            <li><span class="av">C</span><span class="nm">Charles<span class="kr">임명섭</span></span></li>
-            <li><span class="av">A</span><span class="nm">Anna<span class="kr">김수빈</span></span></li>
-            <li><span class="av">L</span><span class="nm">Lucia<span class="kr">제갈민</span></span></li>
-          </ul>
-        </div>
-        <div class="og">
-          <div class="og-h">제작실 <span>7명</span></div>
-          <ul class="pl">
-            <li><span class="av">J</span><span class="nm">James<span class="kr">이중석</span></span><span class="rl">제작</span></li>
-            <li><span class="av">A</span><span class="nm">Awesome<span class="kr">홍준</span></span><span class="rl">제작</span></li>
-            <li><span class="av">J</span><span class="nm">Jude<span class="kr">차동훈</span></span><span class="rl">제작</span></li>
-            <li><span class="av">H</span><span class="nm">Hani<span class="kr">김하은</span></span><span class="rl">제작</span></li>
-            <li><span class="av">R</span><span class="nm">Rhea<span class="kr">권아름</span></span><span class="rl">영상</span></li>
-            <li><span class="av">S</span><span class="nm">Sianu<span class="kr">김경태</span></span><span class="rl">개발</span></li>
-            <li><span class="av">S</span><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">서포트</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="org-after">
-        <div class="org-lbl">개편 후 · AX사업실 <span class="n">1 총괄 · 3개 부서</span></div>
         <div class="head-wrap">
           <div class="head-card">
             <span class="av">C</span>
@@ -883,16 +840,14 @@
             </ul>
           </div></div>
         </div>
-        <div class="org-notes-gap"></div>
         <div class="org-notes">
-      <div class="org-note"><div class="k">조직</div>
-        <div class="v"><s>세일즈 / 제작실 분리</s> → <em>AX사업실 단일 조직</em></div></div>
-      <div class="org-note"><div class="k">구성</div>
-        <div class="v"><s>기능별 2개 그룹</s> → <em>세일즈 · 고객 대응 · 지원</em></div></div>
-      <div class="org-note"><div class="k">대응 범위</div>
-        <div class="v">전 인원 <em>건설 · 비건설</em> 모두 대응</div></div>
+          <div class="org-note"><div class="k">조직</div>
+            <div class="v"><em>AX사업실</em> 단일 조직 (세일즈 · 제작 통합)</div></div>
+          <div class="org-note"><div class="k">구성</div>
+            <div class="v"><em>세일즈 · 고객 대응 · 지원</em> 3개 부서</div></div>
+          <div class="org-note"><div class="k">대응 범위</div>
+            <div class="v">전 인원 <em>건설 · 비건설</em> 모두 대응</div></div>
         </div>
-      </div>
     </div>
   </section>
 
