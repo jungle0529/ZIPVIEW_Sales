@@ -128,6 +128,66 @@
   .keymsg p{margin-top:12px;font-size:16.5px;line-height:1.75;color:#E9EEF2}
   .keymsg b{color:#fff;font-weight:700}.keymsg .hl{color:#F2D79B;font-weight:700}
 
+  /* org chart */
+  .org{display:grid;grid-template-columns:3fr 9fr;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .org-before{background:#FAFBFC;border-right:1px solid var(--line);padding:22px 20px;position:relative;
+    display:flex;flex-direction:column;gap:12px}
+  .org-before::after{content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--card);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;
+    color:var(--accent);z-index:1;box-shadow:var(--shadow)}
+  .org-after{padding:22px 26px 24px;display:flex;flex-direction:column}
+  .org-lbl{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:8px}
+  .org-lbl .n{margin-left:auto;font-weight:600;letter-spacing:0;text-transform:none;font-size:11.5px}
+  .org-after .org-lbl{color:var(--accent);margin-bottom:16px}
+  .og{border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  .og-h{font-size:12.5px;font-weight:800;padding:9px 12px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline}
+  .og-h span,.dept-h span{color:var(--muted);font-weight:600;font-size:11.5px;font-variant-numeric:tabular-nums}
+  .pl{list-style:none;padding:5px 0}
+  .pl li{display:flex;align-items:center;gap:9px;padding:5px 12px;font-size:12.5px;line-height:1.3}
+  .av{width:24px;height:24px;border-radius:50%;flex:none;font-size:10.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;background:#EEF1F4;color:var(--ink-soft)}
+  .pl .nm{color:var(--ink);font-weight:700}
+  .pl .kr{color:var(--muted);font-weight:500;margin-left:3px}
+  .pl .rl{margin-left:auto;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;
+    background:#EEF1F4;color:var(--ink-soft);white-space:nowrap}
+  .head-wrap{display:flex;justify-content:center}
+  .head-card{background:var(--ink);color:#fff;border-radius:12px;padding:12px 22px 12px 14px;
+    display:flex;align-items:center;gap:12px}
+  .head-card .av{width:34px;height:34px;font-size:14px;background:rgba(255,255,255,.14);color:#fff}
+  .head-card .nm{font-size:15.5px;font-weight:800;line-height:1.3}
+  .head-card .kr{color:#B9C3CE;font-weight:500;margin-left:4px;font-size:13px}
+  .head-card .t{font-size:11.5px;color:#8FE3CF;font-weight:700}
+  .org-stem{width:1.5px;height:18px;background:#C9D1DB;margin:0 auto}
+  .depts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .dept{position:relative;padding-top:18px}
+  .dept::before{content:"";position:absolute;top:0;left:50%;width:1.5px;height:18px;background:#C9D1DB}
+  .dept::after{content:"";position:absolute;top:0;left:-7px;right:-7px;height:1.5px;background:#C9D1DB}
+  .dept:first-child::after{left:50%}
+  .dept:last-child::after{right:50%}
+  .dept.s{--c:var(--accent);--cs:var(--accent-soft)}
+  .dept.cx{--c:#2F5D8A;--cs:#E8EFF7}
+  .dept.sp{--c:var(--gold);--cs:var(--gold-soft)}
+  .dept-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);height:100%}
+  .dept-h{padding:10px 14px;background:var(--cs);display:flex;justify-content:space-between;align-items:baseline}
+  .dept-h b{font-size:13.5px;font-weight:800;color:var(--c)}
+  .dept .av{background:var(--cs);color:var(--c)}
+  .dept .rl{background:var(--cs);color:var(--c)}
+  .pl li.dual .av{background:transparent;border:1.5px dashed var(--c)}
+  .pl li.dual .nm{color:var(--ink-soft)}
+  .org-notes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;
+    border-top:1px dashed var(--line);padding-top:18px}
+  .org-notes-gap{min-height:22px;flex:1}
+  .org-note{padding:0 16px;border-left:1px solid var(--line);word-break:keep-all}
+  .org-note:first-child{border-left:none;padding-left:0}
+  .org-note .k{font-size:11.5px;font-weight:700;color:var(--muted)}
+  .org-note .v{font-size:13.5px;font-weight:700;margin-top:5px;line-height:1.55}
+  .org-note .v s{color:var(--muted);font-weight:500;text-decoration:none}
+  .org-note .v em{font-style:normal;color:var(--accent)}
+
   footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
@@ -135,9 +195,17 @@
     .metrics,.levers,.cols{grid-template-columns:1fr}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
+    .org,.depts,.org-notes{grid-template-columns:1fr}
+    .org-before{border-right:none;border-bottom:1px solid var(--line)}
+    .org-before::after{content:"↓";right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}
+    .org-after{padding:26px 18px 20px}
+    .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
+    .head-wrap{margin-bottom:14px}
+    .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .mcard,.lever,.panel,table,.listcard,.tl{box-shadow:none}
+  @media print{body{background:#fff}.keymsg,.head-card,.dept-h,.av,.rl{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .org,.org-notes{break-inside:avoid}
+    .mcard,.lever,.panel,table,.listcard,.tl,.org,.org-note,.org-before::after{box-shadow:none}
     #detail{max-height:none!important}.hint{display:none}}
 </style>
 </head>
@@ -749,9 +817,88 @@
       ※ 금액은 영업 추정(확인 필요). 협의 9건 확률 확정 시 합산 · 예상치 정밀화.</p>
   </section>
 
-  <!-- 6. 실행 체계 -->
+  <!-- 6. 조직 체계 -->
   <section>
-    <div class="sec-h"><span class="sec-n">06</span><h2>실행 체계 — 분기 목표 & 역할</h2>
+    <div class="sec-h"><span class="sec-n">06</span><h2>조직 체계 — AX사업실 개편</h2>
+      <span class="sec-note">개편 전 → 후 · 총 10명</span></div>
+    <div class="org">
+      <div class="org-before">
+        <div class="org-lbl">개편 전</div>
+        <div class="og">
+          <div class="og-h">세일즈 · 기획 · PM <span>3명</span></div>
+          <ul class="pl">
+            <li><span class="av">C</span><span class="nm">Charles<span class="kr">임명섭</span></span></li>
+            <li><span class="av">A</span><span class="nm">Anna<span class="kr">김수빈</span></span></li>
+            <li><span class="av">L</span><span class="nm">Lucia<span class="kr">제갈민</span></span></li>
+          </ul>
+        </div>
+        <div class="og">
+          <div class="og-h">제작실 <span>7명</span></div>
+          <ul class="pl">
+            <li><span class="av">J</span><span class="nm">James<span class="kr">이중석</span></span><span class="rl">제작</span></li>
+            <li><span class="av">A</span><span class="nm">Awesome<span class="kr">홍준</span></span><span class="rl">제작</span></li>
+            <li><span class="av">J</span><span class="nm">Jude<span class="kr">차동훈</span></span><span class="rl">제작</span></li>
+            <li><span class="av">H</span><span class="nm">Hani<span class="kr">김하은</span></span><span class="rl">제작</span></li>
+            <li><span class="av">R</span><span class="nm">Rhea<span class="kr">권아름</span></span><span class="rl">영상</span></li>
+            <li><span class="av">S</span><span class="nm">Sianu<span class="kr">김경태</span></span><span class="rl">개발</span></li>
+            <li><span class="av">S</span><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">서포트</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="org-after">
+        <div class="org-lbl">개편 후 · AX사업실 <span class="n">1 총괄 · 3개 부서</span></div>
+        <div class="head-wrap">
+          <div class="head-card">
+            <span class="av">C</span>
+            <div><div class="nm">Charles<span class="kr">임명섭</span></div>
+              <div class="t">AX사업실장 · 총괄</div></div>
+          </div>
+        </div>
+        <div class="org-stem"></div>
+        <div class="depts">
+          <div class="dept s"><div class="dept-card">
+            <div class="dept-h"><b>세일즈 부서</b><span>3명</span></div>
+            <ul class="pl">
+              <li class="dual"><span class="av">C</span><span class="nm">Charles<span class="kr">임명섭</span></span><span class="rl">겸업</span></li>
+              <li><span class="av">L</span><span class="nm">Lucia<span class="kr">제갈민</span></span><span class="rl">Manager</span></li>
+              <li><span class="av">A</span><span class="nm">Anna<span class="kr">김수빈</span></span><span class="rl">Pro</span></li>
+            </ul>
+          </div></div>
+          <div class="dept cx"><div class="dept-card">
+            <div class="dept-h"><b>고객 대응 부서</b><span>4명</span></div>
+            <ul class="pl">
+              <li><span class="av">J</span><span class="nm">James<span class="kr">이중석</span></span><span class="rl">Manager</span></li>
+              <li><span class="av">A</span><span class="nm">Awesome<span class="kr">홍준</span></span><span class="rl">Pro</span></li>
+              <li><span class="av">J</span><span class="nm">Jude<span class="kr">차동훈</span></span><span class="rl">Pro</span></li>
+              <li><span class="av">H</span><span class="nm">Hani<span class="kr">김하은</span></span><span class="rl">Pro</span></li>
+            </ul>
+          </div></div>
+          <div class="dept sp"><div class="dept-card">
+            <div class="dept-h"><b>지원 부서</b><span>3명</span></div>
+            <ul class="pl">
+              <li><span class="av">R</span><span class="nm">Rhea<span class="kr">권아름</span></span><span class="rl">콘텐츠</span></li>
+              <li><span class="av">S</span><span class="nm">Sianu<span class="kr">김경태</span></span><span class="rl">기술개발</span></li>
+              <li><span class="av">S</span><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">Intern</span></li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="org-notes-gap"></div>
+        <div class="org-notes">
+      <div class="org-note"><div class="k">조직</div>
+        <div class="v"><s>세일즈 / 제작실 분리</s> → <em>AX사업실 단일 조직</em></div></div>
+      <div class="org-note"><div class="k">구성</div>
+        <div class="v"><s>기능별 2개 그룹</s> → <em>세일즈 · 고객 대응 · 지원</em></div></div>
+      <div class="org-note"><div class="k">대응 범위</div>
+        <div class="v">전 인원 <em>건설 · 비건설</em> 모두 대응</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 실행 체계 -->
+  <section>
+    <div class="sec-h"><span class="sec-n">07</span><h2>실행 체계 — 분기 목표 & 역할</h2>
       <span class="sec-note">3분기 ~10억 · 4분기 ~12.48억</span></div>
     <div class="listcard"><h3><span class="dot"></span>역할 분담 <span style="font-weight:500;color:var(--muted);font-size:11px">(제안 · 확인 필요)</span></h3>
       <ul>
@@ -761,9 +908,9 @@
       </ul></div>
   </section>
 
-  <!-- 7. 위험 -->
+  <!-- 8. 위험 -->
   <section>
-    <div class="sec-h"><span class="sec-n">07</span><h2>위험 & 대응</h2></div>
+    <div class="sec-h"><span class="sec-n">08</span><h2>위험 & 대응</h2></div>
     <div class="cols">
       <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
         <ul>
