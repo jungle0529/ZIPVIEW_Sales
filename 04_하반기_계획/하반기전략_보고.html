@@ -239,6 +239,7 @@
   .sens .row>div.hl{background:var(--accent-soft);border-color:var(--accent)}
   .sens i{display:block;font-style:normal;font-size:12px;color:var(--muted);font-weight:600}
   .sens .row b{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+  .sens .case-ref{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
   .sens p{font-size:13px;color:var(--ink-soft);margin-top:10px}
   .pstrat{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .ps{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
@@ -287,6 +288,7 @@
   .cr span{font-size:12.8px;color:var(--ink-soft);line-height:1.55;word-break:keep-all}
   .cr b{color:var(--ink)}
   .case.ax .cr i{background:var(--card)}
+  .case .src{margin-top:auto;font-size:11px;color:var(--muted);font-weight:600;border-top:1px dashed var(--line);padding-top:8px}
   .cases-note{font-size:13px;color:var(--ink-soft);margin-top:10px;word-break:keep-all}
   .cases-note b{color:var(--accent)}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -475,17 +477,19 @@
 
     <div class="sub-h">같은 방식으로 운영하는 사례</div>
     <div class="cases">
-      <div class="case"><div class="ct">분양 광고대행사</div>
-        <div class="cr"><i>내부</i><span>현장별 <b>PM</b>이 기획 · 일정 · 고객 대응</span></div>
-        <div class="cr"><i>협력업체</i><span>제작 · 시공 · 영상 등 실제 작업</span></div></div>
-      <div class="case"><div class="ct">인터내셔널</div>
-        <div class="cr"><i>내부</i><span><b>기획 · PM</b>으로 사업을 설계하고 관리</span></div>
-        <div class="cr"><i>협력업체</i><span>협력업체를 통해 <b>사업을 오픈</b></span></div></div>
+      <div class="case"><div class="ct">분양 홍보대행사</div>
+        <div class="cr"><i>내부</i><span>입지 · 수요 분석, <b>광고 콘셉트 · 언론 홍보 · 온라인 마케팅 전략</b>을 설계해 PT로 수주</span></div>
+        <div class="cr"><i>실행</i><span>3D · 드론 · 모션그래픽 영상, 현장 이벤트</span></div>
+        <div class="src">한국금융신문 · 2026.6.11</div></div>
+      <div class="case"><div class="ct">종합 광고대행사 (제일기획)</div>
+        <div class="cr"><i>내부</i><span>광고 <b>기획 · 집행 관리</b></span></div>
+        <div class="cr"><i>협력업체</i><span>프로덕션 등 <b>협력업체가 제작</b> — 외주비 비중이 커서 <b>매출총이익을 따로 발표</b></span></div>
+        <div class="src">서울경제 · 2025.4.25 · 1분기 매출 1조394억 / 매출총이익 4,335억</div></div>
       <div class="case ax"><div class="ct">AX사업실</div>
         <div class="cr"><i>내부</i><span>세일즈기획 수주 · 프로덕션 <b>PM</b> · 핵심 제작 · 검수</span></div>
         <div class="cr"><i>협력업체</i><span>VR 모델링 · CG · 영상 · HW 설치</span></div></div>
     </div>
-    <p class="cases-note">공통점 — 내부는 <b>기획 · PM · 품질</b>을 쥐고, 실행 물량은 <b>협력업체</b>로 넓혀 인원 이상의 일을 수행한다.</p>
+    <p class="cases-note">공통점 — 내부는 <b>기획 · PM · 품질</b>을 쥐고, 실행 물량은 <b>협력업체</b>로 넓힌다. 그래서 이 업계는 매출보다 <b>매출총이익</b>을 핵심 지표로 본다.</p>
 
     <div class="sub-h">운영 원칙</div>
     <div class="prin">
@@ -551,6 +555,7 @@
       <div class="lbl">4분기 매출 11.62억 기준 매출총이익</div>
       <div class="row"><div><i>이익률 30%</i><b>3.49억</b></div><div class="hl"><i>이익률 40%</i><b>4.65억</b></div><div><i>이익률 50%</i><b>5.81억</b></div></div>
       <p>이익률 10%p 차이 = 매출총이익 <b>1.16억</b> 차이. 협력업체 활용을 늘릴수록 견적 단계의 이익 확인이 중요하다.</p>
+      <p class="case-ref">참고 · HS애드는 2012년 매출이 14억 줄었지만 외주비를 24억 줄여 매출총이익이 617억 → 627억으로 늘고 영업이익도 4.9% 증가했다 (아주경제 · 2013.3.21).</p>
     </div>
 
     <div class="sub-h">협력업체 운영</div>
