@@ -52,7 +52,7 @@
   .qlegend{display:flex;gap:16px;font-size:12px;color:var(--muted);font-weight:600}
   .qlegend span{display:flex;align-items:center;gap:6px}
   .qlegend i{width:10px;height:10px;border-radius:3px;display:inline-block}
-  .seg.c{background:var(--accent)}.seg.b{background:var(--gold)}.seg.p{background:#9AA5B1}
+  .seg.c{background:var(--accent)}.seg.b{background:var(--gold)}
   .qchart{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
   .qcol{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;
     justify-content:flex-end;height:236px;padding:8px 6px 10px;border-radius:10px;transition:background .15s}
@@ -78,7 +78,6 @@
   .gtag{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px}
   .gtag.c{background:var(--accent-soft);color:var(--accent)}
   .gtag.b{background:var(--gold-soft);color:var(--gold)}
-  .gtag.p{background:#EEF1F4;color:var(--ink-soft)}
   .foot{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
 
   /* Q3 findings */
@@ -259,13 +258,13 @@
     </div>
 
     <div class="panel" style="margin-top:16px">
-      <div class="qlegend"><span><i class="seg c"></i>건설</span><span><i class="seg b"></i>비건설</span><span><i class="seg p"></i>공공</span></div>
+      <div class="qlegend"><span><i class="seg c"></i>건설</span><span><i class="seg b"></i>비건설</span></div>
       <div class="qchart">
         <button class="qcol" type="button" data-q="1" aria-controls="qd1" aria-pressed="false">
           <span class="qv">3.88억</span><span class="qstack"><span class="seg c" style="height:71.6px"></span><span class="seg b" style="height:10.8px"></span></span><span class="qx">1분기</span></button><button class="qcol" type="button" data-q="2" aria-controls="qd2" aria-pressed="false">
           <span class="qv">7.30억</span><span class="qstack"><span class="seg c" style="height:85.4px"></span><span class="seg b" style="height:69.8px"></span></span><span class="qx">2분기</span></button><button class="qcol on" type="button" data-q="3" aria-controls="qd3" aria-pressed="true">
           <span class="qv">7.20억</span><span class="qstack"><span class="seg c" style="height:111.5px"></span><span class="seg b" style="height:41.6px"></span></span><span class="qx">3분기</span></button><button class="qcol" type="button" data-q="4" aria-controls="qd4" aria-pressed="false">
-          <span class="qv">64만</span><span class="qstack"><span class="seg p" style="height:2px"></span></span><span class="qx">4분기 <small>진행 중</small></span></button>
+          <span class="qv">—</span><span class="qstack"></span><span class="qx">4분기 <small>진행 중</small></span></button>
       </div>
       <div class="qdetail">
       <div class="qd" id="qd1">
@@ -330,10 +329,10 @@
 <tr><td>9월</td><td><span class="gtag c">건설</span></td><td>소요한남 체험 솔루션</td><td>브릭스인베스트먼트</td><td>Anna</td><td class="num-cell">21,280,000</td></tr>
 <tr><td>9월</td><td><span class="gtag c">건설</span></td><td>성수동 삼표산업 갤러리 AI영상</td><td>삼표산업</td><td>Charles</td><td class="num-cell">10,000,000</td></tr>
         </tbody></table></div></div><div class="qd" id="qd4">
-        <div class="qd-h"><b>4분기 · 1건</b><span>10월 5일 기준 · 합계 636,363원</span></div>
+        <div class="qd-h"><b>4분기 · 0건</b><span>10월 5일 기준 · 합계 0원</span></div>
         <div class="tbl-wrap"><table class="qtbl"><thead><tr><th>월</th><th>구분</th><th>프로젝트</th><th>고객사</th><th>담당</th><th class="num-cell">계약금액(원)</th></tr></thead>
         <tbody>
-<tr><td>10월</td><td><span class="gtag p">공공</span></td><td>세경대학교 박물관 포럼 강연</td><td>세경대학교</td><td>Lucia</td><td class="num-cell">636,363</td></tr>
+<tr><td colspan="6" style="text-align:center;color:var(--muted)">10월 5일 기준 수주 없음</td></tr>
         </tbody></table></div></div>
       </div>
     </div>
@@ -346,7 +345,7 @@
 <tr><td><b>3분기</b></td><td class="num-cell">5.25억</td><td class="num-cell">1.96억</td><td class="num-cell"><b>7.20억</b></td><td class="num-cell">21건</td><td class="num-cell">3,431만</td><td>삼성 디자인센터 하반기 1.40억 · 거제시 옥포동 공동주택 0.85억</td></tr>
 <tr class="row-target"><td style="white-space:nowrap">1~3분기 누적</td><td class="num-cell">12.63억</td><td class="num-cell">5.75억</td><td class="num-cell">18.38억</td><td class="num-cell">49건</td><td class="num-cell">3,752만</td><td>—</td></tr>
       </tbody></table></div>
-    <p class="foot">※ 출처: AX사업실 수주 실적표(계약서 작성 또는 작성 확정 후 실행 오더를 받은 프로젝트). 10월은 5일 기준 1건(공공 64만원)으로 4분기 진행 중.</p>
+    <p class="foot">※ 출처: AX사업실 수주 실적표(계약서 작성 또는 작성 확정 후 실행 오더를 받은 프로젝트). 4분기는 10월 5일 기준 수주 없음.</p>
   </section>
 
   <!-- 2. 3분기 분석 -->
@@ -788,7 +787,7 @@
         <div class="dept-h"><b>세일즈기획 (고객대응)</b><span>Charles · Lucia · Anna</span></div>
         <ul class="rl-list">
           <li><b>Charles</b> — 실 총괄 · 1억 이상 대형 HW 결합 건 · 해모로(HJ) · 위너케이</li>
-          <li><b>Lucia</b> — 비건설 계정(삼성전자 2027) · 반도건설 · 공공</li>
+          <li><b>Lucia</b> — 비건설 계정(삼성전자 2027) · 반도건설</li>
           <li><b>Anna</b> — 동부건설 다음 현장 · GS 옵션몰 · 소요한남(브릭스)</li>
         </ul></div></div>
       <div class="role cx"><div class="dept-card">
