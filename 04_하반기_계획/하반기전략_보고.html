@@ -48,40 +48,80 @@
 
   .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;
     box-shadow:var(--shadow)}
-  .chart{display:flex;align-items:flex-end;gap:14px;height:200px;margin:18px 4px 6px;
-    border-bottom:1px solid var(--line)}
-  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-    height:100%;cursor:pointer;border-radius:6px 6px 0 0;transition:background .15s;padding-top:4px}
-  .bar-col:hover{background:#F0F4F3}
-  .bar-col:hover .bar{filter:brightness(1.06)}
-  .bar-col.active{background:#EAF1EF}
-  .bar-val{font-size:10px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;
-    font-variant-numeric:tabular-nums;white-space:nowrap}
-  .bar{width:100%;max-width:54px;background:linear-gradient(180deg,#2E8C76,#1F6F5C);
-    border-radius:6px 6px 0 0;transition:height .3s;pointer-events:none}
-  .bar.peak{background:linear-gradient(180deg,#C99A45,#B0822E)}
-  .bar.low{background:linear-gradient(180deg,#D2604A,#C0492F)}
-  .bar-col.active .bar{outline:2px solid var(--ink);outline-offset:2px}
-  .bar-x{display:flex;gap:14px;margin-top:8px}
-  .bar-x span{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
-  .chart-cap{font-size:13px;color:var(--warn);font-weight:600;margin-top:12px;
-    background:var(--warn-soft);display:inline-block;padding:5px 11px;border-radius:8px}
-  .hint{font-size:12px;color:var(--muted);margin-top:10px}
+  /* quarterly chart */
+  .qlegend{display:flex;gap:16px;font-size:12px;color:var(--muted);font-weight:600}
+  .qlegend span{display:flex;align-items:center;gap:6px}
+  .qlegend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .seg.c{background:var(--accent)}.seg.b{background:var(--gold)}.seg.p{background:#9AA5B1}
+  .qchart{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
+  .qcol{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;
+    justify-content:flex-end;height:236px;padding:8px 6px 10px;border-radius:10px;transition:background .15s}
+  .qcol:hover{background:#F0F4F3}
+  .qcol.on{background:var(--accent-soft)}
+  .qcol:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .qv{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:8px}
+  .qstack{width:100%;max-width:84px;display:flex;flex-direction:column-reverse;border-radius:6px 6px 0 0;overflow:hidden}
+  .qstack .seg{display:block;width:100%}
+  .qx{width:100%;text-align:center;border-top:1px solid var(--line);margin-top:0;padding-top:8px;
+    font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+  .qx small{font-weight:600;color:var(--muted);font-size:11px}
+  .qcol.on .qx{color:var(--accent)}
+  .qdetail{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px}
+  .qd{display:none}.qd.on{display:block}
+  .qd-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .qd-h b{font-size:15px;font-weight:800}
+  .qd-h span{font-size:12.5px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+  .tbl-wrap{overflow-x:auto}
+  .qtbl{font-size:12.5px;box-shadow:none}
+  .qtbl th,.qtbl td{padding:8px 12px;white-space:nowrap}
+  .qtbl td:nth-child(3){white-space:normal;min-width:200px}
+  .gtag{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px}
+  .gtag.c{background:var(--accent-soft);color:var(--accent)}
+  .gtag.b{background:var(--gold-soft);color:var(--gold)}
+  .gtag.p{background:#EEF1F4;color:var(--ink-soft)}
+  .foot{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
 
-  /* expandable detail */
-  #detail{margin-top:16px;overflow:hidden;max-height:0;transition:max-height .3s ease;
-    border-top:1px dashed var(--line)}
-  #detail.open{max-height:520px}
-  .detail-inner{padding-top:16px}
-  .detail-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
-  .detail-head .m{font-size:15px;font-weight:800}
-  .detail-head .s{font-size:13px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+  /* Q3 findings */
+  .finds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .find{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:6px}
+  .ftag{align-self:flex-start;font-size:11px;font-weight:800;padding:2px 9px;border-radius:999px}
+  .find.pos .ftag{background:var(--accent-soft);color:var(--accent)}
+  .find.neg .ftag{background:var(--warn-soft);color:var(--warn)}
+  .find h3{font-size:15px;font-weight:800;letter-spacing:-0.01em;margin-top:4px;text-wrap:balance}
+  .fnum{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+  .find.pos .fnum{color:var(--accent)}.find.neg .fnum{color:var(--warn)}
+  .find p{font-size:13px;color:var(--ink-soft);line-height:1.6;word-break:keep-all}
+
+  /* Q4 goal */
+  .gr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:14px}
+  .gr-row .k{font-size:12px;color:var(--muted);font-weight:700}
+  .gr-row .v{font-size:26px;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:4px}
+  .gr-row .v.warn-v{color:var(--warn)}
+  .gr-row .d{font-size:12px;color:var(--muted);margin-top:2px}
+  .goal-reset p{font-size:13.5px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:14px;word-break:keep-all}
+  .sub-h{font-size:15px;font-weight:800;margin:28px 0 8px;display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";width:14px;height:2px;background:var(--accent)}
+
+  /* operating flow & roles */
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-bottom:16px}
+  .fstep{border-radius:12px;padding:12px 14px;background:var(--cs);text-align:center}
+  .fstep b{display:block;font-size:13.5px;color:var(--c)}
+  .fstep span{font-size:11.5px;color:var(--muted);font-weight:600}
+  .farr{color:var(--muted);font-weight:800}
+  .fbase{grid-column:1/-1;background:var(--cs);color:var(--c);border-radius:12px;padding:10px 14px;
+    font-size:12.5px;font-weight:700;text-align:center}
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rl-list{list-style:none;padding:8px 14px 12px}
+  .rl-list li{font-size:12.8px;color:var(--ink-soft);padding:7px 0;border-bottom:1px dashed var(--line);line-height:1.55;word-break:keep-all}
+  .rl-list li:last-child{border-bottom:none}
+  .rl-list b{color:var(--ink)}
   table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);
     border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
   th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-  th{background:#FAFBFC;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+  th{white-space:nowrap;background:#FAFBFC;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
   td{color:var(--ink-soft)} tr:last-child td{border-bottom:none}
-  .num-cell{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+  .num-cell{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
   .row-target{background:var(--accent-soft)}
   .row-target td{color:var(--ink);font-weight:700}
   .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px}
@@ -154,12 +194,13 @@
   .dept::after{content:"";position:absolute;top:0;left:-7px;right:-7px;height:1.5px;background:#C9D1DB}
   .dept:first-child::after{left:50%}
   .dept:last-child::after{right:50%}
-  .dept.s{--c:var(--accent);--cs:var(--accent-soft)}
-  .dept.cx{--c:#2F5D8A;--cs:#E8EFF7}
-  .dept.sp{--c:var(--gold);--cs:var(--gold-soft)}
+  .dept.s,.role.s,.fstep.s{--c:var(--accent);--cs:var(--accent-soft)}
+  .dept.cx,.role.cx,.fstep.cx{--c:#2F5D8A;--cs:#E8EFF7}
+  .dept.sp,.role.sp,.fbase.sp{--c:var(--gold);--cs:var(--gold-soft)}
   .dept-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);height:100%}
   .dept-h{padding:10px 14px;background:var(--cs);display:flex;justify-content:space-between;align-items:baseline}
   .dept-h b{font-size:13.5px;font-weight:800;color:var(--c)}
+  .role .dept-h span{font-size:11.5px}
   .dept .av{background:var(--cs);color:var(--c)}
   .dept .rl{background:var(--cs);color:var(--c)}
   .pl li.dual .av{background:transparent;border:1.5px dashed var(--c)}
@@ -177,7 +218,9 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles{grid-template-columns:1fr}
+    .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
+    .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
     .org,.depts,.org-notes{grid-template-columns:1fr}
@@ -186,10 +229,11 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg,.head-card,.dept-h,.av,.rl{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.keymsg,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
-    .mcard,.lever,.panel,table,.listcard,.tl,.org{box-shadow:none}
-    #detail{max-height:none!important}.hint{display:none}}
+    .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
+    .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
+    .find,.lever,.role{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -199,297 +243,200 @@
     <div class="kicker">AX사업실 · 팀 공유</div>
     <h1>2026 AX사업실 운영계획</h1>
     <div class="sub">
-      <span>기준일 2026-06-22</span><span>작성 · AX사업실</span>
+      <span>기준일 2026-10-05</span><span>작성 · AX사업실</span>
       <span class="badge">대외비 · 내부용</span>
     </div>
   </header>
 
-  <!-- 1. 현황 진단 -->
+  <!-- 1. 분기별 실적 -->
   <section>
-    <div class="sec-h"><span class="sec-n">01</span><h2>상반기 실적 & 분석</h2>
-      <span class="sec-note">월별 수주 (원) · 막대 클릭 시 상세</span></div>
-
-    <!-- KPI 카드 행 -->
-    <div class="metrics" style="margin-bottom:16px;grid-template-columns:repeat(4,1fr)">
-      <div class="mcard">
-        <div class="t">분양파트 CRM 제안 건수</div>
-        <div class="v">56건</div>
-        <div class="d">계약완료 19 · 미성사 10 · 견적/제안 27 (2026 H1 분양파트 기준)</div>
-      </div>
-      <div class="mcard accent">
-        <div class="t">분양 파트 수주 금액</div>
-        <div class="v">7.52억</div>
-        <div class="d">연간 목표의 25%</div>
-      </div>
-      <div class="mcard">
-        <div class="t">수주 건수</div>
-        <div class="v">17건</div>
-        <div class="d">1건 평균 약 4,424만원</div>
-      </div>
-      <div class="mcard" style="border-left:3px solid var(--warn)">
-        <div class="t">기존 관계 의존도</div>
-        <div class="v" style="color:var(--warn)">90%</div>
-        <div class="d">신규 고객 단 3건 · 10%</div>
-      </div>
-    </div>
-
-    <!-- 제안→계약 전환 퍼널 -->
-    <div class="panel" style="margin-bottom:16px">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
-        <span style="font-size:15px;font-weight:800">제안 → 계약 전환 현황 (상반기)</span>
-        <span style="font-size:12px;color:var(--muted)">출처: 분양파트 CRM Google Sheets · 견적월 M1~M6 기준 · 2026 H1</span>
-      </div>
-      <!-- 퍼널 스텝 -->
-      <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:0;margin-bottom:18px">
-        <!-- 스텝 1: 전체 제안 -->
-        <div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center">
-          <div style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px">전체 제안 (견적 발행)</div>
-          <div style="font-size:28px;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">56건</div>
-          <div style="font-size:13px;font-weight:700;color:var(--ink-soft);margin-top:4px">약 58.7억</div>
-          <div style="margin-top:10px;font-size:11px;color:var(--muted);line-height:1.6">
-            계약완료 19 · 견적/제안 27<br>계약미성사 10건 포함
-          </div>
-        </div>
-        <!-- 화살표 -->
-        <div style="text-align:center;padding:0 12px;flex-shrink:0">
-          <div style="font-size:20px;color:var(--line)">→</div>
-          <div style="font-size:11px;font-weight:700;color:var(--accent);margin-top:2px">34%</div>
-          <div style="font-size:10px;color:var(--muted)">건수 기준</div>
-        </div>
-        <!-- 스텝 2: 전사 계약 -->
-        <div style="background:var(--accent-soft);border:2px solid var(--accent);border-radius:12px;padding:18px;text-align:center">
-          <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px">전사 수주 확정</div>
-          <div style="font-size:28px;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--accent)">19건</div>
-          <div style="font-size:13px;font-weight:700;color:var(--accent);margin-top:4px">9.54억</div>
-          <div style="margin-top:10px;font-size:11px;color:var(--ink-soft);line-height:1.6">
-            H1 2026 계약시작일 기준<br>건당 평균 5,024만원
-          </div>
-        </div>
-        <!-- 화살표 -->
-        <div style="text-align:center;padding:0 12px;flex-shrink:0">
-          <div style="font-size:20px;color:var(--line)">→</div>
-          <div style="font-size:11px;font-weight:700;color:var(--ink-soft);margin-top:2px">17건</div>
-          <div style="font-size:10px;color:var(--muted)">분양 파트</div>
-        </div>
-        <!-- 스텝 3: 분양파트 -->
-        <div style="background:var(--accent);border:1px solid var(--accent);border-radius:12px;padding:18px;text-align:center">
-          <div style="font-size:11px;font-weight:700;color:#CDE8E1;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px">분양 파트 수주</div>
-          <div style="font-size:28px;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:#fff">17건</div>
-          <div style="font-size:13px;font-weight:700;color:#CDE8E1;margin-top:4px">7.52억</div>
-          <div style="margin-top:10px;font-size:11px;color:#CDE8E1;line-height:1.6">
-            연간 목표 30억의 25%<br>건당 평균 4,424만원
-          </div>
-        </div>
-      </div>
-      <!-- 미성사 분석 바 -->
-      <div style="margin-top:4px">
-        <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px">전체 제안 56건 구성 (건수 기준)</div>
-        <div style="display:flex;height:28px;border-radius:7px;overflow:hidden;font-size:11px;font-weight:700">
-          <div style="width:33.9%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff" title="계약완료 19건">수주 19건</div>
-          <div style="width:48.2%;background:#8A94A1;display:flex;align-items:center;justify-content:center;color:#fff" title="견적/제안 27건">견적/제안 27건</div>
-          <div style="width:17.9%;background:var(--warn);display:flex;align-items:center;justify-content:center;color:#fff" title="미성사 10건">미성사 10</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11.5px;color:var(--muted)">
-          <span style="color:var(--accent);font-weight:600">9.54억 (16.2%)</span>
-          <span style="color:#5B6675;font-weight:600">~42억 진행중 파이프라인</span>
-          <span style="color:var(--warn);font-weight:600">7.18억 미성사</span>
-        </div>
-      </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6">
-        ※ 2026 H1 분양파트 CRM 기준 56건 집계. 견적/제안 진행중 27건(~42억)은 현재도 수주 가능 파이프라인. 전체 금액 58.7억 중 부산해운대우동 복합개발(27.96억) 1건이 대형 미결 프로젝트로 포함됨.
-      </p>
-    </div>
-
-    <div class="panel">
-      <div class="chart" id="chart">
-        <div class="bar-col" data-m="1"><div class="bar-val">20,200,000</div><div class="bar" style="height:5%"></div></div>
-        <div class="bar-col" data-m="2"><div class="bar-val">160,236,364</div><div class="bar" style="height:43%"></div></div>
-        <div class="bar-col" data-m="3"><div class="bar-val">375,480,000</div><div class="bar peak" style="height:100%"></div></div>
-        <div class="bar-col" data-m="4"><div class="bar-val">98,300,000</div><div class="bar" style="height:26%"></div></div>
-        <div class="bar-col" data-m="5"><div class="bar-val">83,000,000</div><div class="bar" style="height:22%"></div></div>
-        <div class="bar-col" data-m="6"><div class="bar-val">15,000,000</div><div class="bar low" style="height:4%"></div></div>
-      </div>
-      <div class="bar-x"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span></div>
-      <div class="chart-cap">⚠ 3월 최고치(3.75억) 이후 4월 0.98억 → 5월 0.83억 → 6월 0.15억으로 하락세 — 하반기 즉시 수주 필요</div>
-      <div class="hint">↑ 막대를 클릭하면 해당 월의 사업지 · 금액이 아래에 펼쳐집니다.</div>
-
-      <div id="detail">
-        <div class="detail-inner">
-          <div class="detail-head"><span class="m" id="d-month"></span><span class="s" id="d-sum"></span></div>
-          <table><thead><tr><th>프로젝트</th><th>고객사</th><th class="num-cell">금액(원)</th></tr></thead>
-            <tbody id="d-rows"></tbody></table>
-        </div>
-      </div>
-
-      <div style="margin-top:20px">
-        <div style="font-size:14px;font-weight:800;margin-bottom:10px">월별 상세</div>
-        <table>
-          <thead><tr><th>월</th><th class="num-cell">수주(원)</th><th class="num-cell">건</th><th>핵심 요인 &amp; 설명</th></tr></thead>
-          <tbody>
-            <tr><td>1월</td><td class="num-cell">20,200,000</td><td class="num-cell">1</td>
-              <td>오티에르 반포 XR(포스코이앤씨). 연초 단 1건 · 기존 관계 기반.</td></tr>
-            <tr><td>2월</td><td class="num-cell">160,236,364</td><td class="num-cell">3</td>
-              <td>동문 용인고림2(VR+HW) · 동문 천안삼룡동(VR+HW) · 포레나힐스테이트진주(연계약). 동문건설 2개 현장 + 연계약으로 반등.</td></tr>
-            <tr style="background:var(--gold-soft)"><td><b>3월</b></td><td class="num-cell"><b>375,480,000</b></td><td class="num-cell"><b>6</b></td>
-              <td><b>최고치.</b> 거제 투명 LED 본체(1.40억) 대형 하드웨어 + 동문 장승배기역(0.80억) + 송도 G5(0.58억) + LED 추가 + 엘리프 세종 + 등촌역. 6건 동시 수주.</td></tr>
-            <tr><td>4월</td><td class="num-cell">98,300,000</td><td class="num-cell">4</td>
-              <td>거제LED 2차 추가(소액) + 송도G5 추가 + 소요한남(신규) + 함안 주상복합. 대형 거래 없이 4건 소액.</td></tr>
-            <tr><td>5월</td><td class="num-cell">83,000,000</td><td class="num-cell">2</td>
-              <td>꺾이기 시작. 대형 하드웨어 · 추가 판매 없이 일반 건(전주 키오스크 · 오산세교 공공임대)만.</td></tr>
-            <tr style="background:var(--warn-soft)"><td><b>6월</b></td><td class="num-cell"><b>15,000,000</b></td><td class="num-cell"><b>1</b></td>
-              <td><b>급감.</b> 신규 고객 · 대형 거래 전혀 없음, 옵션몰 소액 1건(GS). → 하반기 즉시 수주 필요.</td></tr>
-            <tr style="border-top:2px solid var(--line)"><td><b>합계</b></td><td class="num-cell"><b>752,216,364</b></td><td class="num-cell"><b>17</b></td>
-              <td style="color:var(--muted)">상반기 합계 · 1건당 평균 약 44,247,000원</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size:12.5px;color:var(--muted);margin-top:10px">↑ 각 월 막대를 클릭하면 사업지별 금액이 펼쳐집니다.</p>
-      </div>
-
-      <div style="margin-top:18px;font-size:13.5px;color:var(--ink-soft);line-height:1.7">
-        <p style="margin-bottom:8px"><b>견인 요인</b> — 하드웨어 결합(투명 LED · 거제 상동 2.06억 · 전체의 27%)과 기존 고객사 추가 수주(한토신 · 동문 2개 사가 52%).</p>
-        <p style="margin-bottom:8px"><b>규모</b> — 17건 · 합계 7.52억.</p>
-        <p><b>핵심 이슈</b> — 3월 최고치 이후 하락세. 대형 하드웨어 · 추가 판매 · 신규 고객이 동시에 끊기면 곧바로 급감.</p>
-      </div>
-    </div>
-
-    <div class="panel" style="margin-top:16px">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
-        <span style="font-size:15px;font-weight:800">고객 유입 경로 — 신규 고객 거의 없음</span>
-        <span style="font-size:13px;color:var(--warn);font-weight:700">신규 고객 단 3건 · 10.1%</span>
-      </div>
-      <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font-size:11px;font-weight:700;color:#fff">
-        <div style="width:10.1%;background:var(--accent);display:flex;align-items:center;justify-content:center" title="신규 고객 10.1%">10%</div>
-        <div style="width:73.6%;background:#5B6675;display:flex;align-items:center;justify-content:center" title="기존 거래 73.6%">기존 거래 73.6%</div>
-        <div style="width:7.7%;background:#8A94A1" title="연계약 7.7%"></div>
-        <div style="width:8.6%;background:#AEB6C0" title="기존 소개·기타 8.6%"></div>
-      </div>
-      <div style="margin-top:12px;font-size:12px;color:var(--ink-soft);line-height:1.9">
-        <div><b style="color:var(--accent)">■</b> <b>신규 고객</b> 3건 · 0.76억 — 소요한남 · 함안 주상복합 · 오산세교2</div>
-        <div><b style="color:#5B6675">■</b> <b>기존 거래</b> 5.54억 — 포스코(오티에르 반포) · 한토신(거제 3건) · 동문(3현장) · 포애드원(송도 G5 2건) · 계룡(엘리프 세종) · GS(옵션몰)</div>
-        <div><b style="color:#8A94A1">■</b> <b>연계약</b> 0.58억 — (주)한화 포레나힐스테이트진주</div>
-        <div><b style="color:#AEB6C0">■</b> <b>기존 소개·기타</b> 0.65억 — 전주 삼천주공3(재건축조합) · 등촌역(지존애드 소개)</div>
-      </div>
-      <p style="font-size:13px;color:var(--ink-soft);margin-top:14px">
-        매출 <b>89.9%가 기존 관계 기반</b>. 새 고객을 꾸준히 만들어내는 장치가 사실상 없음 → 매출 확장·반복이 어려움.</p>
-    </div>
-
-    <!-- 수주 내역 17건 -->
-    <div class="panel" style="margin-top:16px">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
-        <span style="font-size:15px;font-weight:800">상반기 수주 내역 — 17건 · 7.52억</span>
-        <span style="font-size:12px;color:var(--muted)">출처: 영업(매출)DB · 계약시작일 기준</span>
-      </div>
-      <div style="overflow-x:auto">
-      <table>
-        <thead><tr>
-          <th>월</th><th>프로젝트</th><th>고객사</th>
-          <th class="num-cell">금액(원)</th><th>상품 유형</th>
-        </tr></thead>
-        <tbody>
-          <tr><td>1월</td><td>오티에르 반포 XR 솔루션</td><td>포스코이앤씨</td><td class="num-cell">20,200,000</td><td>XR·VR</td></tr>
-          <tr><td>2월</td><td>동문 용인고림2지구 공동주택</td><td>동문건설</td><td class="num-cell">39,000,000</td><td>VR+HW</td></tr>
-          <tr><td>2월</td><td>동문 천안삼룡동 공동주택</td><td>동문건설</td><td class="num-cell">63,636,364</td><td>VR+HW</td></tr>
-          <tr><td>2월</td><td>포레나힐스테이트 진주 이현</td><td>(주)한화</td><td class="num-cell">57,600,000</td><td>VR</td></tr>
-          <tr style="background:var(--gold-soft)"><td><b>3월</b></td><td>동부 거제상동 2지구 LED DX 솔루션</td><td>한국토지신탁</td><td class="num-cell"><b>140,456,000</b></td><td>HW(투명LED)</td></tr>
-          <tr><td>3월</td><td>동문 장승배기역 공동주택</td><td>동문건설</td><td class="num-cell">80,000,000</td><td>VR</td></tr>
-          <tr><td>3월</td><td>송도 더샵 G5</td><td>포스코이앤씨</td><td class="num-cell">58,000,000</td><td>VR</td></tr>
-          <tr><td>3월</td><td>동부 거제상동 2지구 LED DX 솔루션 추가</td><td>한국토지신탁</td><td class="num-cell">55,024,000</td><td>HW(사이니지)</td></tr>
-          <tr><td>3월</td><td>엘리프 세종 스마트시티 옵션행사 DX</td><td>계룡건설</td><td class="num-cell">36,000,000</td><td>옵션몰</td></tr>
-          <tr><td>3월</td><td>등촌역 펜타아르테</td><td>지존애드</td><td class="num-cell">6,000,000</td><td>VR</td></tr>
-          <tr><td>4월</td><td>동부 거제상동 LED DX 솔루션 추가 2차</td><td>한국토지신탁</td><td class="num-cell">10,300,000</td><td>HW</td></tr>
-          <tr><td>4월</td><td>송도 더샵 G5 추가</td><td>포스코이앤씨</td><td class="num-cell">36,000,000</td><td>VR추가</td></tr>
-          <tr><td>4월</td><td>소요한남 하이엔드 시니어 레지던스 XR</td><td>브릭스인베스트먼트</td><td class="num-cell">40,000,000</td><td>XR</td></tr>
-          <tr><td>4월</td><td>전라남도 함안 주상복합 XR</td><td>(주)더시프트</td><td class="num-cell">12,000,000</td><td>VR</td></tr>
-          <tr><td>5월</td><td>코오롱 전주삼천주공</td><td>코오롱글로벌</td><td class="num-cell">59,000,000</td><td>VR+HW</td></tr>
-          <tr><td>5월</td><td>오산세교2 A-5BL 공공지원민간임대</td><td>우미건설</td><td class="num-cell">24,000,000</td><td>VR</td></tr>
-          <tr style="background:var(--warn-soft)"><td><b>6월</b></td><td>GS 옵션몰 고도화</td><td>GS건설</td><td class="num-cell">15,000,000</td><td>옵션몰</td></tr>
-          <tr style="border-top:2px solid var(--line)">
-            <td colspan="3"><b>합계 (17건)</b></td>
-            <td class="num-cell"><b>752,216,364</b></td><td style="color:var(--muted);font-size:12px">7.52억</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:10px">
-        ※ 분양 파트(건설) 기준 17건. 별도 사업 포함 전사 건설 계약은 19건/9.54억 — 한양건설 DX 솔루션 20,000만원·포레나상인천초교 135만원 포함. 월 배정 기준: CRM 견적월.</p>
-    </div>
-
-    <!-- 상품별 매출 구성 -->
-    <div class="panel" style="margin-top:16px">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px">
-        <span style="font-size:15px;font-weight:800">상품별 매출 구성 (상반기 7.52억)</span>
-        <span style="font-size:12.5px;color:var(--accent);font-weight:700">하드웨어 결합형이 최고 매출</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:16px">
-        <div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-            <span style="font-size:13.5px;font-weight:700">하드웨어 결합</span>
-            <span style="font-size:13.5px;font-weight:800">3.67억 <span style="font-weight:400;color:var(--muted);font-size:12px">(48.8%)</span></span>
-          </div>
-          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
-            <div style="width:48.8%;height:100%;background:var(--accent);border-radius:99px"></div>
-          </div>
-          <div style="font-size:12px;color:var(--muted);margin-top:5px">거제 상동 2지구 · 동문 천안삼룡동 · 전주 삼천주공3 · 동문 용인고림2</div>
-        </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-            <span style="font-size:13.5px;font-weight:700">VR 사이버 모델하우스</span>
-            <span style="font-size:13.5px;font-weight:800">3.28억 <span style="font-weight:400;color:var(--muted);font-size:12px">(43.6%)</span></span>
-          </div>
-          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
-            <div style="width:43.6%;height:100%;background:#5B6675;border-radius:99px"></div>
-          </div>
-          <div style="font-size:12px;color:var(--muted);margin-top:5px">동문 장승배기역 · 송도 G5 · 포레나힐진주 · 소요한남 · 오산세교2 · 오티에르 반포 · 함안</div>
-        </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-            <span style="font-size:13.5px;font-weight:700">옵션몰 · 기타</span>
-            <span style="font-size:13.5px;font-weight:800">0.57억 <span style="font-weight:400;color:var(--muted);font-size:12px">(7.6%)</span></span>
-          </div>
-          <div style="height:10px;background:var(--line);border-radius:99px;overflow:hidden">
-            <div style="width:7.6%;height:100%;background:#AEB6C0;border-radius:99px"></div>
-          </div>
-          <div style="font-size:12px;color:var(--muted);margin-top:5px">엘리프 세종 옵션행사 · GS 옵션몰 · 등촌역 펜타아르테</div>
-        </div>
-      </div>
-      <div style="background:var(--gold-soft);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:13px;color:var(--ink)">
-        <b>시사점</b> — <b>하드웨어 결합형이 매출 절반(48.8%)</b>을 점유. VR 단독 대비 HW 번들이 1건당 deal size를 3~5배 키운다는 점이 실증됨 → 하반기 전략의 핵심 근거.
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. 문제 제기 -->
-  <section>
-    <div class="sec-h"><span class="sec-n">02</span><h2>하반기 목표와 과제</h2></div>
+    <div class="sec-h"><span class="sec-n">01</span><h2>1~3분기 실적</h2>
+      <span class="sec-note">계약일 기준 · 분기 막대를 누르면 상세</span></div>
     <div class="metrics">
-      <div class="mcard"><div class="t">연간 목표</div><div class="v">30.0억</div>
-        <div class="d">건축(분양) 파트</div></div>
-      <div class="mcard"><div class="t">상반기 실적</div><div class="v">7.52억</div>
-        <div class="d">17건 · 목표의 25%</div></div>
-      <div class="mcard accent"><div class="t">하반기 필요</div><div class="v">22.48억</div>
-        <div class="d">상반기의 3.0배</div></div>
+      <div class="mcard accent"><div class="t">1~3분기 누적 수주</div><div class="v">18.38억</div><div class="d">49건 · 건당 평균 3,752만원</div></div>
+      <div class="mcard"><div class="t">3분기 수주</div><div class="v">7.20억</div><div class="d">21건 · 2분기 7.30억와 같은 수준 유지</div></div>
+      <div class="mcard"><div class="t">사업 구분 (누적)</div><div class="v" style="font-size:24px">건설 12.63억</div><div class="d">브랜드 5.75억 · 건설 69% : 브랜드 31%</div></div>
     </div>
-    <div style="margin-top:16px;font-size:13.5px;color:var(--ink-soft);line-height:1.65">
-      <p style="font-weight:800;color:var(--warn);margin-bottom:12px">기존 방식(단위세대 VR 중심 제안)으로는 22.48억 달성 불가.</p>
-      <div style="display:flex;gap:8px;margin-bottom:8px">
-        <span style="color:var(--accent);font-weight:800;flex-shrink:0">•</span>
-        <span><b>제한된 인력</b> — 2.5명으로 소액·다건(하반기 50건 이상 필요)은 물리적으로 불가능.</span></div>
-      <div style="display:flex;gap:8px;margin-bottom:14px">
-        <span style="color:var(--accent);font-weight:800;flex-shrink:0">•</span>
-        <span><b>아웃바운드(관계 영업)의 한계</b> — 신규 유입 10%, 매출 대부분이 기존 관계에 의존.</span></div>
-      <div style="background:var(--accent-soft);border-radius:8px;padding:11px 14px;font-weight:700;color:var(--ink)">
-        → 결론 : 거래 성격 전환(1건당 금액 상향)이 전제</div>
+
+    <div class="panel" style="margin-top:16px">
+      <div class="qlegend"><span><i class="seg c"></i>건설</span><span><i class="seg b"></i>브랜드</span><span><i class="seg p"></i>공공</span></div>
+      <div class="qchart">
+        <button class="qcol" type="button" data-q="1" aria-controls="qd1" aria-pressed="false">
+          <span class="qv">3.88억</span><span class="qstack"><span class="seg c" style="height:71.6px"></span><span class="seg b" style="height:10.8px"></span></span><span class="qx">1분기</span></button><button class="qcol" type="button" data-q="2" aria-controls="qd2" aria-pressed="false">
+          <span class="qv">7.30억</span><span class="qstack"><span class="seg c" style="height:85.4px"></span><span class="seg b" style="height:69.8px"></span></span><span class="qx">2분기</span></button><button class="qcol on" type="button" data-q="3" aria-controls="qd3" aria-pressed="true">
+          <span class="qv">7.20억</span><span class="qstack"><span class="seg c" style="height:111.5px"></span><span class="seg b" style="height:41.6px"></span></span><span class="qx">3분기</span></button><button class="qcol" type="button" data-q="4" aria-controls="qd4" aria-pressed="false">
+          <span class="qv">64만</span><span class="qstack"><span class="seg p" style="height:2px"></span></span><span class="qx">4분기 <small>진행 중</small></span></button>
+      </div>
+      <div class="qdetail">
+      <div class="qd" id="qd1">
+        <div class="qd-h"><b>1분기 · 13건</b><span>건설 3.37억 · 브랜드 0.51억 · 합계 387,810,364원</span></div>
+        <div class="tbl-wrap"><table class="qtbl"><thead><tr><th>월</th><th>구분</th><th>프로젝트</th><th>고객사</th><th>담당</th><th class="num-cell">계약금액(원)</th></tr></thead>
+        <tbody>
+<tr><td>1월</td><td><span class="gtag c">건설</span></td><td>오티에르 반포 XR 솔루션</td><td>포스코이앤씨</td><td>Charles</td><td class="num-cell">20,200,000</td></tr>
+<tr><td>1월</td><td><span class="gtag c">건설</span></td><td>포레나 상인천 재건축_추가 XR 통합 솔루션</td><td>(주)한화</td><td>Charles</td><td class="num-cell">1,350,000</td></tr>
+<tr><td>1월</td><td><span class="gtag b">브랜드</span></td><td>교보문고 갤럭시북6 팝업스토어 DX 솔루션</td><td>메이데이파트너스</td><td>Charles</td><td class="num-cell">12,000,000</td></tr>
+<tr><td>1월</td><td><span class="gtag c">건설</span></td><td>동문_용인고림2지구 공동주택</td><td>동문건설(주)</td><td>Charles</td><td class="num-cell">39,000,000</td></tr>
+<tr><td>1월</td><td><span class="gtag b">브랜드</span></td><td>한수원 건식저장시설 콘텐츠 운영</td><td>한국능률협회컨설팅</td><td>Lucia</td><td class="num-cell">10,000,000</td></tr>
+<tr><td>2월</td><td><span class="gtag c">건설</span></td><td>동문_천안삼룡동 공동주택</td><td>동문건설(주)</td><td>Charles</td><td class="num-cell">63,636,364</td></tr>
+<tr><td>2월</td><td><span class="gtag b">브랜드</span></td><td>ABC 승무원아카데미 교육솔루션</td><td>(주)에이비씨에어</td><td>Lucia</td><td class="num-cell">25,000,000</td></tr>
+<tr><td>3월</td><td><span class="gtag c">건설</span></td><td>포레나힐스테이트진주</td><td>(주)한화</td><td>Anna</td><td class="num-cell">57,600,000</td></tr>
+<tr><td>3월</td><td><span class="gtag b">브랜드</span></td><td>KT&amp;G 릴 미니멀리움 영상</td><td>키예노</td><td>Lucia</td><td class="num-cell">4,000,000</td></tr>
+<tr><td>3월</td><td><span class="gtag c">건설</span></td><td>송도 G5</td><td>포애드원</td><td>Charles</td><td class="num-cell">58,000,000</td></tr>
+<tr><td>3월</td><td><span class="gtag c">건설</span></td><td>거제 상동 2지구 투명 LED DX 솔루션_추가</td><td>한국토지신탁</td><td>Charles</td><td class="num-cell">55,024,000</td></tr>
+<tr><td>3월</td><td><span class="gtag c">건설</span></td><td>등촌역 펜타아르테</td><td>(주)지존애드</td><td>Charles</td><td class="num-cell">6,000,000</td></tr>
+<tr><td>3월</td><td><span class="gtag c">건설</span></td><td>엘리프 세종 스마트시티 옵션 행사 DX 솔루션</td><td>계룡건설</td><td>Charles</td><td class="num-cell">36,000,000</td></tr>
+        </tbody></table></div></div><div class="qd" id="qd2">
+        <div class="qd-h"><b>2분기 · 15건</b><span>건설 4.02억 · 브랜드 3.28억 · 합계 730,064,464원</span></div>
+        <div class="tbl-wrap"><table class="qtbl"><thead><tr><th>월</th><th>구분</th><th>프로젝트</th><th>고객사</th><th>담당</th><th class="num-cell">계약금액(원)</th></tr></thead>
+        <tbody>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>거제 상동 2지구 투명 LED DX 솔루션</td><td>한국토지신탁</td><td>Charles</td><td class="num-cell">140,456,000</td></tr>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>동문_장승배기역 공동주택</td><td>동문건설(주)</td><td>Charles</td><td class="num-cell">80,000,000</td></tr>
+<tr><td>4월</td><td><span class="gtag b">브랜드</span></td><td>삼성 디자인센터 상반기</td><td>삼성전자</td><td>Lucia</td><td class="num-cell">92,500,000</td></tr>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>거제 상동 2지구 투명 LED DX 솔루션_2차 추가</td><td>한국토지신탁</td><td>Charles</td><td class="num-cell">10,300,000</td></tr>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>송도 G5 추가</td><td>포애드원</td><td>Charles</td><td class="num-cell">36,000,000</td></tr>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>소요한남</td><td>브릭스인베스트먼트</td><td>Anna</td><td class="num-cell">40,000,000</td></tr>
+<tr><td>4월</td><td><span class="gtag c">건설</span></td><td>전라남도 함안 주상복합</td><td>주식회사 더시프트</td><td>Charles</td><td class="num-cell">12,000,000</td></tr>
+<tr><td>5월</td><td><span class="gtag b">브랜드</span></td><td>올리브영 티커영상 정산 1~4월</td><td>에스큐브</td><td>Charles</td><td class="num-cell">15,882,000</td></tr>
+<tr><td>5월</td><td><span class="gtag c">건설</span></td><td>오산세교2 A-5BL 공공지원민간임대주택</td><td>우미건설</td><td>Charles</td><td class="num-cell">24,000,000</td></tr>
+<tr><td>5월</td><td><span class="gtag b">브랜드</span></td><td>한동대학교 XROO 연간구독</td><td>한동대학</td><td>Lucia</td><td class="num-cell">1,090,909</td></tr>
+<tr><td>5월</td><td><span class="gtag b">브랜드</span></td><td>올리브영 티커영상 정산 5~6월</td><td>에스큐브</td><td>Charles</td><td class="num-cell">5,280,000</td></tr>
+<tr><td>6월</td><td><span class="gtag b">브랜드</span></td><td>신화갤러리 전시 솔루션</td><td>신화갤러리</td><td>Jin</td><td class="num-cell">150,000,000</td></tr>
+<tr><td>6월</td><td><span class="gtag b">브랜드</span></td><td>영남대 입찰 시연영상</td><td>제이솔루션</td><td>Jin</td><td class="num-cell">8,000,000</td></tr>
+<tr><td>6월</td><td><span class="gtag b">브랜드</span></td><td>트립네스트 관광바우처</td><td>(주)트립네스트</td><td>Lucia</td><td class="num-cell">55,555,555</td></tr>
+<tr><td>6월</td><td><span class="gtag c">건설</span></td><td>전주 삼천주공3 재건축</td><td>삼천주공3 재건축</td><td>Charles</td><td class="num-cell">59,000,000</td></tr>
+        </tbody></table></div></div><div class="qd on" id="qd3">
+        <div class="qd-h"><b>3분기 · 21건</b><span>건설 5.25억 · 브랜드 1.96억 · 합계 720,493,636원</span></div>
+        <div class="tbl-wrap"><table class="qtbl"><thead><tr><th>월</th><th>구분</th><th>프로젝트</th><th>고객사</th><th>담당</th><th class="num-cell">계약금액(원)</th></tr></thead>
+        <tbody>
+<tr><td>7월</td><td><span class="gtag c">건설</span></td><td>오산세교2 A-5BL 공공지원민간임대주택 층별조망</td><td>우미건설</td><td>Charles</td><td class="num-cell">17,000,000</td></tr>
+<tr><td>7월</td><td><span class="gtag c">건설</span></td><td>GS 옵션몰 고도화</td><td>GS건설</td><td>Anna</td><td class="num-cell">15,000,000</td></tr>
+<tr><td>7월</td><td><span class="gtag c">건설</span></td><td>트리븐 서산</td><td>디아트픽셀</td><td>Anna</td><td class="num-cell">8,000,000</td></tr>
+<tr><td>7월</td><td><span class="gtag b">브랜드</span></td><td>국립생태원 추가 콘텐츠</td><td>국립생태원</td><td>Lucia</td><td class="num-cell">26,363,636</td></tr>
+<tr><td>7월</td><td><span class="gtag c">건설</span></td><td>동부건설 광교</td><td>동부건설</td><td>Anna</td><td class="num-cell">74,200,000</td></tr>
+<tr><td>7월</td><td><span class="gtag b">브랜드</span></td><td>올리브영 티커영상 정산 7~8월</td><td>에스큐브</td><td>Charles</td><td class="num-cell">6,150,000</td></tr>
+<tr><td>8월</td><td><span class="gtag b">브랜드</span></td><td>삼성전자 비스포크 시뮬레이터 유지보수</td><td>삼성전자</td><td>Charles</td><td class="num-cell">12,650,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>강릉 아테라 XR 솔루션</td><td>크리에이티브지니</td><td>Anna</td><td class="num-cell">12,000,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>동부건설 춘천 효자동</td><td>동부건설</td><td>Anna</td><td class="num-cell">83,100,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>포레나 천안아산 수정</td><td>(주)한화</td><td>Charles</td><td class="num-cell">18,750,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>거제시 옥포동 공동주택</td><td>위너케이</td><td>Charles</td><td class="num-cell">84,900,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>해모로 서대신 4구역 집뷰 솔루션</td><td>애드펀치(HJ중공업)</td><td>Charles</td><td class="num-cell">32,600,000</td></tr>
+<tr><td>8월</td><td><span class="gtag c">건설</span></td><td>옵션몰 이미지형 리스트</td><td>모투스(GS건설)</td><td>Anna</td><td class="num-cell">5,000,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>계양신도시 AC3,4BL 카이브유보라</td><td>반도건설</td><td>Lucia</td><td class="num-cell">70,000,000</td></tr>
+<tr><td>9월</td><td><span class="gtag b">브랜드</span></td><td>삼성 디자인센터 하반기</td><td>삼성전자</td><td>Lucia</td><td class="num-cell">139,500,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>해모로 익산 영등주공1단지 집뷰 솔루션</td><td>애드펀치(HJ중공업)</td><td>Charles</td><td class="num-cell">36,500,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>검단 오류동 16호 공원 개발사업 콘텐츠</td><td>더시프트</td><td>Lucia</td><td class="num-cell">14,500,000</td></tr>
+<tr><td>9월</td><td><span class="gtag b">브랜드</span></td><td>데이코 마케팅 영상</td><td>삼성전자</td><td>Lucia</td><td class="num-cell">11,000,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>의정부역 펠리스타워</td><td>(주)클리프커뮤니케이션</td><td>Charles</td><td class="num-cell">22,000,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>소요한남 체험 솔루션</td><td>브릭스인베스트먼트</td><td>Anna</td><td class="num-cell">21,280,000</td></tr>
+<tr><td>9월</td><td><span class="gtag c">건설</span></td><td>성수동 삼표산업 갤러리 AI영상</td><td>삼표산업</td><td>Charles</td><td class="num-cell">10,000,000</td></tr>
+        </tbody></table></div></div><div class="qd" id="qd4">
+        <div class="qd-h"><b>4분기 · 1건</b><span>10월 5일 기준 · 합계 636,363원</span></div>
+        <div class="tbl-wrap"><table class="qtbl"><thead><tr><th>월</th><th>구분</th><th>프로젝트</th><th>고객사</th><th>담당</th><th class="num-cell">계약금액(원)</th></tr></thead>
+        <tbody>
+<tr><td>10월</td><td><span class="gtag p">공공</span></td><td>세경대학교 박물관 포럼 강연</td><td>세경대학교</td><td>Lucia</td><td class="num-cell">636,363</td></tr>
+        </tbody></table></div></div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:16px"><table>
+      <thead><tr><th>분기</th><th class="num-cell">건설</th><th class="num-cell">브랜드</th><th class="num-cell">합계</th><th class="num-cell">건수</th><th class="num-cell">건당 평균</th><th>주요 건</th></tr></thead>
+      <tbody>
+<tr><td><b>1분기</b></td><td class="num-cell">3.37억</td><td class="num-cell">0.51억</td><td class="num-cell"><b>3.88억</b></td><td class="num-cell">13건</td><td class="num-cell">2,983만</td><td>동문_천안삼룡동 공동주택 0.64억 · 송도 G5 0.58억</td></tr>
+<tr><td><b>2분기</b></td><td class="num-cell">4.02억</td><td class="num-cell">3.28억</td><td class="num-cell"><b>7.30억</b></td><td class="num-cell">15건</td><td class="num-cell">4,867만</td><td>신화갤러리 전시 솔루션 1.50억 · 거제 상동 2지구 투명 LED DX 솔루션 1.40억</td></tr>
+<tr><td><b>3분기</b></td><td class="num-cell">5.25억</td><td class="num-cell">1.96억</td><td class="num-cell"><b>7.20억</b></td><td class="num-cell">21건</td><td class="num-cell">3,431만</td><td>삼성 디자인센터 하반기 1.40억 · 거제시 옥포동 공동주택 0.85억</td></tr>
+<tr class="row-target"><td style="white-space:nowrap">1~3분기 누적</td><td class="num-cell">12.63억</td><td class="num-cell">5.75억</td><td class="num-cell">18.38억</td><td class="num-cell">49건</td><td class="num-cell">3,752만</td><td>—</td></tr>
+      </tbody></table></div>
+    <p class="foot">※ 출처: AX사업실 수주 실적표(계약서 작성 또는 작성 확정 후 실행 오더를 받은 프로젝트). 10월은 5일 기준 1건(공공 64만원)으로 4분기 진행 중.</p>
+  </section>
+
+  <!-- 2. 3분기 분석 -->
+  <section>
+    <div class="sec-h"><span class="sec-n">02</span><h2>3분기 분석 — 잘된 점과 남은 과제</h2>
+      <span class="sec-note">7~9월 21건 · 7.20억</span></div>
+    <div class="finds">
+      <div class="find pos"><span class="ftag">성과</span>
+        <h3>규모 유지, 월별로는 상승세</h3>
+        <div class="fnum">7월 1.47억 → 8월 2.49억 → 9월 3.25억</div>
+        <p>2분기(7.30억)와 같은 수준을 지키면서 건수는 15건 → 21건으로 늘었다. 분기 안에서 매달 수주가 커졌다.</p></div>
+      <div class="find pos"><span class="ftag">성과</span>
+        <h3>새로 연 고객사가 실적의 2/3</h3>
+        <div class="fnum">4.80억 · 3분기의 67%</div>
+        <p>상반기에 거래가 없던 고객사에서 나왔다. 동부건설 2개 현장 1.57억 · 위너케이(거제 옥포동) 0.85억 · 반도건설 0.70억 · HJ중공업 해모로 2개 현장 0.69억.</p></div>
+      <div class="find pos"><span class="ftag">성과</span>
+        <h3>한 사람에 몰리지 않는 구조</h3>
+        <div class="fnum">Charles 33% · Anna 30% · Lucia 36%</div>
+        <p>상반기에는 Charles 1인 비중이 60%였다. 3분기에는 세 명이 고르게 수주해 특정 담당자가 빠져도 실적이 버티는 구조가 됐다.</p></div>
+      <div class="find neg"><span class="ftag">과제</span>
+        <h3>대형 건이 없고 단가가 내려감</h3>
+        <div class="fnum">건설 건당 5,022만 → 3,280만</div>
+        <p>2분기에는 거제 상동 투명 LED(1.40억) 같은 1억 이상 건설 건이 있었지만, 3분기에는 0건이었다. 건수는 늘었는데 한 건의 크기가 작아졌다.</p></div>
+      <div class="find neg"><span class="ftag">과제</span>
+        <h3>6월 협의 9건 중 수주 1건</h3>
+        <div class="fnum">의정부역 펠리스타워 2,200만 (계획 5,300만)</div>
+        <p>6월에 잡아둔 협의 건은 대부분 수주로 이어지지 않았고, 3분기 실적은 새 고객에서 나왔다. 나머지 8건이 진행 중인지 종료됐는지 판정이 필요하다.</p></div>
+      <div class="find neg"><span class="ftag">과제</span>
+        <h3>브랜드는 삼성전자 한 곳에 집중</h3>
+        <div class="fnum">3분기 브랜드 1.96억 중 1.63억 (83%)</div>
+        <p>삼성 디자인센터 하반기(1.40억)가 대부분이다. 누적으로도 브랜드 실적의 44%가 삼성전자라, 이 한 건이 흔들리면 브랜드 실적이 크게 줄어든다.</p></div>
     </div>
   </section>
 
-  <!-- 3. 해법 -->
+  <!-- 3. 4분기 목표 -->
   <section>
-    <div class="sec-h"><span class="sec-n">03</span><h2>문제 해결을 위한 해법 (4가지 전략)</h2></div>
+    <div class="sec-h"><span class="sec-n">03</span><h2>4분기 목표</h2>
+      <span class="sec-note">제안 · 확정 필요</span></div>
+    <div class="panel goal-reset">
+      <div class="gr-row">
+        <div><div class="k">기존 연간 목표</div><div class="v">30억</div><div class="d">분양(건설) 파트 단독 기준</div></div>
+        <div><div class="k">건설 1~3분기 누적</div><div class="v">12.63억</div><div class="d">3분기 계획 ~10억 → 실적 5.25억 (52%)</div></div>
+        <div><div class="k">건설만으로 남은 금액</div><div class="v warn-v">17.37억</div><div class="d">3분기 건설 실적의 3.3배</div></div>
+      </div>
+      <p>건설 단독 30억은 4분기 한 분기로 채우기 어렵다. 조직이 AX사업실로 합쳐진 만큼 <b>목표도 건설 + 브랜드 통합 기준으로 다시 정하는 것</b>을 제안한다. 통합 기준 1~3분기 누적은 <b>18.38억</b>이다.</p>
+    </div>
+    <div class="tbl-wrap" style="margin-top:16px"><table>
+      <thead><tr><th>구분</th><th class="num-cell">4분기 수주</th><th class="num-cell">연간 (통합)</th><th>근거 · 조건</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag c">보수</span> 현실선</td><td class="num-cell">~7.2억</td><td class="num-cell">~25.6억</td>
+          <td>2·3분기 평균(7.25억) 유지 — 지금 방식 그대로</td></tr>
+        <tr class="row-target"><td><span class="tag t">목표</span> 목표선</td><td class="num-cell">~10억</td><td class="num-cell">~28.4억</td>
+          <td>현실선 + 1억 이상 대형 HW 결합 건 2건 (거제 상동 1.40억 수준)</td></tr>
+        <tr><td><span class="tag s">도전</span> 상향선</td><td class="num-cell">11.62억</td><td class="num-cell">30억</td>
+          <td>통합 기준 연 30억 달성 — 3분기의 1.6배, 대형 건 3건 이상 필요</td></tr>
+      </tbody></table></div>
+    <p class="foot">※ 시나리오는 1~3분기 실적에서 계산한 제안값이다. 연간 목표 기준(분양 단독 / AX 통합)과 4분기 목표는 결정이 필요하다.</p>
+  </section>
+
+  <!-- 4. 4분기 실행 전략 -->
+  <section>
+    <div class="sec-h"><span class="sec-n">04</span><h2>4분기 실행 전략</h2>
+      <span class="sec-note">우선순위 4가지 + 상품 전략 4가지</span></div>
+
+    <div class="levers">
+      <div class="lever"><div class="num">1</div>
+        <h3>3분기 신규 고객사에서 다음 현장 따내기</h3>
+        <p>동부건설 · HJ중공업(해모로)은 이미 2개 현장을 연달아 맡겼고, 상반기 동문건설도 같은 방식으로 3개 현장을 수주했다. 동부 · HJ · 반도 · 위너케이의 <b>4분기 분양 예정 현장을 먼저 찾아 선제 제안</b>한다.</p>
+        <span class="ev">대상 4개사 · 3분기 3.81억</span></div>
+      <div class="lever"><div class="num">2</div>
+        <h3>1억 이상 대형 건 되살리기</h3>
+        <p>4분기 분양 대단지에 <b>투명 LED · 키오스크 결합 패키지</b>를 모델하우스 협의 단계부터 제안한다. 대상 후보는 성남 상대원2(DL, 10월 · 1,866세대), 포항 장성동 · 대구 노원2 · 광주 양동3(11월), 래미안 마크더스위트(삼성물산, 12월)다.</p>
+        <span class="ev">목표선 = 대형 건 2건 · 상태 확인 필요</span></div>
+      <div class="lever"><div class="num">3</div>
+        <h3>멈춘 협의 건 정리</h3>
+        <p>6월 협의 9건 중 남은 8건(송도 G5 옵션몰 추가 · 계룡 평택/천안 · 삼성물산 목동 · 이편한세상 당산 · 포레나 평택/창원 · SM그룹 인천)을 <b>10월 중 진행 / 연기 / 종료로 판정</b>한다. 진행 중인 건만 4분기 클로징 목록에 남긴다.</p>
+        <span class="ev">10월 판정 · 8건 액면 5.59억</span></div>
+      <div class="lever"><div class="num">4</div>
+        <h3>브랜드 계정 넓히기</h3>
+        <p>삼성 디자인센터는 상반기(4월) · 하반기(9월) 두 번 계약됐다. <b>2027년 상반기 건을 4분기 안에 미리 확보</b>하고, 올리브영 티커영상처럼 정기 정산되는 건은 유지한다. 동시에 새 브랜드 고객을 늘려 삼성전자 비중을 낮춘다.</p>
+        <span class="ev">삼성 비중 44% → 분산</span></div>
+    </div>
+
+    <div class="sub-h">상품 전략 — 6월 수립, 4분기에도 이어서 진행</div>
+    <p class="foot" style="margin:-4px 0 14px">※ 아래 사업지 목록은 6월 기준으로 뽑은 것이다. 거제 옥포동은 8월에 수주(8,490만원)했고, 나머지는 4분기 제안 전에 상태를 다시 확인해야 한다.</p>
 
     <!-- 전략 1: 하이브리드 옵션몰 (도식 장표) -->
     <div class="panel" style="border-top:3px solid var(--accent)">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">1</span>
+        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">A</span>
         <span style="font-size:17px;font-weight:800">하이브리드 옵션몰</span>
       </div>
       <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
@@ -559,7 +506,7 @@
     <!-- 전략 2: 하드웨어 결합 상품 (도식 장표) -->
     <div class="panel" style="border-top:3px solid var(--accent);margin-top:16px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">2</span>
+        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">B</span>
         <span style="font-size:17px;font-weight:800">하드웨어 결합 상품 판매</span>
       </div>
       <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
@@ -627,7 +574,7 @@
     <!-- 전략 3: AI 영상 (도식 장표) -->
     <div class="panel" style="border-top:3px solid var(--accent);margin-top:16px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">3</span>
+        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--accent);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">C</span>
         <span style="font-size:17px;font-weight:800">AI 영상 적극 도입</span>
       </div>
       <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
@@ -691,7 +638,7 @@
     <!-- 전략 4: 모델하우스 사인업체 컨소시엄 -->
     <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--gold);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">4</span>
+        <span style="font-size:12px;font-weight:800;color:#fff;background:var(--gold);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center">D</span>
         <span style="font-size:17px;font-weight:800">모델하우스 사인업체 컨소시엄</span>
       </div>
       <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
@@ -731,10 +678,10 @@
       추가 판매(분양→입주 전 과정을 묶어 이탈 방지).</p>
   </section>
 
-  <!-- 4. 마케팅 -->
+  <!-- 5. 마케팅 -->
   <section>
-    <div class="sec-h"><span class="sec-n">04</span><h2>신규 고객 만들기 — 마케팅 (별도 병행 과제)</h2>
-      <span class="sec-note">중기 체질 개선 · 하반기 매출 직접 기여는 작음</span></div>
+    <div class="sec-h"><span class="sec-n">05</span><h2>신규 고객 만들기 — 마케팅 (별도 병행 과제)</h2>
+      <span class="sec-note">중기 체질 개선 · 4분기 매출 직접 기여는 작음</span></div>
 
     <!-- 상반기 가장 효과적: 포럼 -->
     <div class="panel" style="border-left:4px solid var(--accent);margin-bottom:16px">
@@ -748,7 +695,7 @@
         <div class="mcard"><div class="t">연간 계약 추진 중</div><div class="v">2곳</div><div class="d">현대엔지니어링 · 우미건설</div></div>
       </div>
       <div style="background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--ink)">
-        <b>하반기 방향</b> — 건설 팝업 담당자 / 모델하우스 브랜딩 협업으로 포럼 재진행. 단발성이 아닌 반기 1회 이상 정례화 필요.
+        <b>4분기 방향</b> — 건설 팝업 담당자 / 모델하우스 브랜딩 협업으로 포럼 재진행. 단발성이 아닌 반기 1회 이상 정례화 필요.
       </div>
     </div>
 
@@ -771,33 +718,6 @@
         <p>6월 조회수 7,300회 · 평균 참여시간 8초 · 매출 전환 0회. 현재는 포트폴리오 용도로만 활용 중. 홍보용 편집 재제작으로 체류 시간·CTA 연결을 개선해야 영업 신뢰 자료로서 효과 발휘.</p>
         <span class="ev">조회 7,300 · 체류 8초 → 홍보 편집 재제작 필요</span></div>
     </div>
-  </section>
-
-  <!-- 5. 현실성 -->
-  <section>
-    <div class="sec-h"><span class="sec-n">05</span><h2>현실성 — 예상 실적안</h2></div>
-    <table style="margin-bottom:16px">
-      <thead><tr><th>항목</th><th class="num-cell">금액</th><th>비고</th></tr></thead>
-      <tbody>
-        <tr><td>① 협의 중인 건 (9건, 액면 합계)</td><td class="num-cell">6.12억</td><td>성사 확률 반영 시 약 3.2억 · 목표의 27%</td></tr>
-        <tr><td>② 3가지 전략을 통한 추가 제안</td><td class="num-cell">약 8.7억</td><td>옵션몰 2.7억 + 하드웨어 4.0억 + AI 영상 2.0억</td></tr>
-        <tr><td>③ 잔여 (추가 발굴 필요분)</td><td class="num-cell">약 7.66억</td><td>분양 예정 단지 × 우리 관계 신규 타겟 추가 발굴</td></tr>
-        <tr style="border-top:2px solid var(--line)" class="row-target"><td><b>H2 목표</b></td><td class="num-cell"><b>22.48억</b></td><td>① + ② + ③ = 목표 도달</td></tr>
-      </tbody>
-    </table>
-    <table>
-      <thead><tr><th>구분</th><th class="num-cell">하반기</th><th class="num-cell">연간</th><th>조건</th></tr></thead>
-      <tbody>
-        <tr><td><span class="tag c">보수</span> 현실선</td><td class="num-cell">~13억</td>
-          <td class="num-cell">~20.5억</td><td>협의 건 성사 + 기존 고객사 추가 수주 · 현장 내 추가 판매</td></tr>
-        <tr class="row-target"><td><span class="tag t">목표</span> 목표선</td><td class="num-cell">22.48억</td>
-          <td class="num-cell">30억</td><td>대형 하드웨어 거래 1~2건 + 포스코 도입 + 옵션몰 타 현장 확산 성공</td></tr>
-        <tr><td><span class="tag s">도전</span> 상향선</td><td class="num-cell">~28억</td>
-          <td class="num-cell">~35억</td><td>신탁사 · 대형 사업지 추가 성사</td></tr>
-      </tbody>
-    </table>
-    <p style="font-size:12.5px;color:var(--muted);margin-top:12px">
-      ※ 금액은 영업 추정(확인 필요). 협의 9건 확률 확정 시 합산 · 예상치 정밀화.</p>
   </section>
 
   <!-- 6. 조직 체계 -->
@@ -851,16 +771,42 @@
     </div>
   </section>
 
-  <!-- 7. 실행 체계 -->
+  <!-- 7. 운영 체계 -->
   <section>
-    <div class="sec-h"><span class="sec-n">07</span><h2>실행 체계 — 분기 목표 & 역할</h2>
-      <span class="sec-note">3분기 ~10억 · 4분기 ~12.48억</span></div>
-    <div class="listcard"><h3><span class="dot"></span>역할 분담 <span style="font-weight:500;color:var(--muted);font-size:11px">(제안 · 확인 필요)</span></h3>
-      <ul>
-        <li><b>Charles</b> — 대형 하드웨어 거래(거제 옥포동) · 핵심 고객사 추가 수주 · 협의 9건 마무리 주관</li>
-        <li><b>Anna</b> — 옵션몰 타 현장 확산 · 고급 주거 단지 · 추가 서비스 구상</li>
-        <li><b>신규 1명</b> — 7~8월 적응 교육 → 9월부터 신규 고객 · 조합 개척 전담</li>
-      </ul></div>
+    <div class="sec-h"><span class="sec-n">07</span><h2>4분기 운영 체계 — 조직별 역할</h2>
+      <span class="sec-note">제안 · 확인 필요</span></div>
+    <div class="flow">
+      <div class="fstep s"><b>제안 · 수주</b><span>세일즈기획</span></div>
+      <div class="farr">→</div>
+      <div class="fstep cx"><b>착수 · 제작 · 납품</b><span>프로덕션</span></div>
+      <div class="farr">→</div>
+      <div class="fstep s"><b>추가 제안</b><span>세일즈기획</span></div>
+      <div class="fbase sp">지원 — 제안 단계의 기획 자료 · 시연 영상, 수행 단계의 개발 · 영상 · 하드웨어를 양쪽에 공급</div>
+    </div>
+    <div class="roles">
+      <div class="role s"><div class="dept-card">
+        <div class="dept-h"><b>세일즈기획 (고객대응)</b><span>Charles · Lucia · Anna</span></div>
+        <ul class="rl-list">
+          <li><b>Charles</b> — 실 총괄 · 1억 이상 대형 HW 결합 건 · 해모로(HJ) · 위너케이</li>
+          <li><b>Lucia</b> — 브랜드 계정(삼성전자 2027) · 반도건설 · 공공</li>
+          <li><b>Anna</b> — 동부건설 다음 현장 · GS 옵션몰 · 소요한남(브릭스)</li>
+        </ul></div></div>
+      <div class="role cx"><div class="dept-card">
+        <div class="dept-h"><b>프로덕션 (PM, 제작)</b><span>James 외 3명</span></div>
+        <ul class="rl-list">
+          <li>3분기 수주 21건의 <b>납품 완료</b>와 4분기 신규 착수를 함께 관리</li>
+          <li>수주 시 세일즈기획에서 <b>범위 · 일정 · 금액을 넘겨받는 착수 인계</b>를 정례화</li>
+          <li>납품 시점에 추가 제안 거리(추가 타입 · 영상 · 옵션몰)를 세일즈기획에 전달</li>
+        </ul></div></div>
+      <div class="role sp"><div class="dept-card">
+        <div class="dept-h"><b>지원 (개발, 영상, 하드웨어)</b><span>Rhea · Sianu · Seok</span></div>
+        <ul class="rl-list">
+          <li>제안서용 <b>기획 자료 · 시연 영상</b> 제작으로 수주 단계 지원</li>
+          <li>옵션몰 · 집뷰 솔루션 개발과 <b>대형 HW 건의 사양 · 설치 협력사</b> 준비</li>
+          <li>AI 영상 등 반복 제작물을 표준화해 프로덕션 부담을 줄임</li>
+        </ul></div></div>
+    </div>
+    <p class="foot">※ 담당 배정은 3분기 실제 수주 담당을 기준으로 정리한 제안안이다.</p>
   </section>
 
   <!-- 8. 위험 -->
@@ -869,16 +815,17 @@
     <div class="cols">
       <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
         <ul>
-          <li><b>수주 후보 공백(최우선)</b> — 6월 0.15억 → 7월 회복 필수</li>
-          <li><b>목표가 도전적</b> — 30억은 도전 목표 → 현실선/목표선 두 가지로 관리</li>
-          <li><b>고객 쏠림</b> — 2개 고정 클라이언트 의존 → 신규 고객으로 분산</li>
+          <li><b>대형 건 공백</b> — 3분기 건설 1억 이상 0건. 4분기에도 없으면 목표선(10억)은 어렵다</li>
+          <li><b>브랜드 집중</b> — 3분기 브랜드의 83%가 삼성전자. 2027 계약 시점이 늦어지면 공백이 생긴다</li>
+          <li><b>제작 부하</b> — 3분기 21건 수주분 납품과 4분기 신규 착수가 겹친다</li>
+          <li><b>목표 기준 불명확</b> — 분양 단독 30억과 AX 통합 기준이 정리되지 않았다</li>
         </ul></div>
-      <div class="listcard"><h3><span class="dot"></span>지원 요청</h3>
+      <div class="listcard"><h3><span class="dot"></span>결정 · 지원 요청</h3>
         <ul>
-          <li>영업 1명 <b>조기 합류 · 교육</b></li>
-          <li>투명 LED · 키오스크 <b>설치 인력(생산능력) · 협력사 사전 확보</b></li>
-          <li>포스코 도입 확대 <b>임원 동행</b></li>
-          <li>하이브리드 옵션몰 <b>개발 인력 우선 배정</b></li>
+          <li>AX사업실 <b>연간 · 4분기 목표 기준 확정</b> (통합 기준 제안)</li>
+          <li>투명 LED · 키오스크 <b>설치 협력사 사전 확보</b></li>
+          <li>대형 건 · 삼성전자 2027 협의에 <b>임원 동행</b></li>
+          <li>지원 조직의 <b>개발 · 영상 우선순위 합의</b> (대형 건 우선)</li>
         </ul></div>
     </div>
   </section>
@@ -887,12 +834,11 @@
   <section>
     <div class="keymsg">
       <div class="lbl">결론 · 종합</div>
-      <p>연간 목표 <b>30억</b> 중 상반기는 <b>7.52억(25%)</b>. 하반기 <span class="hl">22.48억 —
-      상반기의 3배</span>가 필요하며, 단위세대 VR 위주로는 불가능하다고 판단. 해결책으로 <b>옵션몰 ·
-      하드웨어 결합 · 대형 거래로 업셀링</b>을 제안한다. 예상 실적으로는 현실선 <b>약 20억</b>,
-      목표선 <b>30억</b>이며, 30억은 <span class="hl">대형 거래 1~2건 + 포스코 도입 확대 · SM그룹 등
-      고객사 확대</span>의 성사를 통해 해결한다. 동시에 <span class="hl">신규 고객 10%</span>라는
-      구조적 약점은 <b>마케팅으로 신규 고객을 만드는 일(별도 병행)</b>로 인바운드를 늘려 중기 체질을 바꿔야 한다.</p>
+      <p>AX사업실의 1~3분기 누적 수주는 <b>18.38억(49건)</b>이다. 2 · 3분기 연속 <b>7억대</b>를 지켰고,
+      3분기에는 <span class="hl">새로 연 고객사(67%)와 세 명이 고르게 나눠 맡는 영업 구조</span>가 실적을 만들었다.
+      반면 <b>건설 1억 이상 대형 건이 끊기고 건당 단가가 내려갔으며</b>, 브랜드는 삼성전자에 집중돼 있다.
+      4분기에는 <b>신규 고객사의 다음 현장 수주 · 대형 HW 결합 건 회복 · 멈춘 협의 건 정리 · 브랜드 계정 확장</b>으로
+      현실선 <b>7.2억</b> 이상, 목표선 <span class="hl">10억</span>을 추진한다. 연간 목표는 <b>AX사업실 통합 기준으로 재설정</b>할 것을 제안한다.</p>
     </div>
   </section>
 
@@ -904,33 +850,13 @@
 </div>
 
 <script>
-  var MONTH = {
-    "1":{rows:[["오티에르 반포 XR","포스코이앤씨",20200000]]},
-    "2":{rows:[["동문 용인고림2지구","동문건설",39000000],
-      ["동문 천안삼룡동","동문건설",63636364],
-      ["포레나힐스테이트진주","(주)한화",57600000]]},
-    "3":{rows:[["거제 상동 투명 LED DX","한국토지신탁",140456000],["동문 장승배기역","동문건설",80000000],
-      ["송도 G5","포스코이앤씨",58000000],["거제 상동 LED DX 추가","한국토지신탁",55024000],
-      ["엘리프 세종 옵션행사 DX","계룡건설",36000000],["등촌역 펜타아르테","지존애드",6000000]]},
-    "4":{rows:[["거제 상동 LED DX 2차 추가","한국토지신탁",10300000],["송도 G5 추가","포스코이앤씨",36000000],
-      ["소요한남","브릭스인베스트먼트",40000000],["함안 주상복합","더시프트",12000000]]},
-    "5":{rows:[["코오롱 전주삼천주공","코오롱글로벌",59000000],["오산세교2 A-5BL","우미건설",24000000]]},
-    "6":{rows:[["GS 옵션몰 고도화","GS건설",15000000]]}
-  };
-  function won(n){return n.toLocaleString("ko-KR")+"원";}
-  var detail=document.getElementById("detail"), cols=document.querySelectorAll(".bar-col"), cur=null;
-  cols.forEach(function(c){
+  var qcols=document.querySelectorAll(".qcol");
+  qcols.forEach(function(c){
     c.addEventListener("click",function(){
-      var m=c.getAttribute("data-m");
-      if(cur===m){ detail.classList.remove("open"); c.classList.remove("active"); cur=null; return; }
-      cols.forEach(function(x){x.classList.remove("active");}); c.classList.add("active");
-      var d=MONTH[m], sum=0, html="";
-      d.rows.forEach(function(r){ sum+=r[2];
-        html+="<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td class='num-cell'>"+won(r[2])+"</td></tr>"; });
-      document.getElementById("d-month").textContent=m+"월 · "+d.rows.length+"건";
-      document.getElementById("d-sum").textContent="합계 "+won(sum);
-      document.getElementById("d-rows").innerHTML=html;
-      detail.classList.add("open"); cur=m;
+      qcols.forEach(function(x){x.classList.remove("on");x.setAttribute("aria-pressed","false");});
+      document.querySelectorAll(".qd").forEach(function(d){d.classList.remove("on");});
+      c.classList.add("on"); c.setAttribute("aria-pressed","true");
+      document.getElementById("qd"+c.getAttribute("data-q")).classList.add("on");
     });
   });
 </script>
