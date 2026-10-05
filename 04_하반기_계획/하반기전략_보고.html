@@ -237,7 +237,8 @@
   .ps .demo:hover{text-decoration:underline}
   .prin.mk{grid-template-columns:repeat(4,1fr)}
   .ref{margin-top:28px;padding-top:14px;border-top:1px dashed var(--line)}
-  .ref-lbl{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px}
+  .ref-lbl{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--ink-soft);margin-bottom:10px}
+  .ref-lbl span{font-size:11px;font-weight:700;color:var(--muted);background:#E9ECF0;border-radius:6px;padding:2px 8px}
   .cmp{font-size:12px;background:transparent;border:none;border-radius:0;box-shadow:none}
   .cmp th,.cmp td{padding:6px 10px;white-space:nowrap;color:var(--muted);background:transparent;border-bottom:1px solid var(--line)}
   .cmp th{font-size:11px;font-weight:700}
@@ -456,7 +457,7 @@
     </div>
 
     <div class="ref">
-      <div class="ref-lbl">참고 · 같은 방식으로 운영하는 사례</div>
+      <div class="ref-lbl"><span>참고</span>같은 방식으로 운영하는 사례</div>
     <div class="tbl-wrap"><table class="cmp">
       <thead><tr><th>구분</th><th>내부</th><th>협력업체</th><th>출처</th></tr></thead>
       <tbody>
