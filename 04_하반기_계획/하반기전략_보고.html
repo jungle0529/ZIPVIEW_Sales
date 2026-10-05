@@ -213,7 +213,7 @@
   .org-note .v s{color:var(--muted);font-weight:500;text-decoration:none}
   .org-note .v em{font-style:normal;color:var(--accent)}
 
-  /* summary · mission · GP · appendix */
+  /* summary · GP · appendix */
   .sum4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .sum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -222,15 +222,6 @@
   .sum .d{font-size:12.3px;color:var(--ink-soft);line-height:1.55;word-break:keep-all}
   .sum.accent{background:var(--accent);border-color:var(--accent)}
   .sum.accent .k,.sum.accent .d{color:#CDE8E1}.sum.accent .v{color:#fff;font-size:28px}
-  .mission{background:var(--ink);color:#fff;border-radius:14px;padding:22px 26px}
-  .mission .lbl{font-size:11.5px;font-weight:700;color:#8FE3CF;letter-spacing:.06em}
-  .mission p{font-size:18px;line-height:1.6;margin-top:6px;color:#E9EEF2;word-break:keep-all;text-wrap:balance}
-  .mission b{color:#fff}
-  .why3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-  .why{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
-  .why .k{font-size:13.5px;font-weight:800;color:var(--accent);margin-bottom:6px}
-  .why p{font-size:13px;color:var(--ink-soft);line-height:1.65;word-break:keep-all}
-  .why b{color:var(--ink)}
   .gp-eq{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .gp-eq>div{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;
     display:flex;flex-direction:column;gap:2px}
@@ -248,7 +239,7 @@
     font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media(max-width:720px){
-    .metrics,.levers,.cols,.finds,.gr-row,.roles,.why3{grid-template-columns:1fr}
+    .metrics,.levers,.cols,.finds,.gr-row,.roles{grid-template-columns:1fr}
     .sum4{grid-template-columns:1fr 1fr}.gp-eq>b{display:none}
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
@@ -260,18 +251,18 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg,.mission,.sum.accent,.gp-eq>div.hl,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.keymsg,.sum.accent,.gp-eq>div.hl,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.sum,.why{break-inside:avoid}.appx{break-before:page}}
+    .find,.lever,.role,.sum{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="kicker">AX사업실 · 팀 공유</div>
+    <div class="kicker">AX사업실 · 대표 보고</div>
     <h1>2026 AX사업실 운영계획</h1>
     <div class="sub">
       <span>기준일 2026-10-05</span><span>작성 · AX사업실</span>
@@ -294,23 +285,29 @@
     </div>
   </section>
 
-  <!-- 1. 배경과 미션 -->
+  <!-- 1. 4분기 목표 -->
   <section>
-    <div class="sec-h"><span class="sec-n">01</span><h2>개편 배경과 미션</h2>
-      <span class="sec-note">초안 · 확인 필요</span></div>
-    <div class="mission">
-      <div class="lbl">AX사업실 미션</div>
-      <p>건설 · 비건설 고객의 공간과 브랜드 경험을 <b>기획부터 납품까지 한 조직에서 책임진다.</b></p>
+    <div class="sec-h"><span class="sec-n">01</span><h2>4분기 목표</h2>
+      <span class="sec-note">연간 30억 · 건설 + 비건설 통합</span></div>
+    <div class="panel goal-reset">
+      <div class="gr-row">
+        <div><div class="k">연간 목표</div><div class="v">30억</div><div class="d">건설 + 비건설 통합</div></div>
+        <div><div class="k">1~3분기 누적</div><div class="v">18.38억</div><div class="d">달성률 61%</div></div>
+        <div><div class="k">4분기 목표</div><div class="v warn-v">11.62억</div><div class="d">월 3.87억 · 3분기(7.20억)의 1.6배</div></div>
+      </div>
+      <p>2 · 3분기 평균(7.25억)만 유지하면 연간 25.6억으로 <b>4.37억이 모자란다</b>. 이 차이는 <b>1억 이상 대형 건 3건</b>(거제 상동 1.40억 수준)으로 메운다. 실적 근거는 부록 A · B에 있다.
+      월 기준으로는 매달 3.87억 — 3분기 최고였던 9월(3.25억)보다 높은 수준을 10~12월 석 달 연속 내야 한다.</p>
     </div>
-    <div class="why3">
-      <div class="why"><div class="k">무엇이 바뀌었나</div>
-        <p>세일즈 · 기획 · PM 3명과 제작실 7명이 <b>AX사업실 한 조직</b>이 됐다. 수주와 제작이 같은 실장 아래에서 움직이고, 전 인원이 건설 · 비건설을 가리지 않고 대응한다.</p></div>
-      <div class="why"><div class="k">왜 합쳤나</div>
-        <p>수주한 일이 제작으로 넘어갈 때의 <b>인계 · 일정 조율을 한 조직 안에서</b> 끝내고, 제작 중에 생기는 추가 제안 기회를 바로 영업으로 연결하기 위해서다.</p></div>
-      <div class="why"><div class="k">어떻게 일하나</div>
-        <p>광고대행사처럼 <b>일은 최대한 수주</b>하고, 내부는 기획 · PM · 핵심 개발 · 품질에 집중한다. 내부 인력을 넘는 물량은 <b>외주 협력사로 수행</b>하고 건별 매출총이익으로 관리한다.</p></div>
-    </div>
-    <p class="foot">※ 미션과 개편 배경은 초안이다. 공식 문구가 있으면 그 표현으로 바꾼다.</p>
+    <div class="tbl-wrap" style="margin-top:16px"><table>
+      <thead><tr><th>4분기 목표 구성</th><th class="num-cell">금액</th><th class="num-cell">연간 누적</th><th>채우는 방법</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag c">기본</span> 지금 수준 유지</td><td class="num-cell">7.25억</td><td class="num-cell">25.63억</td>
+          <td>신규 고객사 다음 현장 · 협의 건 클로징 · 비건설 정기 건 (우선순위 1 · 3 · 4)</td></tr>
+        <tr><td><span class="tag s">추가</span> 대형 건</td><td class="num-cell">4.37억</td><td class="num-cell">30.00억</td>
+          <td>1억 이상 HW 결합 건 약 3건 · 삼성전자 2027 상반기 선확보 (우선순위 2 · 4)</td></tr>
+        <tr class="row-target"><td><span class="tag t">목표</span> 4분기 합계</td><td class="num-cell">11.62억</td><td class="num-cell">30.00억</td>
+          <td>10월 · 11월 · 12월 각 약 3.9억</td></tr>
+      </tbody></table></div>
   </section>
 
   <!-- 2. 조직 체계 -->
@@ -418,34 +415,9 @@
     <p class="foot">※ 담당 배정은 3분기 실제 수주 담당을 기준으로 정리했다. 회의 요일과 이익률 기준은 정해야 한다.</p>
   </section>
 
-  <!-- 4. 4분기 목표 -->
+  <!-- 4. 외주 활용과 매출총이익 -->
   <section>
-    <div class="sec-h"><span class="sec-n">04</span><h2>4분기 목표</h2>
-      <span class="sec-note">연간 30억 · 건설 + 비건설 통합</span></div>
-    <div class="panel goal-reset">
-      <div class="gr-row">
-        <div><div class="k">연간 목표</div><div class="v">30억</div><div class="d">건설 + 비건설 통합</div></div>
-        <div><div class="k">1~3분기 누적</div><div class="v">18.38억</div><div class="d">달성률 61%</div></div>
-        <div><div class="k">4분기 목표</div><div class="v warn-v">11.62억</div><div class="d">월 3.87억 · 3분기(7.20억)의 1.6배</div></div>
-      </div>
-      <p>2 · 3분기 평균(7.25억)만 유지하면 연간 25.6억으로 <b>4.37억이 모자란다</b>. 이 차이는 <b>1억 이상 대형 건 3건</b>(거제 상동 1.40억 수준)으로 메운다. 실적 근거는 부록 A · B에 있다.
-      월 기준으로는 매달 3.87억 — 3분기 최고였던 9월(3.25억)보다 높은 수준을 10~12월 석 달 연속 내야 한다.</p>
-    </div>
-    <div class="tbl-wrap" style="margin-top:16px"><table>
-      <thead><tr><th>4분기 목표 구성</th><th class="num-cell">금액</th><th class="num-cell">연간 누적</th><th>채우는 방법</th></tr></thead>
-      <tbody>
-        <tr><td><span class="tag c">기본</span> 지금 수준 유지</td><td class="num-cell">7.25억</td><td class="num-cell">25.63억</td>
-          <td>신규 고객사 다음 현장 · 협의 건 클로징 · 비건설 정기 건 (우선순위 1 · 3 · 4)</td></tr>
-        <tr><td><span class="tag s">추가</span> 대형 건</td><td class="num-cell">4.37억</td><td class="num-cell">30.00억</td>
-          <td>1억 이상 HW 결합 건 약 3건 · 삼성전자 2027 상반기 선확보 (우선순위 2 · 4)</td></tr>
-        <tr class="row-target"><td><span class="tag t">목표</span> 4분기 합계</td><td class="num-cell">11.62억</td><td class="num-cell">30.00억</td>
-          <td>10월 · 11월 · 12월 각 약 3.9억</td></tr>
-      </tbody></table></div>
-  </section>
-
-  <!-- 5. 외주 활용과 매출총이익 -->
-  <section>
-    <div class="sec-h"><span class="sec-n">05</span><h2>외주 활용과 매출총이익 관리</h2>
+    <div class="sec-h"><span class="sec-n">04</span><h2>외주 활용과 매출총이익 관리</h2>
       <span class="sec-note">제안 · 실제 원가율 확인 필요</span></div>
 
     <div class="panel goal-reset">
@@ -523,9 +495,9 @@
     <p class="foot">※ 상품별 실제 원가율과 외주 비중 데이터가 없어 기준 이익률은 비워 두었다. 1~3분기 건별 원가 자료를 받으면 상품별 기준과 4분기 매출총이익 목표를 채운다.</p>
   </section>
 
-  <!-- 6. 4분기 실행 전략 -->
+  <!-- 5. 4분기 실행 전략 -->
   <section>
-    <div class="sec-h"><span class="sec-n">06</span><h2>4분기 실행 전략</h2>
+    <div class="sec-h"><span class="sec-n">05</span><h2>4분기 실행 전략</h2>
       <span class="sec-note">우선순위 4가지 · 상품 전략 · 마케팅</span></div>
 
     <div class="levers">
@@ -834,9 +806,9 @@
     </div>
   </section>
 
-  <!-- 7. 위험 -->
+  <!-- 6. 위험 -->
   <section>
-    <div class="sec-h"><span class="sec-n">07</span><h2>위험 & 지원 요청</h2></div>
+    <div class="sec-h"><span class="sec-n">06</span><h2>위험 & 지원 요청</h2></div>
     <div class="cols">
       <div class="listcard warn"><h3><span class="dot"></span>위험</h3>
         <ul>
@@ -1006,7 +978,7 @@
   </section>
 
   <footer>
-    <span>2026 AX사업실 운영계획 · 팀 공유용</span>
+    <span>2026 AX사업실 운영계획 · 대표 보고용</span>
     <span>올림플래닛 · 대외비</span>
   </footer>
 
