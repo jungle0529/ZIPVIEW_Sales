@@ -172,17 +172,14 @@
     padding:26px 28px 24px}
   .dept-h span{color:var(--muted);font-weight:600;font-size:11.5px;font-variant-numeric:tabular-nums}
   .pl{list-style:none;padding:5px 0}
-  .pl li{display:flex;align-items:center;gap:9px;padding:5px 12px;font-size:12.5px;line-height:1.3}
-  .av{width:24px;height:24px;border-radius:50%;flex:none;font-size:10.5px;font-weight:800;
-    display:flex;align-items:center;justify-content:center;background:#EEF1F4;color:var(--ink-soft)}
+  .pl li{display:flex;align-items:center;gap:9px;padding:8px 14px;font-size:13px;line-height:1.3}
   .pl .nm{color:var(--ink);font-weight:700}
   .pl .kr{color:var(--muted);font-weight:500;margin-left:3px}
   .pl .rl{margin-left:auto;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;
     background:#EEF1F4;color:var(--ink-soft);white-space:nowrap}
   .head-wrap{display:flex;justify-content:center}
-  .head-card{background:var(--ink);color:#fff;border-radius:12px;padding:12px 22px 12px 14px;
+  .head-card{background:var(--ink);color:#fff;border-radius:12px;padding:12px 24px;
     display:flex;align-items:center;gap:12px}
-  .head-card .av{width:34px;height:34px;font-size:14px;background:rgba(255,255,255,.14);color:#fff}
   .head-card .nm{font-size:15.5px;font-weight:800;line-height:1.3}
   .head-card .kr{color:#B9C3CE;font-weight:500;margin-left:4px;font-size:13px}
   .head-card .t{font-size:11.5px;color:#8FE3CF;font-weight:700}
@@ -200,10 +197,7 @@
   .dept-h{padding:10px 14px;background:var(--cs);display:flex;justify-content:space-between;align-items:baseline}
   .dept-h b{font-size:13.5px;font-weight:800;color:var(--c)}
   .role .dept-h span{font-size:11.5px}
-  .dept .av{background:var(--cs);color:var(--c)}
   .dept .rl{background:var(--cs);color:var(--c)}
-  .pl li.dual .av{background:transparent;border:1.5px dashed var(--c)}
-  .pl li.dual .nm{color:var(--ink-soft)}
   .org-notes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;
     border-top:1px dashed var(--line);padding-top:18px}
   .org-note{padding:0 16px;border-left:1px solid var(--line);word-break:keep-all}
@@ -272,7 +266,7 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.av,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
@@ -326,7 +320,6 @@
     <div class="org">
         <div class="head-wrap">
           <div class="head-card">
-            <span class="av">C</span>
             <div><div class="nm">Charles<span class="kr">임명섭</span></div>
               <div class="t">AX사업실장 · 총괄</div></div>
           </div>
@@ -336,26 +329,26 @@
           <div class="dept s"><div class="dept-card">
             <div class="dept-h"><b>세일즈기획 (고객대응)</b><span>3명</span></div>
             <ul class="pl">
-              <li class="dual"><span class="av">C</span><span class="nm">Charles<span class="kr">임명섭</span></span><span class="rl">겸업</span></li>
-              <li><span class="av">L</span><span class="nm">Lucia<span class="kr">제갈민</span></span><span class="rl">Manager</span></li>
-              <li><span class="av">A</span><span class="nm">Anna<span class="kr">김수빈</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">Charles<span class="kr">임명섭</span></span><span class="rl">겸업</span></li>
+              <li><span class="nm">Lucia<span class="kr">제갈민</span></span><span class="rl">Manager</span></li>
+              <li><span class="nm">Anna<span class="kr">김수빈</span></span><span class="rl">Pro</span></li>
             </ul>
           </div></div>
           <div class="dept cx"><div class="dept-card">
             <div class="dept-h"><b>프로덕션 (PM, 제작)</b><span>4명</span></div>
             <ul class="pl">
-              <li><span class="av">J</span><span class="nm">James<span class="kr">이중석</span></span><span class="rl">Manager</span></li>
-              <li><span class="av">A</span><span class="nm">Awesome<span class="kr">홍준</span></span><span class="rl">Pro</span></li>
-              <li><span class="av">J</span><span class="nm">Jude<span class="kr">차동훈</span></span><span class="rl">Pro</span></li>
-              <li><span class="av">H</span><span class="nm">Hani<span class="kr">김하은</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">James<span class="kr">이중석</span></span><span class="rl">Manager</span></li>
+              <li><span class="nm">Awesome<span class="kr">홍준</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">Jude<span class="kr">차동훈</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">Hani<span class="kr">김하은</span></span><span class="rl">Pro</span></li>
             </ul>
           </div></div>
           <div class="dept sp"><div class="dept-card">
             <div class="dept-h"><b>지원 (개발, 영상, 하드웨어)</b><span>3명</span></div>
             <ul class="pl">
-              <li><span class="av">R</span><span class="nm">Rhea<span class="kr">권아름</span></span><span class="rl">Pro</span></li>
-              <li><span class="av">S</span><span class="nm">Sianu<span class="kr">김경태</span></span><span class="rl">Pro</span></li>
-              <li><span class="av">S</span><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">Intern</span></li>
+              <li><span class="nm">Rhea<span class="kr">권아름</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">Sianu<span class="kr">김경태</span></span><span class="rl">Pro</span></li>
+              <li><span class="nm">Seok<span class="kr">장순석</span></span><span class="rl">Intern</span></li>
             </ul>
           </div></div>
         </div>
