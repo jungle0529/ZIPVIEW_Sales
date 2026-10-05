@@ -292,6 +292,32 @@
   .fplus{text-align:center;font-weight:800;color:var(--muted);line-height:1}
   .floop{grid-column:1/-1;background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:8px 14px;
     font-size:13px;font-weight:700;text-align:center}
+  .dg{position:relative;display:grid;grid-template-columns:1fr 84px 1.2fr 84px 1fr;
+    grid-template-rows:34px auto 70px auto 70px auto;
+    grid-template-areas:". . . . ." "con . sal . non" ". . . . ." "inn . prd . par" ". . . . ." ". . del . .";
+    padding-left:26px;margin-top:8px}
+  .dg-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+  .dg [data-n="con"]{grid-area:con}.dg [data-n="sal"]{grid-area:sal}.dg [data-n="non"]{grid-area:non}
+  .dg [data-n="inn"]{grid-area:inn}.dg [data-n="prd"]{grid-area:prd}.dg [data-n="par"]{grid-area:par}.dg [data-n="del"]{grid-area:del}
+  .dg-p,.dg-hub{position:relative;z-index:1;background:var(--card);border-radius:14px;padding:0 0 14px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .dg .hd{border-radius:999px;margin:-13px 14px 10px;padding:6px 12px;text-align:center;font-size:13.5px;font-weight:800;color:#fff}
+  .dg ul{list-style:none;padding:0 16px;display:grid;gap:6px}
+  .dg li{font-size:12.8px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.45;word-break:keep-all}
+  .dg li::before{content:"✓";position:absolute;left:0;font-weight:800}
+  .dg li b{color:var(--ink)}
+  .dg-p.con .hd{background:var(--accent)}.dg-p.con li::before{color:var(--accent)}
+  .dg-p.non .hd{background:var(--gold)}.dg-p.non li::before{color:var(--gold)}
+  .dg-hub.sal{background:var(--accent-soft);border-color:var(--accent)}.dg-hub.sal .hd{background:var(--ink)}.dg-hub.sal li::before{color:var(--accent)}
+  .dg-hub .ex{margin:10px 16px 0;font-size:11.5px;font-weight:700;color:var(--accent);background:var(--card);border-radius:8px;padding:5px 9px;text-align:center}
+  .dg-hub.prd{background:#E8EFF7;border-color:#2F5D8A}.dg-hub.prd .hd{background:#2F5D8A}.dg-hub.prd li::before{color:#2F5D8A}
+  .dg-p.inn{border:1.5px solid #2F5D8A}.dg-p.inn .hd{background:#5B7FA6}.dg-p.inn li::before{color:#2F5D8A}
+  .dg-p.par{border:1.5px dashed var(--gold);background:var(--gold-soft)}.dg-p.par .hd{background:var(--gold)}
+  .chips4{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 14px}
+  .chips4 span{background:var(--card);border-radius:8px;padding:7px 6px;text-align:center;font-size:12.5px;font-weight:800;color:var(--gold)}
+  .dg-del{position:relative;z-index:1;justify-self:center;width:62%;background:var(--ink);color:#fff;border-radius:12px;padding:12px;text-align:center;font-size:15px;font-weight:800}
+  .dg-lbl{position:absolute;z-index:2;transform:translate(-50%,-50%);background:var(--bg);border-radius:6px;padding:1px 7px;
+    font-size:11px;font-weight:800;white-space:nowrap}
+  .fl{display:none}
   .ogoals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .og{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
     display:flex;flex-direction:column;gap:6px}
@@ -323,6 +349,7 @@
     .qchart{gap:6px}.qcol{height:210px;padding:6px 2px 8px}.qv{font-size:12.5px}
     .flow{grid-template-columns:1fr}.farr{text-align:center;transform:rotate(90deg)}
     .fa{text-align:center;transform:rotate(90deg);line-height:1}
+    .dg{display:none}.fl{display:grid!important}
     .tl{grid-template-columns:1fr}.tl-col{border-right:none;border-bottom:1px solid var(--line)}
     h1{font-size:27px}
     .sec-h{flex-wrap:wrap;row-gap:4px}.sec-note{margin-left:0;width:100%}
@@ -332,11 +359,11 @@
     .head-wrap{margin-bottom:14px}
     .org-notes{gap:12px}.org-note{border-left:none;padding:0}
   }
-  @media print{body{background:#fff}.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.keymsg,.mission,.gp-eq>div.hl,.head-card,.dept-h,.rl,.seg,.gtag,.ftag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org,.org-notes{break-inside:avoid}
     .mcard,.lever,.panel,table,.listcard,.tl,.org,.find{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
-    .find,.lever,.role,.og,.fl,.cases{break-inside:avoid}.appx{break-before:page}}
+    .find,.lever,.role,.og,.dg,.cases{break-inside:avoid}.appx{break-before:page}}
 </style>
 </head>
 <body>
@@ -432,22 +459,39 @@
   <!-- 3. 팀 운영 -->
   <section>
     <div class="sec-h"><span class="sec-n">03</span><h2>팀 운영</h2></div>
-    <div class="why-box">체험 마케팅 전 분야로 확장하기 위해 — <b>세일즈기획이 수주</b>하고, <b>프로덕션이 내부 인원 + 협력업체로 수행</b>한다.</div>
+    <div class="why-box"><b>세일즈기획이 메인</b>이 되어 수주하고, 프로덕션은 <b>PM · 퀄리티 관리</b>를 맡아 협력업체와 함께 수행한다. 납품 후에는 <b>재구매 재제안</b>으로 다시 수주로 이어진다.</div>
 
-    <div class="fl-scope"><span class="k">수주 범위</span><span>VR · XR</span><span>하드웨어</span><span>개발</span><span>CG · 영상</span><span>전시 · 콘텐츠</span></div>
+    <div class="dg" id="dg">
+      <svg class="dg-svg" aria-hidden="true"></svg>
+      <div class="dg-p con" data-n="con"><div class="hd">건설</div>
+        <ul><li>시공사 · 시행사</li><li>신탁사 · 재건축 조합</li><li>분양 광고대행사</li></ul></div>
+      <div class="dg-hub sal" data-n="sal"><div class="hd">세일즈기획 · 메인</div>
+        <ul><li>작은 업무부터 큰 업무까지 수주</li><li>작은 건 → 큰 건 <b>업셀링 제안</b></li><li>납품 후 <b>재구매 재제안</b></li></ul>
+        <div class="ex">업셀링 예 · 거제 상동 0.56억 → 2.06억</div></div>
+      <div class="dg-p non" data-n="non"><div class="hd">비건설</div>
+        <ul><li>기업 브랜드</li><li>전시 · 갤러리 · 팝업</li><li>교육 · 공공기관</li></ul></div>
+      <div class="dg-p inn" data-n="inn"><div class="hd">내부 인원</div>
+        <ul><li><b>핵심 프로젝트</b> 직접 제작</li><li>협력업체 결과물 <b>퀄리티 관리</b></li></ul></div>
+      <div class="dg-hub prd" data-n="prd"><div class="hd">프로덕션</div>
+        <ul><li>모든 프로젝트 <b>PM</b></li><li>내부 / 협력업체 배정</li></ul></div>
+      <div class="dg-p par" data-n="par"><div class="hd">협력업체</div>
+        <div class="chips4"><span>하드웨어</span><span>개발</span><span>CG</span><span>영상</span></div></div>
+      <div class="dg-del" data-n="del">최종 납품</div>
+    </div>
+
     <div class="fl">
-      <div class="fn s"><i>세일즈기획</i><b>수주</b></div>
+      <div class="fn s"><i>세일즈기획 · 메인</i><b>수주 · 업셀링</b></div>
       <div class="fa">→</div>
-      <div class="fn cx"><i>프로덕션</i><b>PM</b></div>
+      <div class="fn cx"><i>프로덕션</i><b>PM · 퀄리티 관리</b></div>
       <div class="fa">→</div>
       <div class="fstack">
-        <div class="fn in"><i>내부 인원</i><b>핵심 작업</b></div>
+        <div class="fn in"><i>내부 인원</i><b>핵심 프로젝트</b></div>
         <div class="fplus">+</div>
-        <div class="fn out"><i>협력업체</i><b>물량 작업</b></div>
+        <div class="fn out"><i>협력업체</i><b>하드웨어 · 개발 · CG · 영상</b></div>
       </div>
       <div class="fa">→</div>
-      <div class="fn done"><i>결과</i><b>납품</b></div>
-      <div class="floop">← 납품 현장에서 다음 건 제안 (반복 수주)</div>
+      <div class="fn done"><i>결과</i><b>최종 납품</b></div>
+      <div class="floop">← 재구매 재제안 — 다시 세일즈기획으로</div>
     </div>
 
     <div class="sub-h">같은 방식으로 운영하는 사례</div>
@@ -793,6 +837,39 @@
       document.getElementById("qd"+c.getAttribute("data-q")).classList.add("on");
     });
   });
+
+  (function(){
+    var host=document.getElementById("dg"); if(!host) return;
+    var svg=host.querySelector(".dg-svg"), NS="http://www.w3.org/2000/svg";
+    var C={g:"#1F6F5C",b:"#2F5D8A",o:"#B0822E"};
+    function R(n){var e=host.querySelector('[data-n="'+n+'"]'),r=e.getBoundingClientRect(),h=host.getBoundingClientRect();
+      return {x:r.left-h.left,y:r.top-h.top,r:r.right-h.left,b:r.bottom-h.top,cx:r.left-h.left+r.width/2,cy:r.top-h.top+r.height/2};}
+    function path(d,c,dash,both){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);p.setAttribute("fill","none");
+      p.setAttribute("stroke",C[c]);p.setAttribute("stroke-width","1.8");if(dash)p.setAttribute("stroke-dasharray","5 4");
+      p.setAttribute("marker-end","url(#m"+c+")");if(both)p.setAttribute("marker-start","url(#s"+c+")");svg.appendChild(p);}
+    function lbl(x,y,t,c){var d=document.createElement("div");d.className="dg-lbl";d.style.left=x+"px";d.style.top=y+"px";d.style.color=C[c];d.textContent=t;host.appendChild(d);}
+    function draw(){
+      if(getComputedStyle(host).display==="none") return;
+      svg.innerHTML=""; host.querySelectorAll(".dg-lbl").forEach(function(e){e.remove();});
+      var defs=document.createElementNS(NS,"defs");
+      Object.keys(C).forEach(function(k){
+        defs.innerHTML+='<marker id="m'+k+'" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="'+C[k]+'"/></marker>'+
+          '<marker id="s'+k+'" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="'+C[k]+'"/></marker>';});
+      svg.appendChild(defs);
+      var con=R("con"),sal=R("sal"),non=R("non"),inn=R("inn"),prd=R("prd"),par=R("par"),del=R("del");
+      path("M"+con.r+","+sal.cy+" H"+(sal.x-2),"g"); lbl((con.r+sal.x)/2,sal.cy-14,"수주","g");
+      path("M"+non.x+","+sal.cy+" H"+(sal.r+2),"o"); lbl((non.x+sal.r)/2,sal.cy-14,"수주","o");
+      path("M"+sal.cx+","+sal.b+" V"+(prd.y-2),"g"); lbl(sal.cx,(sal.b+prd.y)/2,"프로젝트 인계","g");
+      path("M"+prd.r+","+(prd.cy-12)+" H"+(par.x-2),"o"); lbl((prd.r+par.x)/2,prd.cy-26,"발주","o");
+      path("M"+par.x+","+(prd.cy+12)+" H"+(prd.r+2),"o",true); lbl((prd.r+par.x)/2,prd.cy+26,"결과물","o");
+      path("M"+(inn.r+2)+","+prd.cy+" H"+(prd.x-2),"b",false,true); lbl((inn.r+prd.x)/2,prd.cy-14,"핵심 · 품질","b");
+      path("M"+prd.cx+","+prd.b+" V"+(del.y-2),"b"); lbl(prd.cx,(prd.b+del.y)/2,"최종 검수","b");
+      var top=12;
+      path("M"+del.x+","+del.cy+" H8 V"+top+" H"+sal.cx+" V"+(sal.y-14),"g",true); lbl(con.cx,top,"재구매 재제안","g");
+    }
+    window.addEventListener("resize",draw); window.addEventListener("beforeprint",draw);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw); draw();
+  })();
 </script>
 </body>
 </html>
