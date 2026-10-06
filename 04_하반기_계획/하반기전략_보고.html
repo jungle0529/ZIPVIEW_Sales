@@ -304,7 +304,19 @@
     .dept{padding-top:0}.dept::before,.dept::after,.org-stem{display:none}
     .head-wrap{margin-bottom:14px}
   }
-  @media print{body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.mission,.head-card,.dept-h,.rl,.seg,.gtag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .ev-btn{margin-left:6px;font:inherit;font-size:12px;font-weight:700;color:var(--accent);background:var(--card);
+    border:1px solid var(--accent);border-radius:999px;padding:2px 10px;cursor:pointer;white-space:nowrap}
+  .ev-btn:hover{background:var(--accent);color:#fff}
+  .ev-btn:focus-visible,.ev-x:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  dialog.ev{border:none;border-radius:16px;padding:0;width:min(760px,calc(100% - 32px));margin:auto;
+    box-shadow:0 20px 60px rgba(20,32,46,.25);color:var(--ink)}
+  dialog.ev::backdrop{background:rgba(21,32,46,.45)}
+  .ev-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);font-size:15px}
+  .ev-x{border:none;background:none;font-size:16px;color:var(--muted);cursor:pointer;padding:4px 8px;border-radius:8px}
+  .ev-b{padding:14px 20px 18px;max-height:70vh;overflow:auto}
+  .ev-b table{font-size:13px;min-width:560px}
+  .ev-b td,.ev-b th{word-break:keep-all}
+  @media print{.ev-btn,dialog.ev{display:none}body{background:#fff}.dg-lbl{background:#fff}.dg .hd,.dg-hub,.dg-p,.dg-del,.chips4 span,.mission,.head-card,.dept-h,.rl,.seg,.gtag,.fstep,.fbase,.mcard.accent{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .org{break-inside:avoid}
     .mcard,.panel,table,.tl,.org{box-shadow:none}
     .qd{display:block!important;margin-bottom:16px;break-inside:avoid}.qcol.on{background:none}
@@ -550,7 +562,7 @@
     <p class="foot">※ 대상 사업지와 예상 금액은 6월 발굴 기준이며, 4분기 제안 전에 상태를 다시 확인한다.</p>
 
     <div class="sub-h">인바운드 강화 방향</div>
-    <div class="why-box">1~3분기 수주 49건 <b>모두 인바운드로 수주</b>. 그중 30건 · 12.18억(66%)은 <b>재의뢰 고객사 12곳</b>에서 수주.</div>
+    <div class="why-box">1~3분기 수주 49건 <b>모두 인바운드로 수주</b>. 그중 30건 · 12.18억(66%)은 <b>재의뢰 고객사 12곳</b>에서 수주. <button type="button" class="ev-btn" data-open="repeat">근거 보기</button></div>
     <div class="prin mk">
       <div><b>재의뢰 고객 관리</b><span>거래 고객사 31곳의 다음 분양 · 행사 일정 사전 파악 후 먼저 연락</span></div>
       <div><b>대행사 · 파트너 채널</b><span>포애드원 · 애드펀치 · 에스큐브 등 대행사 경유 수주 다수. 레퍼런스 · 단가 · 데모를 담은 제안 키트 공유</span></div>
@@ -663,6 +675,30 @@
   </section>
 
 
+  <dialog class="ev" id="repeat" aria-labelledby="repeat-t">
+    <div class="ev-h"><b id="repeat-t">재의뢰 고객사 12곳 · 30건 · 12.18억 (66%)</b><button type="button" class="ev-x" aria-label="닫기">✕</button></div>
+    <div class="ev-b">
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>고객사</th><th class="num-cell">건수</th><th class="num-cell">금액</th><th>계약 건</th></tr></thead>
+        <tbody>
+          <tr><td><b>삼성전자</b></td><td class="num-cell">4건</td><td class="num-cell">2.56억</td><td>디자인센터 상·하반기 · 비스포크 시뮬레이터 유지보수 · 데이코 영상</td></tr>
+          <tr><td><b>한국토지신탁</b></td><td class="num-cell">3건</td><td class="num-cell">2.06억</td><td>거제 상동 본 계약 + 추가 2건</td></tr>
+          <tr><td><b>동문건설</b></td><td class="num-cell">3건</td><td class="num-cell">1.83억</td><td>용인고림2 · 천안삼룡동 · 장승배기역</td></tr>
+          <tr><td><b>동부건설</b></td><td class="num-cell">2건</td><td class="num-cell">1.57억</td><td>광교 · 춘천 효자동</td></tr>
+          <tr><td><b>포애드원</b></td><td class="num-cell">2건</td><td class="num-cell">0.94억</td><td>송도 G5 · 송도 G5 추가</td></tr>
+          <tr><td><b>한화</b></td><td class="num-cell">3건</td><td class="num-cell">0.78억</td><td>포레나 상인천 · 힐스테이트진주 · 천안아산</td></tr>
+          <tr><td><b>애드펀치(HJ중공업)</b></td><td class="num-cell">2건</td><td class="num-cell">0.69억</td><td>해모로 서대신4 · 익산 영등주공1</td></tr>
+          <tr><td><b>브릭스인베스트먼트</b></td><td class="num-cell">2건</td><td class="num-cell">0.61억</td><td>소요한남 · 소요한남 체험</td></tr>
+          <tr><td><b>우미건설</b></td><td class="num-cell">2건</td><td class="num-cell">0.41억</td><td>오산세교2 · 오산세교2 층별조망</td></tr>
+          <tr><td><b>에스큐브</b></td><td class="num-cell">3건</td><td class="num-cell">0.27억</td><td>올리브영 티커영상 정산 3회</td></tr>
+          <tr><td><b>더시프트</b></td><td class="num-cell">2건</td><td class="num-cell">0.27억</td><td>함안 주상복합 · 검단 오류동</td></tr>
+          <tr><td><b>GS건설</b></td><td class="num-cell">2건</td><td class="num-cell">0.20억</td><td>옵션몰 고도화 · 옵션몰 이미지형 리스트(모투스 경유)</td></tr>
+          <tr class="row-target"><td>합계</td><td class="num-cell">30건</td><td class="num-cell">12.18억</td><td>전체 18.38억의 66%</td></tr>
+        </tbody></table></div>
+      <p class="foot">※ 1~3분기 2건 이상 계약한 고객사 기준(첫 계약 포함). 첫 계약을 제외한 재의뢰 건만 보면 18건 · 7.69억(42%).</p>
+    </div>
+  </dialog>
+
   <footer>
     <span>2026 AX사업실 운영계획</span>
     <span>올림플래닛 · 대외비</span>
@@ -714,6 +750,15 @@
     }
     window.addEventListener("resize",draw); window.addEventListener("beforeprint",draw);
     if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw); draw();
+  })();
+  (function(){
+    document.querySelectorAll("[data-open]").forEach(function(b){
+      b.addEventListener("click",function(){var d=document.getElementById(b.getAttribute("data-open"));if(d&&d.showModal)d.showModal();});});
+    document.querySelectorAll("dialog.ev").forEach(function(d){
+      d.querySelector(".ev-x").addEventListener("click",function(){d.close();});
+      d.addEventListener("click",function(e){if(e.target===d)d.close();});});
+    var h=(location.hash||"").slice(1), d=h&&document.getElementById(h);
+    if(d&&d.tagName==="DIALOG"&&d.showModal)d.showModal();
   })();
 </script>
 </body>
